@@ -1,0 +1,1603 @@
+---
+title: "Introducción al análisis de datos con R"
+subtitle: "Curso dirigido a Ciencias Sociales y Humanidades"
+author: "Bastián Olea Herrera"
+format: 
+  revealjs:
+    theme: [default, estilos.scss]
+    transition: slide
+    highlight-style: "github-dark"
+    # footer: "Bastián Olea Herrera — [https://bastianolea.rbind.io](https://bastianolea.rbind.io)"
+execute: 
+  echo: true
+  eval: true
+editor_options: 
+  chunk_output_type: console
+---
+
+
+
+## Inicio
+
+[Bastián Olea Herrera]{.subtitulo}
+
+[bastianolea.rbind.io](https://bastianolea.rbind.io)
+
+:::: {.pad}
+Encuentra todo sobre el curso [en este post](https://bastianolea.rbind.io/blog/curso_gratis_r_intro_1/) de mi blog.
+::::
+
+:::: {.pad style="max-width: 50%;"}
+::: {.boton}
+[{{< fa book-open >}} Curso](https://bastianolea.rbind.io/blog/curso_gratis_r_intro_1/)
+:::
+
+::: {.boton}
+[{{< fa file-code >}} Código](https://github.com/bastianolea/curso_intro_R_gratis)
+:::
+
+::: {.boton}
+[{{< fa video >}} Grabaciones](https://bastianolea.rbind.io/blog/curso_gratis_r_intro_1/#streaming-y-grabaciones)
+:::
+
+::: {.boton}
+[{{< fa chalkboard-user >}} Diapositivas](https://bastianolea.github.io/curso_intro_R_gratis)
+:::
+
+::: {.boton}
+[{{< fa envelope >}} Contacto](https://bastianolea.rbind.io/contacto/)
+:::
+::::
+
+:::: {.pad}
+Puedes encontrar más contenidos para [aprender R en este sitio](https://bastianolea.github.io/aprende_r/), y más cosas de R [en mi sitio web](https://bastianolea.rbind.io).
+::::
+
+----
+
+
+## ¿Qué es R?
+
+:::: {.columns}
+
+::: {.column width="55%"}
+R es un lenguaje de programación enfocado al **análisis de datos**, las **estadísticas** y la **visualización de datos**.
+:::
+
+::: {.column width="45%"}
+![](imagenes/logo_r.png){.rosa style="height: 180px; margin-top:-30px;"}
+:::
+::::
+
+::: {.boton}
+[{{< fa circle-arrow-down >}} Descargar R](https://cran.r-project.org/)
+:::
+
+<br>
+
+:::: {.fragment}
+### ¿Para qué sirve?
+
+::: {.incremental}
+- Lógica distinta: **instrucciones** en vez de **acciones** ⚙️
+- Repetir, mejorar, adaptar y reutilizar lo que ya has hecho ♻️
+- Automatizar tareas repetitivas 🤖
+- Expandir tus resultados 🚀
+:::
+::::
+
+----
+
+
+### ¿Por qué usar R?
+
+:::: {.fragment}
+::: {.cuadro} 
+[Gratuito]{.subtitulo}
+
+R es un lenguaje de programación abierto y gratuito, y es parte de la comunidad del _software libre_, así que nunca tendrás que pagar nada!
+:::
+::::
+
+:::: {.fragment}
+::: {.cuadro} 
+[Amigable]{.subtitulo}
+
+R fue creado para personas de distintas disciplinas, y al centrarse en los datos resulta [más intuitivo](https://bastianolea.rbind.io/blog/r_introduccion/por_que_r/#usabilidad) que otros lenguajes.
+:::
+::::
+
+:::: {.fragment}
+::: {.cuadro} 
+[Reproducible]{.subtitulo}
+
+La gracia de R es [guardar todos los pasos de tu análisis](https://bastianolea.rbind.io/blog/2025-11-13/), lo que facilita corregirlos, [reutilizarlos](https://bastianolea.rbind.io/blog/r_introduccion/por_que_r/#procesos-reutilizables) para nuevos casos, y compartirlo con otros.
+:::
+::::
+
+----
+
+
+## ¿Qué se puede hacer con R?
+
+<img class="r-stretch" 
+src="imagenes/shiny_apps.jpg" 
+style="border-radius: 8px; border: solid 1px #442A54; margin-bottom: 20px;"/>
+
+<div style="text-align: center; font-size: 90%;">
+Muestra de algunas [aplicaciones](https://bastianolea.github.io/shiny_apps/), [gráficos](https://bastianolea.rbind.io/tags/gráficos/), [tablas](https://bastianolea.rbind.io/tags/tablas/), y [mapas](https://bastianolea.rbind.io/tags/mapas/) hechos con R. También algunos [trabajos](https://bastianolea.rbind.io/blog/portafolio_trabajos_r/) que he hecho.
+</div>
+
+
+
+----
+
+
+## Diferencia entre _hacer_ y programar
+
+::: {.incremental}
+- Aprender a programar es un **cambio de perspectiva**: pasamos de _hacer_ cosas a _planificar_ cosas 💅🏼
+- Acción 🔧 → instrucción 🧠
+- Trabajamos **desde arriba**, viendo todos sus pasos y componentes 👩🏻‍💻
+- Pasos independientes, reutilizables, mejorables, intercambiables ⚙️
+- El trabajo que hagas puede **servirte** a futuro, a ti y a otrxs ♻️
+- Resultados **replicables** 🏭
+:::
+
+::: {.fragment}
+Veamos algunos casos!
+:::
+
+----
+
+### Caso 1: _arreglar un problema_
+
+::: {.pad}
+Datos → A → B → C → Resultado
+:::
+
+::: {.fragment}
+
+::::: {.columns}
+
+:::: {.column}
+[Hacer]{.subtitulo}
+
+::: {.incremental}
+- Hago **A**
+- Hago **B**
+- Hago **C**
+- _Me equivoqué en **B**_ 😣
+- Vuelvo a **A** 🙄
+- Hago **B**
+- Hago **C**
+::: 
+::::
+
+:::: {.column}
+[Programar]{.subtitulo}
+
+::: {.incremental}
+- Haga **A**
+- Haga **B**
+- Haga **C**
+- _Me equivoqué en **B**_ 🤨
+- Cambio **B** 😌
+- Re-ejecuto **A**, **B** y **C**
+::: 
+::::
+:::::
+
+:::
+
+----
+
+
+### Caso 2: _actualización de datos_
+
+::: {.pad}
+Datos → A → B → C → Resultado
+:::
+
+
+
+::::: {.columns}
+
+:::: {.column}
+[Hacer]{.subtitulo}
+
+::: {.incremental}
+- *Actualizar datos*
+- Hago de nuevo **A**
+- Hago de nuevo **B**
+- Hago de nuevo **C**
+:::
+
+::::
+
+:::: {.column}
+[Programar]{.subtitulo}
+
+::: {.incremental}
+- *Actualizar datos*
+- Re-ejecuto **A**, **B** y **C**
+:::
+
+::::
+:::::
+
+----
+
+
+
+### Caso 3: _optimizar procesamiento o cambio en metodología_
+
+::: {.pad}
+Datos → A → B → C → Resultado
+:::
+
+::::: {.columns}
+
+:::: {.column}
+[Hacer]{.subtitulo}
+
+::: {.incremental}
+- _Cambio en procesamiento/metodología_
+- Tengo **A**
+- Hago de nuevo **B**
+- Hago de nuevo **C**
+:::
+
+::::
+
+:::: {.column}
+[Programar]{.subtitulo}
+
+::: {.incremental}
+- _Cambio en procesamiento/metodología_
+- Ajusto **A** si es conveniente
+- Aplico cambios en **B**
+- Re-ejecuto **A**, **B** y **C**
+:::
+
+::::
+:::::
+
+----
+
+### Caso 4: _replicar un resultado_
+
+::: {.pad}
+Datos → A → B → C → Resultado
+:::
+
+::::: {.columns}
+
+:::: {.column}
+[Hacer]{.subtitulo}
+
+::: {.incremental}
+- Hago **A** para grupo 1
+- Hago **B** para grupo 1
+- Hago **C** para grupo 1
+- Hago **A** para grupo 2 🤨
+- Hago **B** para grupo 2
+- Hago **C** para grupo 2... 😵
+:::
+
+::::
+
+:::: {.column}
+[Programar]{.subtitulo}
+
+::: {.incremental}
+- Hago **A** para grupo 1
+- Hago **B** para grupo 1
+- Hago **C** para grupo 1
+- Ajusto scripts para que funcionen con más grupos
+- Re-ejecuto **A**, **B** y **C** para grupo 2
+- Re-ejecuto **A**, **B** y **C** para grupo 3
+- O mejor, hago un loop que haga **A**, **B** y **C** para todos los grupos 😌
+:::
+
+::::
+:::::
+
+
+----
+
+
+## Diferencia entre R y RStudio
+
+::::: {.columns}
+
+:::: {.column}
+::: {.fragment}
+#### R
+![](imagenes/logo_r.png){.rosa style="height: 128px;"}
+
+- Lenguaje de programación
+- Lanzado en 1993
+- Usado por línea de comandos
+- Desarrollado por R Core Team
+- Basado en el lenguaje S (1976)
+- Software libre
+:::
+::::
+:::: {.column}
+
+::: {.fragment}
+
+#### RStudio
+
+![](imagenes/logo_rstudio.png){.rosa style="height: 128px;"}
+
+- Entorno de desarrollo integrado (IDE) enfocado en R
+- Lanzado en 2011
+- Interfaz gráfica (ventanas y botones)
+- Desarrollado por Posit (ex RStudio)
+- Software libre
+:::
+::::
+:::::
+
+
+:::: aside
+::: {.fragment}
+_Por favor no digan que "aprendieron RStudio"_ 😣
+:::
+::::
+
+
+----
+
+## Conceptos clave
+
+::: {.fragment}
+![](imagenes/icono_script.png){.izq style="margin: 10px; width: 110px;"}
+
+#### Script
+
+Archivo de texto .R en el que escribimos nuestro código, en pasos, y siguiendo un orden lógico.
+
+<br>
+:::
+
+::: {.fragment}
+![](imagenes/icono_consola.png){.izq style="margin-top: 10px; width: 130px;"}
+
+#### Consola
+
+Es la forma directa de interactuar con R, un comando a la vez, con resultados efímeros.
+
+<br>
+:::
+
+::: {.fragment}
+![](imagenes/icono_project.png){.izq style="width: 130px;"}
+
+#### Proyecto
+
+Archivo .Rproj que marca nuestro espacio de trabajo: una carpeta específica que reúne todas las piezas de nuestro análisis.
+:::
+
+
+----
+
+## RStudio
+
+::: {.boton .absolute top=-1% right=0%}
+[{{< fa circle-arrow-down >}} Descargar RStudio](https://posit.co/download/rstudio-desktop/)
+:::
+
+![](imagenes/rstudio.png){.entrada-fade-in .centro style="width: 800px;"}
+
+::: {.fragment}
+[1]{.circulo-grande .absolute top=30% left=4%}
+[Scripts]{.circulo-grande-texto .absolute top=30% left=4%}
+:::
+
+::: {.fragment}
+[2]{.circulo-grande .absolute top=70% left=4%}
+[Consola]{.circulo-grande-texto .absolute top=70% left=4%}
+:::
+
+::: {.fragment}
+[3]{.circulo-grande .absolute top=30% right=4%}
+[Entorno]{.circulo-grande-texto-der .absolute top=30% right=4%}
+:::
+
+::: {.fragment}
+[4]{.circulo-grande .absolute top=70% right=4%}
+[Archivos]{.circulo-grande-texto-der .absolute top=70% right=4%}
+:::
+
+----
+
+
+### Conceptos
+
+::: {.fragment .pad}
+[1]{.circulo} **Panel de scripts:** los archivos de texto con nuestro código. Podemos tener varias pestañas. Ejecutamos el código poniendo el cursor en la línea y presionando `control + enter`, o el botón _Run_.
+:::
+
+::: {.fragment .pad}
+[2]{.circulo} **Panel de consola:** en la consola se imprimen los **resultados** del código que ejecutamos. También podemos ejecutar código directamente en ella escribiendo y presionando `enter`.
+:::
+
+::: {.fragment .pad}
+[3]{.circulo} **Panel de entorno:** acá veremos los **objetos** que vayamos creando o cargando, que pueden ser números, texto, tablas de datos, funciones, gráficos y otros.
+:::
+
+::: {.fragment .pad}
+[4]{.circulo} **Panel de archivos:** en este panel podemos navegar los archivos y carpetas de nuestro proyecto y/o computador. La idea es que _todo_ esté dentro del proyecto!
+:::
+
+
+----
+
+### Consola y scripts
+
+
+![](imagenes/rstudio_script.png){.absolute top=5% right=-20%}
+
+
+
+:::: {.columns}
+
+::: {.column}
+
+::: {.incremental}
+- Todos los **comandos** se ejecutan por medio de la consola
+- Pero al ejecutar código en la consola, el código no se guarda!
+- Para **guardar** el código, escribimos en **scripts**
+- Escribimos las **instrucciones** en un script, y RStudio se encarga de pasarlos a la consola y ejecutarlos cuando se lo pidamos 💡
+:::
+
+:::
+::::
+
+----
+
+### Botones 
+
+::::{.r-stack}
+
+::: {.fragment .fondo}
+![](imagenes/rstudio_boton_0.png){style="width: 700px;"}
+
+::: {.centrar}
+Crear un **nuevo script** de R
+:::
+:::
+
+
+::: {.fragment .fondo}
+![](imagenes/rstudio_boton_1.png){style="width: 700px;"}
+
+::: {.centrar}
+Botón para **ejecutar código**
+:::
+:::
+
+::: {.fragment .fondo}
+![](imagenes/rstudio_boton_2.png){style="width: 700px;"}
+
+::: {.centrar}
+Botón para **ejecutar todo el script**
+:::
+:::
+
+::: {.fragment .fondo}
+![](imagenes/rstudio_boton_3.png){style="width: 700px;"}
+
+::: {.centrar}
+Configurar paneles de RStudio
+:::
+:::
+
+::: {.fragment .fondo}
+![](imagenes/rstudio_boton_4.png){style="width: 700px;"}
+
+::: {.centrar}
+Cambiar de **proyecto** o crear uno nuevo
+:::
+:::
+
+::::
+
+----
+
+
+## Operaciones básicas
+
+::::: {.columns}
+
+:::: {.column style="padding-right:28px;"}
+
+::: {.incremental}
+- Podemos realizar cualquier operación matemática en R.
+- Para **ejecutar** un comando, pon el cursor de texto en la línea o expresión que desees ejecutar, o selecciónala, y presiona el botón _Run_, o las teclas `control + enter`.
+- Lo importante es que el cursor de texto `|` esté en cualquier lugar de la línea.
+- El **resultado** de todas las operaciones aparece en la **consola**.
+:::
+
+::::
+
+:::: {.column width="40%"}
+
+::: {.fragment} 
+
+::: {.pad}
+```{r}
+2 + 2 #suma
+```
+:::
+::: {.pad}
+```{r}
+50 * 100 #multiplicación
+```
+:::
+::: {.pad}
+```{r}
+4556 - 1000 #resta
+```
+:::
+::: {.pad}
+```{r}
+6565 / 89 #división
+```
+:::
+::: {.pad}
+```{r}
+10^4 #potencias
+```
+:::
+:::
+
+::::
+:::::
+
+
+----
+
+### Comentarios
+
+::: {.incremental}
+- Los comentarios nos permiten poner texto en cualquier parte del script sin que afecte los cálculos.
+- También podemos poner un comentario al final de una línea sin que afecte el código
+:::
+
+
+::: {.fragment}
+```{r}
+#| eval: false
+1 + 1 + 1 + 1
+# comentario: quizás esto debería
+# ser de otra forma, porque
+# la verdad quedó bien mal...
+
+1 * 4 # así queda mucho mejor
+```
+:::
+
+----
+
+
+## Tipos de datos
+
+Lo que podemos hacer siempre va a depender del **tipo** de cada objeto. 
+
+. . .
+
+En R existen varios tipos:
+
+::: {.pad}
+**Numéricos**
+```{r}
+#| eval: false
+#| code-line-numbers: false
+1  2  3  4  5.1  5.2  5.333
+```
+Pueden ser decimales (_doubles_) o enteros (_integers_)
+::: 
+
+. . .
+
+::: {.pad}
+**Caracter** (texto)
+```{r}
+#| eval: false
+#| code-line-numbers: false
+"ésta es una cadena de texto"
+```
+::: 
+
+. . .
+
+::: {.pad}
+**Lógicos** (verdadero o falso)
+```{r}
+#| eval: false
+#| code-line-numbers: false
+TRUE FALSE TRUE
+```
+::: 
+
+
+----
+
+## Objetos
+
+Se le llama **objeto** a cualquier dato, variable, o elemento que tengas en R.
+
+Podemos guardar _todo_ como un objeto.
+
+. . . 
+
+Para **crear** un objeto, simplemente le damos un nombre y le _asignamos_ un contenido.
+
+::: {style="max-width: 300px; margin: auto;"}
+**nombre** [←]{style="font-size: 130%;"} _contenido_
+:::
+
+<br>
+
+. . . 
+
+:::: {.columns}
+::: {.column .just-der }
+Para asignar algo a un objeto, usamos el operador `<-`
+:::
+
+::: {.column}
+```{r style="margin-left: 28px; margin-top:20px;"}
+#| code-line-numbers: false
+cifra <- 4
+```
+:::
+::::
+
+<br>
+
+. . . 
+
+:::: {.columns}
+::: {.column .just-der}
+El objeto `cifra` se crea cuando declaramos que va a contener el valor `4`
+:::
+
+::: {.column}
+```{r style="margin-left: 28px; margin-top:20px;"}
+#| code-line-numbers: false
+cifra
+```
+:::
+::::
+
+
+----
+
+### Asignación
+
+Con el _operador de **asignación**_ creamos objetos nuevos.
+
+::: {.centrar style="font-size: 200%"}
+`->`
+:::
+
+::: {.fragment}
+Se escribe con: 
+
+::: {.centrar style="color: #563A74; opacity: 40%;"}
+Windows:
+:::
+
+![](imagenes/assignment_shortcut_win.png){.centrar}
+
+::: {.centrar style="color: #563A74; opacity: 40%; margin-top:32px;"}
+Mac:
+:::
+
+![](imagenes/assignment_shortcut_mac.png){.centrar}
+
+:::
+
+----
+
+
+:::: {.columns}
+
+::: {.column}
+Al asignar algo, **creamos** o **modificamos** un objeto con el valor que le estamos asignando.
+
+Al ejecutar un objeto, obtenemos su valor.
+:::
+
+::: {.column}
+
+::: {.fragment}
+```{r}
+edad <- 32
+edad
+```
+:::
+
+::: {.fragment}
+```{r}
+animal = "gato"
+animal
+```
+:::
+
+:::
+::::
+
+<br>
+
+::: {.fragment}
+:::: {.columns}
+
+::: {.column width=40%}
+
+<div style="padding-right:12px;">
+Podemos usar el objeto creado para lo que queramos.
+
+Crear objetos es como **asignar variables**, y podemos usar estas variables para llevar a cabo operaciones!
+</div>
+
+:::
+
+::: {.column width=60%}
+
+
+:::: {.columns}
+
+::: {.fragment .column width=49%}
+```{r}
+edad <- 32
+año <- 2026
+año - edad
+```
+:::
+
+::: {.fragment .column width=49%}
+```{r}
+perros = 2
+gatos = 3
+perros + gatos
+```
+:::
+::::
+
+::: {.fragment}
+```{r}
+presupuesto = 100000
+pizza = 15000
+presupuesto - pizza * 10
+```
+:::
+:::
+::::
+
+:::
+
+----
+
+## Comparaciones
+
+Podemos usar cifras u objetos para compararlas entre sí: la respuesta será `TRUE` (verdadero) o `FALSE` (falso).
+
+. . .
+
+:::: {.pad style="max-width: 400px;"}
+
+::: {.fragment}
+```{r}
+edad >= 18
+```
+:::
+
+::: {.fragment}
+```{r}
+minimo <- 35
+edad > minimo
+``` 
+:::
+
+::: {.fragment}
+```{r}
+año == 2024
+``` 
+:::
+
+::: {.fragment}
+```{r}
+año != 2024
+```
+:::
+::::
+
+. . .
+
+Las comparaciones son el principio que luego nos permitirá filtrar datos, crear variables, y más!
+
+----
+
+
+## Vectores
+
+Los vectores son **secuencias** de elementos. Un objeto que contiene cero o más datos.
+
+::: {.incremental}
+- Estos elementos son de un **mismo tipo**: numérico, carácter o lógico.
+- Son la forma más básica de registrar e interactuar con varios datos a la vez.
+:::
+
+::: {.fragment}
+```{r}
+c(1, 2, 3, 4, 5, 6)
+c("a", "b", "c", "d")
+c(TRUE, FALSE, FALSE)
+c(0.2, 0.1, -0.0, -0.1)
+```
+:::
+
+----
+
+También podemos realizar **comparaciones** sobre los valores de un vector:
+
+```{r}
+edades <- c(54, 34, 65, 21, 32)
+edades > 40
+```
+
+<br> 
+
+O cualquier **operación** sobre sus elementos:
+```{r}
+año <- 2026
+años <- año - edades
+años
+```
+
+
+
+----
+
+## Funciones
+
+::: {.incremental}
+- Las **funciones** son pequeños programas que permiten realizar distintas operaciones.
+:::
+
+::: {.centrar}
+`función(argumento = 123)`
+:::
+
+::: {.fragment}
+Algunas funciones comunes:
+
+```{r}
+#| code-line-numbers: false
+#| eval: false
+mean() # calcular promedio
+median() # calcular mediana
+sum() # sumar elementos
+min() # valor mínimo
+max() # valor máximo
+typeof() # tipo del objeto
+is.na() # evaluar si es missing
+as.numeric() # convertir a numérico
+```
+:::
+
+::: aside
+::: {.fragment}
+Si no sabemos cómo usar una función, podemos buscar su nombre en el panel **Ayuda** de RStudio, o escribir el nombre de la función precedido de un signo de interrogación: `?funcion`
+:::
+:::
+
+----
+
+#### Funciones en vectores 
+
+Las funciones también pueden operar **sobre vectores** de datos.
+
+::: {.pad .fragment}
+```{r}
+población <- c(120, 340, 560, 230, 450)
+prom_pob <- mean(población)
+prom_pob
+```
+:::
+
+::: {.fragment}
+Es decir que la **operación** que hace la función se aplica **a cada elemento** del vector.
+
+Pensemos las **funciones** como nuestras **acciones**, y los **vectores** como las columnas o **variables** de nuestras bases de datos.
+:::
+
+
+
+
+
+
+# Datos {{< fa database >}}
+
+Para cargar datos, tenemos que:
+
+::: {.incremental}
+- Tener un **archivo** y conocer su **formato** (Excel, Stata, CSV, etc.)
+- [Saber **dónde está** el archivo en nuestro computador]{.fragment .strike}
+- **Guardar** el archivo dentro del proyecto de R 📂
+- Conocer una **función** que lea ese formato de archivos
+:::
+
+## Cargar datos {{< fa file-export >}}
+
+- Las funciones de carga de datos usan como argumento la **ruta** del archivo.
+
+::: {.fragment .pad}
+Cargar un archivo en la misma carperta del proyecto:
+```{r}
+#| eval: false
+#| code-line-numbers: false
+datos <- read.csv("datos.csv")
+```
+:::
+
+::: {.fragment .pad}
+Cargar un archivo en una subcarpeta del proyecto:
+```{r}
+#| eval: false
+#| code-line-numbers: false
+datos <- read.csv("carpeta/datos.csv")
+```
+:::
+
+<br>
+
+::: {.fragment}
+Probemos cargando unos datos!
+
+::: {.boton}
+<a href="https://github.com/bastianolea/curso_intro_R_gratis/raw/main/datos/pobreza/estimaciones_pobreza.csv" target="_blank"> {{< fa file-download >}} Descargar datos de pobreza </a>
+:::
+
+:::
+
+
+
+## Paquetes
+
+:::: {.columns} 
+
+::: {.fragment .column width=60%}
+![](imagenes/tidyverse.png)
+:::
+
+::: {.column width=40%}
+
+::: {.incremental}
+- **Extensiones** de R que te permiten agregar **nuevas** y **mejores** funcionalidades.
+- Se instalan desde internet
+- Son creados y mantenidos **por la comunidad**
+- Se revisan para garantizar su seguridad y estabilidad
+:::
+
+::: {.fragment}
+```{r}
+#| eval: false
+#| code-line-numbers: false
+install.packages()
+```
+:::
+
+:::
+
+::::
+
+----
+
+### Paquetes para carga de datos {{< fa laptop-file >}}
+
+![](imagenes/paquetes_carga_datos.png){.pad style="height: 200px;"}
+
+
+::: {.pad .incremental}
+- `{readxl}` es uno de los paquetes de lectura de planillas Excel. Para escribir un archivo Excel está `{writexl}`
+- `{readr}` lee y escribe datos de múltiples formatos (csv, rds, rdata), usualmente de forma más veloz y cómoda
+- `{haven}` permite cargar archivos SPSS, Stata, y SAS
+- `{arrow}` es un formato moderno de datos columnares, optimizado para grandes volúmenes y velocidad de carga, y pensado para usarse en distintos softwares
+:::
+
+
+
+
+
+
+# `{dplyr}`
+
+
+:::: {.columns}
+::: {.incremental .column width=70%}
+- Paquete de exploración, manipulación y transformación de datos
+- Sus funciones se escriben como verbos
+- Las acciones se encadenan con el operador de conexión o _pipe_: `|>`
+
+::: {.fragment}
+```{r}
+#| message: false
+library(dplyr)
+```
+:::
+:::
+
+::: {.column width=30%}
+![](imagenes/dplyr.png){}
+:::
+::::
+
+<br>
+
+::: {.boton .fragment}
+[{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/r_introduccion/dplyr_intro/)
+:::
+
+
+----
+
+## Funciones comunes
+
+::: {.incremental}
+- `head()`, `tail()`, `glimpse()`: vistazos a los datos
+- `select()`: seleccionar columnas o variables de una tabla
+- `slice()`: extraer filas de una tabla por su posición o distintos criterios
+- `pull()`: extraer una columna como vector
+- `filter()`: filtrar observaciones en base a condiciones personalizadas
+- `distinct()`: filtrar observaciones repetidas en una o más columnas
+- `count()`: conteo de casos únicos en una o más columnas
+- `mutate()`: crear columnas entregando valores, funciones sobre columnas, o calculando a partir de otras columnas
+:::
+
+----
+
+
+## Tutoriales de `{dplyr}`
+
+Para que puedan repasar o guiarse con **casos básicos de uso** de `{dplyr}` con **datos reales**, dejo un par de tutoriales:
+
+::: {.boton .pad}
+[{{< fa file-lines >}} Tutorial con datos censales ](https://bastianolea.rbind.io/blog/r_introduccion/tutorial_dplyr_censo/)
+:::
+
+::: {.boton .pad}
+[{{< fa file-lines >}} Tutorial con datos sociales](https://bastianolea.rbind.io/blog/r_introduccion/tutorial_dplyr_campamentos/)
+:::
+
+----
+
+## Conector
+
+::: {.boton .absolute top=0% right=0%}
+[{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/r_introduccion/conectores/)
+:::
+
+El conector o _pipe_ `|>` (o también `%>%`) nos permite encadenar varias funciones de forma más legible.
+
+::: {.centrar style="font-size: 200%"}
+`|>`  `%>%`
+:::
+
+::: {.fragment}
+Se escribe con: 
+
+::: {.centrar style="color: #563A74; opacity: 40%;"}
+Windows:
+:::
+
+![](imagenes/pipe_shortcut_win.png){.centrar}
+
+::: {.centrar style="color: #563A74; opacity: 40%; margin-top:32px;"}
+Mac:
+:::
+
+![](imagenes/pipe_shortcut_mac.png){.centrar}
+
+:::
+
+
+
+----
+
+
+### Usando el conector
+::: {.fragment .pad}
+Aplicar una función normalmente:
+```{r}
+#| eval: false
+#| code-line-numbers: false
+funcion(objeto) # a la función le pasamos un objeto
+```
+:::
+::: {.fragment .pad}
+Otra forma de hacerlo con `|>` es:
+```{r}
+#| eval: false
+#| code-line-numbers: false
+objeto |> funcion() # al objeto luego le aplicamos la función
+```
+:::
+::: {.fragment .pad}
+Luego podemos encadenar varias funciones:
+
+```{r}
+#| eval: false
+#| code-line-numbers: false
+objeto |> funcion() |> funcion() # al objeto le aplicamos dos funciones
+```
+:::
+::: {.fragment .pad}
+También podemos ordenar las instrucciones hacia abajo:
+```{r}
+#| eval: false
+resultado <- objeto |> 
+  funcion() |> 
+  funcion()
+```
+:::
+
+
+----
+
+
+## Seleccionar y ordenar
+
+::: {.boton .absolute top=-1% right=0%}
+[{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/r_introduccion/dplyr_intro/#datos)
+:::
+
+Cargamos un conjunto de datos de prueba:
+
+```{r}
+library(dplyr)
+library(readr)
+
+datos <- read_csv2("datos/pobreza/estimaciones_pobreza.csv")
+```
+
+Estos datos son del [Ministerio Desarrollo Social y Familia](https://bidat.gob.cl/directorio/Pobreza%20comunal/estimaciones-de-pobreza-comunal-2022) de Chile.
+
+<br>
+
+:::: {.columns}
+
+::: {.column .fragment}
+#### Seleccionar
+```{r}
+datos |> 
+  select(region, comuna, personas) |> 
+  head()
+```
+::: 
+
+::: {.column .fragment}
+#### Ordenar
+```{r}
+datos |> 
+  select(region, comuna, personas) |> 
+  arrange(desc(personas)) |> 
+  head()
+```
+:::
+::::
+
+
+----
+
+
+## Filtrar datos
+
+::: {.boton .absolute top=-1% right=0%}
+[{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/r_introduccion/dplyr_intro/#filtrar-datos)
+:::
+
+- Para filtrar, realizamos una **comparación** entre los valores de una columna y un valor específico.
+
+
+::: {.fragment}
+```{r}
+#| message: false
+library(dplyr)
+
+datos |> 
+  filter(porcentaje > 0.35) |> 
+  arrange(desc(porcentaje)) |> 
+  head()
+```
+:::
+
+
+----
+
+
+
+## Crear/modificar variables
+
+::: {.boton .absolute top=0% right=0%}
+[{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/r_introduccion/dplyr_mutate/)
+:::
+
+::: {.pad}
+Con `mutate()` para crear una nueva variable o columna
+:::
+
+::: {.pad}
+Le aplicamos `mutate()` a un _data frame_ conectando los datos a la función con un conector (`|>` o `%>%`)
+:::
+
+:::: {.columns}
+::: {.column .fragment}
+```{r}
+datos |> 
+  select(codigo, comuna) |> 
+  mutate(saludo = "hola") |> 
+  head()
+```
+:::
+
+::: {.column .fragment}
+```{r}
+datos |> 
+  select(comuna, personas) |> 
+  mutate(miles = personas/1000) |> 
+  head()
+```
+:::
+::::
+
+----
+
+### Variables condicionales
+
+
+
+
+
+
+
+:::: {.columns}
+::: {.column .fragment}
+#### `ifelse()`
+
+**Si** ocurre _esto,_ **entonces** retorno _lo primero_, y **si no**, _lo segundo._
+```{r}
+datos |> 
+  select(comuna, porcentaje) |> 
+  mutate(nivel = ifelse(
+    porcentaje >= 0.3,
+    yes = "alta", 
+    no = "baja")) |> 
+  head()
+```
+:::
+
+::: {.column .fragment}
+#### `case_when()`
+Recodificación avanzada con **múltiples condicionales**.
+```{r}
+datos |> 
+  select(comuna, porcentaje) |> 
+  mutate(miles = case_when(
+    porcentaje >= 0.3 ~ "alta",
+    porcentaje >= 0.2 ~ "media",
+    porcentaje < 0.2 ~ "baja")) |> 
+  head()
+```
+:::
+::::
+
+
+----
+
+## Resúmenes de datos
+
+::: {.boton .absolute top=-1% right=0%}
+[{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/r_introduccion/dplyr_summarize/)
+:::
+
+::: {.fragment}
+Aplicar una **función** para **resumir** todas las filas de una tabla en un sólo resultado:
+
+```{r}
+datos |> 
+  summarize(total = sum(personas))
+```
+:::
+
+::: {.fragment}
+Si **agrupamos** los datos, obtendremos una fila de resultado por cada grupo:
+
+```{r}
+datos |> 
+  group_by(region) |> 
+  summarize(total = sum(personas)) |> 
+  head(n = 4)
+```
+:::
+
+
+----
+
+
+
+## Datos de texto
+
+![](imagenes/stringr.png){.esquina-der style='height:128px;'}
+
+El paquete `{stringr}` se especializa en texto.
+
+::: {.pad}
+```{r}
+library(stringr)
+```
+
+::: {.fragment}
+```{r}
+texto <- "todxs pueden aprender a programar 💕" 
+
+str_detect(texto, "todos")
+
+str_detect(texto, "aprender")
+```
+:::
+
+::: {.fragment}
+```{r}
+datos |> 
+  filter(str_detect(comuna, "Alto")) |> 
+  select(region, comuna)
+```
+:::
+:::
+
+
+----
+
+
+### Trabajando con datos de texto
+
+
+::: {.boton .absolute top=0% right=0%}
+[{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/nubes_de_palabras/)
+:::
+
+::: {.boton}
+<a href="https://raw.githubusercontent.com/bastianolea/prensa_chile/refs/heads/main/prensa_datos_muestra.csv" target="_blank"> {{< fa file-download >}} Descargar datos de noticias </a>
+:::
+
+:::{.incremental}
+- Podemos usar un **conteo de palabras** generado con `count()` para hacer una **nube de palabras**.
+- Pero antes, tenemos que **tokenizar** el texto para convertirlo desde una cadena de texto a palabras independientes.
+:::
+
+::: {.fragment}
+```{r}
+#| eval: false
+
+noticias <- readr::read_csv2("https://raw.githubusercontent.com/bastianolea/prensa_chile/refs/heads/main/prensa_datos_muestra.csv")
+
+library(tidytext)
+
+palabras <- noticias |> 
+  tidytext::unnest_tokens(input = cuerpo, output = palabra) |> # tokenizar documentos
+  filter(!palabra %in% stopwords::stopwords("spanish")) # eliminar palabras vacías
+
+palabras_conteo <- palabras_conteo |> 
+  slice_max(n, n = 1000) # sólo las más frecuentes
+
+library(wordcloud2)
+
+palabras_conteo |>
+  wordcloud2::wordcloud2(backgroundColor = "#23102A", color = "#9F69C7")
+```
+:::
+
+----
+
+
+### Análisis de sentimiento
+
+::: {.boton .absolute top=0% right=0%}
+[{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/analisis_sentimiento_llm/)
+:::
+
+::: {.fragment .pad}
+Podemos usar un **modelo de lenguaje** (LLM) local o remoto para que R analice los textos y retorne si son **positivos**, **neutros** o **negativos**.
+:::
+
+::: {.fragment}
+```{r}
+#| eval: false
+
+library(ellmer)
+chat <- chat_ollama(model = "llama3.2:3b") # elegir modelo
+
+library(mall)
+llm_use(chat) # configurar modelo
+
+sentimiento <- noticias |> 
+  slice_sample(n = 10) |> 
+  # extraer sentimiento
+  llm_sentiment(cuerpo, pred_name = "sentimiento",
+                options = c("positivo", "neutro", "negativo"))
+
+sentimiento
+```
+:::
+
+
+----
+
+## Cruzar datos
+
+::: {.boton .absolute top=0% right=0%}
+[{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/left_join/)
+:::
+
+Para cruzar dos tablas de datos<br>usamos `left_join()` de `{dplyr}`
+
+<br>
+
+::: {.fragment}
+![](imagenes/left_join.png){.centrar style='max-height: 400px;'}
+:::
+
+----
+
+
+### Cruzando datos {{< fa table >}}
+
+Veamos un ejemplo donde cruzamos dos tablas, la de **pobreza** y una nueva de **clasificación comunal** (urbana, mixta, rural según la [PNDR](https://bibliotecadigital.odepa.gob.cl/handle/20.500.12650/74476)), a partir de la columna que tienen en común: `codigo`
+
+::: {.fragment}
+```{r}
+#| message: false
+clasificacion <- readr::read_csv2("datos/clasificacion/clasificacion.csv")
+```
+:::
+
+::: {.fragment}
+```{r}
+clasificacion_b <- clasificacion |> 
+  select(codigo, clasificacion)
+```
+:::
+
+::: {.fragment}
+```{r}
+datos_clasif <- datos |> 
+  select(codigo, comuna, personas, porcentaje) |> 
+  left_join(clasificacion_b, by = "codigo")
+
+datos_clasif |> head()
+```
+:::
+
+
+----
+
+
+## Transformar datos
+
+::: {.boton .absolute top=0% right=0%}
+[{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/r_introduccion/tidyr_pivotar/)
+:::
+
+::: {.incremental}
+- El paquete `{tidyr}` se especializa en **transformar la estructura de los datos**.
+- Esto nos permite **manipular** los datos para que sea más cómodo o lógico realizar ciertas operaciones.
+  - Por ejemplo:
+    - Si necesitamos sumar varias variables, es más cómodo tenerlas en filas (para poder usar algo como `sum(valores)`) que en columnas (y tener que sumar `a+b+c+d`...)
+    - Si queremos comparar varias variables, o mostrarlas a un público, es mejor que estén lado a lado, como en las tablas comunes.
+:::
+  
+  
+----
+
+
+### Transformando datos
+
+![](imagenes/tidyr.png){.esquina-der style='height:128px;'}
+
+- **Pivotar** una tabla sirve para cambiar su forma:
+  - De variables en columnas a filas: `pivot_longer()`
+  - De variables en filas a columnas: `pivot_wider()`
+
+
+::: {.fragment}
+![](imagenes/pivot_longer.png){.centrar style='max-height: 200px;'}
+:::
+
+::: {.fragment}
+![](imagenes/pivot_wider.png){.centrar style='max-height: 200px;'}
+:::
+
+----
+
+
+## Datos para practicar {{< fa file-code >}}
+
+
+::: {.boton}
+[{{< fa file-lines >}} Estimaciones de población Censo](https://raw.githubusercontent.com/bastianolea/curso_intro_R_gratis/refs/heads/main/datos/estimaciones/estimaciones-y-proyecciones-base.xlsx)
+:::
+
+
+::: {.boton }
+[{{< fa file-lines >}} Variables educacionales Censo 2024](https://github.com/bastianolea/curso_intro_R_gratis/raw/main/datos/censo/P7_Educacion.xlsx)
+:::
+
+::: {.boton }
+[{{< fa file-lines >}} Estimación de pobreza multidimensional 2022](https://github.com/bastianolea/curso_intro_R_gratis/raw/main/datos/pobreza/estimaciones_indice_pobreza_multidimensional_comunas_2022.xlsx)
+:::
+
+::: {.boton }
+[{{< fa file-lines >}} Clasificaciones comunales 2024](https://github.com/bastianolea/curso_intro_R_gratis/raw/main/datos/clasificacion/ClasificacionComunasPNDR_Censo2024.xlsx)
+:::
+
+Puedes encontrar más datos en mi [repositorio de datos sociales](https://bastianolea.github.io/datos_sociales/), en el [banco integrado de datos del Ministerio de Desarrollo](https://bidat.midesof.cl/), en los [datos abiertos del Estado Chile](https://datos.gob.cl/), y [muchos más](https://bastianolea.rbind.io/blog/r_introduccion/recursos_r/#datos).
+
+:::: aside 
+::: {.fragment}
+Ahora que ya sabes lo básico, todo lo demás se trata de aprender piezas y herramientas que puedes ir agregando a tus análisis! 🧩🛠️
+:::
+::::
+
+
+
+----
+
+## Consejos 
+
+::: {.incremental}
+- Mantengan su propio **libro de aprendizajes**
+- Leer bien los **errores**
+- Probar **paso a paso**
+- Devolverse y **empezar de nuevo**
+- No se vuelvan dependientes de la IA
+- Asistencia con IA: **autocompletado** de GitHub Copilot
+- **Mensaje de sistema** para su proveedor de IA
+- Aprender a **googlear** bien 
+:::
+
+
+
+
+# Gracias <span style="font-size: 110%; color: #9F69C7;">♥</span>
+
+
+Puedes escribirme cualquier duda o comentario [por aquí](https://bastianolea.rbind.io/contact/)
+
+<br>
+
+
+:::: {.centrar}
+::: {.boton}
+[{{< fa link >}} Aprende R](https://bastianolea.github.io/aprende_r/)
+:::
+
+::: {.boton}
+[{{< fa book-open >}} Curso](https://bastianolea.rbind.io/clases/curso_gratis_r_intro_1/)
+:::
+
+::: {.boton}
+[{{< fa file-code >}} Código](https://github.com/bastianolea/curso_intro_R_gratis)
+:::
+
+::: {.boton}
+[{{< fa video >}} Grabaciones](https://bastianolea.rbind.io/blog/curso_gratis_r_intro_1/#streaming-y-grabaciones)
+:::
+::::
+

@@ -1,0 +1,323 @@
+/*https://quarto.org/docs/presentations/revealjs/themes.html*/
+
+/*-- scss:defaults --*/
+
+// fonts
+$font-family-sans-serif: "Atkinson Hyperlegible", Helvetica, Arial, sans-serif !default;
+$presentation-font-size-root: 30px;
+$presentation-line-height: 1.2;
+
+// headings
+$presentation-heading-font: "Atkinson Hyperlegible", Helvetica, Arial, sans-serif !default; //"EB Garamond", Garamond, Times, serif;
+$presentation-heading-color: #B39CCD !default;
+
+$presentation-h1-font-size:	2.5em;
+$presentation-h2-font-size:	1.8em;
+$presentation-h3-font-size:	1.6em;
+$presentation-h4-font-size: 1em;
+
+// colors
+$body-bg: #23102A !default;
+$body-color: #C8B2E2 !default;
+$link-color: #9F69C7 !default;
+$link-color-hover: #8554E8 !default;
+$selection-bg: #553A74 !default;
+
+// inline code
+$code-bg:  #553A74 !default;
+$code-color: #F4E8FD;
+
+// code blocks
+$code-block-bg: #1A111E;
+$code-block-border-color: lighten($code-block-bg, 10%);
+$code-block-font-size: 0.6em;
+
+
+// general
+p {
+  color: $body-color;
+  
+  code {
+    padding: 3px;
+  }
+}
+
+a {
+  text-decoration: underline !important;
+}
+
+h1 {
+  color: #9F69C7 !important;
+}
+
+strong {
+  color: #9F69C7 !important;
+}
+
+.footer {
+  font-size: 0.4em !important;
+  
+  p {
+  color: #442A54 !important;
+  }
+  
+  a {
+  color: #442A54 !important;
+  }
+}
+
+.title {
+  font-weight: 600 !important;
+  line-height: 1 !important;
+}
+
+.subtitle {
+  // font-family: "EB Garamond", Garamond, Times, serif !important;
+  font-size: 130%;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.subtitulo {
+  font-size: 120%;
+  font-weight: bold;
+  color: $link-color;
+}
+
+h4 {
+  font-size: 120% !important;
+  font-weight: bold !important;
+  color: $link-color !important;
+}
+
+// images
+.reveal section.img_container {
+        width: 90%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+}
+.reveal section img {
+        display: block;
+        margin: auto;
+        height: auto;
+        max-height: 90%;
+        width: auto;
+        max-width: 90%;
+}
+
+// bloques de código
+.cell {
+  margin: 12px;
+}
+
+// creados
+.espaciar {
+      padding-right: 10%; /* Adjust the percentage as needed */
+}
+
+.borde {
+  border-radius: 7px !important;
+  margin: 12px !important;
+}
+
+.borde-linea {
+  border-radius: 8px !important;
+}
+
+.linea {
+  border: solid 2px #442A54;
+}
+
+.centrar {
+  margin: auto; 
+  text-align: center;
+}
+
+
+.cuadro {
+    border: solid 1px #442A54;
+    border-radius: 8px !important;
+    padding: 10px !important;
+    padding-left: 20px !important;
+    padding-bottom: 4px !important;
+    margin: 10px;
+    background-color: #31193F;
+    margin-bottom: 20px !important;
+    margin-top: 20px !important;
+}
+
+
+/*-- scss:rules --*/
+
+.reveal .slide blockquote {
+  border-left: 3px solid $text-muted;
+  padding-left: 0.5em;
+}
+
+
+/*estilo de listas*/
+
+.reveal ul {
+  list-style-type: none; 
+  padding-left: 6px; 
+}
+
+.reveal ul ul {
+  list-style-type: none; 
+  padding-left: 6px; 
+}
+
+.reveal ul li {
+  position: relative; 
+  padding-left: 30px; 
+  margin-bottom: 6px;
+}
+
+.reveal ul li::before {
+  content: '▶'; 
+  position: absolute;
+  left: 0;
+  color: #9F69CA;
+  font-size: 20px;
+  line-height: 2;
+}
+
+.reveal ul ul ul {
+  list-style-type: none;
+}
+
+
+.rosa {
+  filter: saturate(200%) brightness(90%);
+}
+
+.izq {
+ float: left !important;
+ padding-right: 16px;
+}
+
+.der {
+ float: right !important;
+ padding-left: 16px;
+}
+
+.esquina-der {
+  float: right !important;
+  margin-right: 32px !important;
+  margin-top: -80px !important;
+}
+
+.ancho-medio {
+  width: 120px !important;
+}
+
+
+.circulo {
+  background-color: $link-color;
+  color: $body-bg !important; 
+  font-weight: bold;
+  width: 30px; height: 30px;
+  line-height: 30px;
+  font-size: 95%;
+  padding-bottom: 0px;
+  border-radius: 50%;
+  text-align: center;
+  display: inline-block;
+  margin-right: 4px;
+  vertical-align: 0.1em;
+}
+
+.circulo-grande {
+  background-color: $link-color;
+  color: $body-bg !important; 
+  font-weight: bold;
+  width: 50px; height: 50px;
+  line-height: 50px;
+  font-size: 120%;
+  padding-bottom: 0px;
+  border-radius: 50%;
+  text-align: center;
+  display: inline-block;
+  margin-right: 4px;
+  vertical-align: 0.1em;
+}
+
+.circulo-grande-texto {
+  font-size: 90%;
+  margin-top: 60px;
+  margin-left: 25px;
+  transform: translate(-50%, 0%);
+}
+.circulo-grande-texto-der {
+  font-size: 90%;
+  margin-top: 60px;
+  margin-right: 25px;
+  transform: translate(50%, 0%);
+}
+
+.pad {
+  padding-top: 8px !important; 
+  padding-bottom: 8px !important; 
+}
+
+
+.just-der {
+  text-align: right !important;
+}
+
+
+.boton {
+  background-color: $link-color;
+  color: $body-bg !important; 
+  font-weight: bold;
+  font-size: 100%;
+  padding: 0px 18px;
+  border-radius: 8px;
+  text-align: center;
+  display: inline-block;
+  margin: 8px 4px;
+  
+  a {
+    color: $body-bg !important; 
+    text-decoration: none !important;
+  }
+  
+  p {
+  color: $body-bg !important;
+  }
+  
+  .fa-classic, .fa-regular, .fa-solid, .far, .fas {
+    margin-right: 6px !important;
+  }
+}
+
+
+
+.entrada-fade-in {
+  animation: fadeIn 3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.padding {
+  padding: 20px !important;
+}
+
+.fit-image {
+  width: 100% !important;
+  height: auto !important; /* maintain aspect ratio */
+  max-height: 100% !important; /* ensure it fits vertically */
+  object-fit: contain; /* ensures the whole image is visible within its container */
+}
+
+.fondo {
+  background-color: $body-bg !important;
+}
