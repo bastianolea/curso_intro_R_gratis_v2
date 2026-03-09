@@ -1,28 +1,29 @@
-## Curso gratuito: introducción al análisis de datos con R
+## Curso gratuito: introducción al análisis de datos con R, segunda versión
 
-_Curso online introductorio de programación dirigido a estudiantes o profesionales de ciencias sociales y humanidades, sin experiencia previa_
+![] (imagenes/afiches/curso_r_featured.png)
 
-Existen muchas herramientas para analizar datos, pero hay algo que casi todas tienen en común: la programación. Pero no es tan difícil como suena!
+Información e inscripciones: https://bastianolea.rbind.io/blog/curso_gratis_r_intro_2/
 
-Por eso estoy organizando un curso gratuito del lenguaje R para análisis de datos!
+Segundo curso gratuito de introducción a R enfocados en ciencias sociales. En este curso, de tres sesiones, aprenderemos a usar R para **analizar datos sociales**, aprenderemos lo básico de la **visualización de datos**, y exploraremos la **creación de mapas** con R.
 
-R es un lenguaje diseñado para trabajar con datos. Además de exploración, transformación y análisis de datos, R permite hacer visualizaciones, animaciones, automatización de procesos, reportes, aplicaciones web, y mucho más.
+_Recomiendo revisar los [contenidos del primer curso gratuito de R](https://bastianolea.rbind.io/blog/curso_gratis_r_intro_1/) que organicé, incluyendo grabaciones y diapositivas, para tener una base de conocimientos básicos!_
 
-Su gracia es que es un lenguaje usado por personas de múltiples disciplinas, y por lo mismo es un lenguaje orientado a ser usado por personas que no sean expertas en informática o ciencias de la computación.
+En este curso gratuito de R podrás **aprender desde cero** a usar programación para análisis de datos! 
 
-Aprende desde cero a usar este lenguaje y complementa tu carrera con herramientas de programación que te abrirán muchas posibilidades.
+R es un lenguaje diseñado para trabajar con datos. Además de exploración, transformación y análisis de datos, R permite hacer visualizaciones, animaciones, automatización de procesos, reportes, aplicaciones web, y mucho más. 
 
-[Más información en este post](https://bastianolea.rbind.io/blog/curso_gratis_r_intro_1/)
+Su gracia es que es un lenguaje usado por personas de **diversas disciplinas**, y por lo mismo es un lenguaje orientado a ser usado por personas que no sean expertas en informática o ciencias de la computación.
 
-
-## Diapositivas
-
-https://bastianolea.github.io/curso_intro_R_gratis/
+Aprende **desde cero** a usar este lenguaje y complementa tu carrera con herramientas de programación que te abrirán muchas posibilidades. 
 
 
-## Streaming
+El curso va dirigido a **profesionales o estudiantes de las ciencias sociales** con **poca experiencia** programando, o **alguna experiencia** trabajando con datos.
 
-https://www.youtube.com/watch?v=A9wtPBEaVvY
+Los **cupos** son limitados, y se aplicarán **criterios de inclusión** para la participación de grupos minoritarios (mujeres, disidencias de sexo y género, personas con discapacidad).
+
+Las clases serán **online** los días 25 y 30 de marzo, y 1 de abril a las 7:30PM (horario de Chile).
+
+[Más información en este post](https://bastianolea.rbind.io/blog/curso_gratis_r_intro_2/)
 
 
 ## Código de conducta
