@@ -1,6 +1,6 @@
 ## Curso gratuito: introducción al análisis de datos con R, segunda versión
 
-![] (imagenes/afiches/curso_r_featured.png)
+![](imagenes/afiches/curso_r_featured.png)
 
 Información e inscripciones: https://bastianolea.rbind.io/blog/curso_gratis_r_intro_2/
 
