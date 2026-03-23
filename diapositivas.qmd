@@ -241,7 +241,7 @@ Datos → A → B → C → Resultado
 
 
 
-### Caso 2: _optimizar procesamiento o cambio en metodología_
+### Caso 2: _cambio en cálculos o metodología_
 
 ::: {.pad}
 Datos → A → B → C → Resultado
@@ -256,7 +256,7 @@ Datos → A → B → C → Resultado
 - Hago **A**
 - Hago **B**
 - Hago **C**
-- _Cambio en procesamiento/metodología_
+- _Cambio en cálculos o metodología_
 - Hago de nuevo **B**
 - Como **C** depende de **B**, lo hago de nuevo también
 :::
@@ -270,7 +270,7 @@ Datos → A → B → C → Resultado
 - Hago **A**
 - Hago **B**
 - Hago **C**
-- _Cambio en procesamiento/metodología_
+- _Cambio en cálculos o metodología_
 - Aplico cambios en **B**
 - Re-ejecuto **A**, **B** y **C**
 :::
@@ -312,9 +312,47 @@ Datos → A → B → C → Resultado
 - Hago **C** para grupo 1
 - _Ahora necesito hacer lo mismo, de nuevo, para otro grupo_
 - Ajusto scripts para que funcionen con más grupos
-- Re-ejecuto **A**, **B** y **C** para grupo 2
-- Re-ejecuto **A**, **B** y **C** para grupo 3
+- Re-ejecuto los scripts para grupo 2
+- Re-ejecuto los scripts  para grupo 3
 - O mejor, hago un loop que haga **A**, **B** y **C** para todos los grupos 😌
+:::
+
+::::
+:::::
+
+
+----
+
+
+
+### Caso 4: _modificar gráficos_
+
+::: {.pad}
+Datos → A → B → C → Resultado
+:::
+
+::::: {.columns}
+
+:::: {.column}
+[Hacer]{.subtitulo}
+
+::: {.incremental}
+- Hago **A, B** y **C**
+- Hago 10 gráficos
+- _Necesito modificar los gráficos_
+- Hago el mismo cambio en cada uno de los gráficos... 😵
+:::
+
+::::
+
+:::: {.column}
+[Programar]{.subtitulo}
+
+::: {.incremental}
+- Hago **A, B** y **C**
+- Hago un script que genera 10 gráficos
+- _Necesito modificar los gráficos_
+- Ajusto el script y vuelvo a generar los gráficos 😌
 :::
 
 ::::
@@ -803,51 +841,6 @@ años
 ----
 
 
-# Datos {{< fa database >}}
-
-Para cargar datos, tenemos que:
-
-::: {.incremental}
-- Tener un **archivo** y conocer su **formato** (Excel, Stata, CSV, etc.)
-- [Saber **dónde está** el archivo en nuestro computador]{.fragment .strike}
-- **Guardar** el archivo dentro del proyecto de R 📂
-- Conocer una **función** que lea ese formato de archivos
-:::
-
-## Cargar datos {{< fa file-export >}}
-
-- Las funciones de carga de datos usan como argumento la **ruta** del archivo.
-
-::: {.fragment .pad}
-Cargar un archivo en la misma carperta del proyecto:
-```{r}
-#| eval: false
-#| code-line-numbers: false
-datos <- read.csv("datos.csv")
-```
-:::
-
-::: {.fragment .pad}
-Cargar un archivo en una subcarpeta del proyecto:
-```{r}
-#| eval: false
-#| code-line-numbers: false
-datos <- read.csv("carpeta/datos.csv")
-```
-:::
-
-<br>
-
-::: {.fragment}
-Probemos cargando unos datos!
-
-::: {.boton}
-<a href="https://github.com/bastianolea/curso_intro_R_gratis/raw/main/datos/pobreza/estimaciones_pobreza.csv" target="_blank"> {{< fa file-download >}} Descargar datos de pobreza </a>
-:::
-
-:::
-
-
 
 ## Paquetes
 
@@ -878,6 +871,40 @@ install.packages()
 
 ::::
 
+
+# Datos {{< fa database >}}
+
+Para cargar datos, tenemos que:
+
+::: {.incremental}
+- Tener un **archivo** y conocer su **formato** (Excel, Stata, CSV, etc.)
+- [Saber **dónde está** el archivo en nuestro computador]{.fragment .strike}
+- **Guardar** el archivo dentro del proyecto de R 📂
+- Conocer una **función** y posiblemente un **paquete** que lea ese formato de archivos
+:::
+
+## Cargar datos {{< fa file-export >}}
+
+- Las funciones de carga de datos usan como argumento la **ruta** del archivo.
+
+::: {.fragment .pad}
+Cargar un archivo en la misma carperta del proyecto:
+```{r}
+#| eval: false
+#| code-line-numbers: false
+datos <- read.csv("datos.csv")
+```
+:::
+
+::: {.fragment .pad}
+Cargar un archivo en una subcarpeta del proyecto:
+```{r}
+#| eval: false
+#| code-line-numbers: false
+datos <- read.csv("carpeta/datos.csv")
+```
+:::
+
 ----
 
 ### Paquetes para carga de datos {{< fa laptop-file >}}
@@ -892,8 +919,36 @@ install.packages()
 - `{arrow}` es un formato moderno de datos columnares, optimizado para grandes volúmenes y velocidad de carga, y pensado para usarse en distintos softwares
 :::
 
+----
+
+### Carga de datos desde Excel
+
+Probemos cargando unos datos!
+
+::: {.boton}
+<a href="https://github.com/bastianolea/curso_intro_R_gratis_v2/raw/main/datos/pobreza/estimaciones_pobreza.xlsx" target="_blank"> {{< fa file-download >}} Descargar datos de pobreza en Excel</a>
+:::
 
 
+:::  {.fragment}
+Cargamos los datos usando una función del paquete `{readxl}`:
+
+
+```{r cargar_excel}
+# cargar paquete
+library(readxl) 
+
+# cargar datos
+datos <- read_excel("datos/pobreza/estimaciones_pobreza.xlsx")
+
+# mirar datos
+head(datos)
+```
+
+:::
+
+
+----
 
 
 
@@ -993,6 +1048,12 @@ Mac:
 
 
 ### Usando el conector
+
+::: {.boton .absolute top=0% right=0%}
+[{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/r_introduccion/conectores/)
+:::
+
+
 ::: {.fragment .pad}
 Aplicar una función normalmente:
 ```{r}
@@ -1038,18 +1099,17 @@ resultado <- objeto |>
 [{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/r_introduccion/dplyr_intro/#datos)
 :::
 
-Cargamos un conjunto de datos de prueba:
+Usaremos los datos de **pobreza** del [Ministerio Desarrollo Social y Familia](https://bidat.gob.cl/directorio/Pobreza%20comunal/estimaciones-de-pobreza-comunal-2022) que vimos antes. Si no los cargaste, [descárgalos](https://github.com/bastianolea/curso_intro_R_gratis_v2/raw/main/datos/pobreza/estimaciones_pobreza.xlsx) y los cargas así:
 
 ```{r}
 library(dplyr)
-library(readr)
+library(readxl)
 
-datos <- read_csv2("datos/pobreza/estimaciones_pobreza.csv")
+datos <- read_excel("datos/pobreza/estimaciones_pobreza.xlsx")
 ```
 
-Estos datos son del [Ministerio Desarrollo Social y Familia](https://bidat.gob.cl/directorio/Pobreza%20comunal/estimaciones-de-pobreza-comunal-2022) de Chile.
-
 <br>
+
 
 :::: {.columns}
 
@@ -1329,81 +1389,6 @@ datos |>
 
 ----
 
-
-### Trabajando con datos de texto
-
-
-::: {.boton .absolute top=0% right=0%}
-[{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/nubes_de_palabras/)
-:::
-
-::: {.boton}
-<a href="https://raw.githubusercontent.com/bastianolea/prensa_chile/refs/heads/main/prensa_datos_muestra.csv" target="_blank"> {{< fa file-download >}} Descargar datos de noticias </a>
-:::
-
-:::{.incremental}
-- Podemos usar un **conteo de palabras** generado con `count()` para hacer una **nube de palabras**.
-- Pero antes, tenemos que **tokenizar** el texto para convertirlo desde una cadena de texto a palabras independientes.
-:::
-
-::: {.fragment}
-```{r}
-#| eval: false
-
-noticias <- readr::read_csv2("https://raw.githubusercontent.com/bastianolea/prensa_chile/refs/heads/main/prensa_datos_muestra.csv")
-
-library(tidytext)
-
-palabras <- noticias |> 
-  tidytext::unnest_tokens(input = cuerpo, output = palabra) |> # tokenizar documentos
-  filter(!palabra %in% stopwords::stopwords("spanish")) # eliminar palabras vacías
-
-palabras_conteo <- palabras_conteo |> 
-  slice_max(n, n = 1000) # sólo las más frecuentes
-
-library(wordcloud2)
-
-palabras_conteo |>
-  wordcloud2::wordcloud2(backgroundColor = "#23102A", color = "#9F69C7")
-```
-:::
-
-----
-
-
-### Análisis de sentimiento
-
-::: {.boton .absolute top=0% right=0%}
-[{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/analisis_sentimiento_llm/)
-:::
-
-::: {.fragment .pad}
-Podemos usar un **modelo de lenguaje** (LLM) local o remoto para que R analice los textos y retorne si son **positivos**, **neutros** o **negativos**.
-:::
-
-::: {.fragment}
-```{r}
-#| eval: false
-
-library(ellmer)
-chat <- chat_ollama(model = "llama3.2:3b") # elegir modelo
-
-library(mall)
-llm_use(chat) # configurar modelo
-
-sentimiento <- noticias |> 
-  slice_sample(n = 10) |> 
-  # extraer sentimiento
-  llm_sentiment(cuerpo, pred_name = "sentimiento",
-                options = c("positivo", "neutro", "negativo"))
-
-sentimiento
-```
-:::
-
-
-----
-
 ## Cruzar datos
 
 ::: {.boton .absolute top=0% right=0%}
@@ -1440,9 +1425,10 @@ clasificacion_b <- clasificacion |>
 :::
 
 ::: {.fragment}
-```{r}
+```{r left_join}
 datos_clasif <- datos |> 
   select(codigo, comuna, personas, porcentaje) |> 
+  mutate(codigo = as.numeric(codigo)) |>
   left_join(clasificacion_b, by = "codigo")
 
 datos_clasif |> head()
@@ -1495,20 +1481,20 @@ datos_clasif |> head()
 
 
 ::: {.boton}
-[{{< fa file-lines >}} Estimaciones de población Censo](https://raw.githubusercontent.com/bastianolea/curso_intro_R_gratis/refs/heads/main/datos/estimaciones/estimaciones-y-proyecciones-base.xlsx)
+[{{< fa file-lines >}} Estimaciones de población Censo](https://raw.githubusercontent.com/bastianolea/curso_intro_R_gratis_v2/refs/heads/main/datos/estimaciones/estimaciones-y-proyecciones-base.xlsx)
 :::
 
 
 ::: {.boton }
-[{{< fa file-lines >}} Variables educacionales Censo 2024](https://github.com/bastianolea/curso_intro_R_gratis/raw/main/datos/censo/P7_Educacion.xlsx)
+[{{< fa file-lines >}} Variables educacionales Censo 2024](https://github.com/bastianolea/curso_intro_R_gratis_v2/raw/main/datos/censo/P7_Educacion.xlsx)
 :::
 
 ::: {.boton }
-[{{< fa file-lines >}} Estimación de pobreza multidimensional 2022](https://github.com/bastianolea/curso_intro_R_gratis/raw/main/datos/pobreza/estimaciones_indice_pobreza_multidimensional_comunas_2022.xlsx)
+[{{< fa file-lines >}} Estimación de pobreza multidimensional 2022](https://github.com/bastianolea/curso_intro_R_gratis_v2/raw/main/datos/pobreza/estimaciones_indice_pobreza_multidimensional_comunas_2022.xlsx)
 :::
 
 ::: {.boton }
-[{{< fa file-lines >}} Clasificaciones comunales 2024](https://github.com/bastianolea/curso_intro_R_gratis/raw/main/datos/clasificacion/ClasificacionComunasPNDR_Censo2024.xlsx)
+[{{< fa file-lines >}} Clasificaciones comunales 2024](https://github.com/bastianolea/curso_intro_R_gratis_v2/raw/main/datos/clasificacion/ClasificacionComunasPNDR_Censo2024.xlsx)
 :::
 
 Puedes encontrar más datos en mi [repositorio de datos sociales](https://bastianolea.github.io/datos_sociales/), en el [banco integrado de datos del Ministerio de Desarrollo](https://bidat.midesof.cl/), en los [datos abiertos del Estado Chile](https://datos.gob.cl/), y [muchos más](https://bastianolea.rbind.io/blog/r_introduccion/recursos_r/#datos).

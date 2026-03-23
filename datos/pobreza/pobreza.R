@@ -34,3 +34,7 @@ pobreza <- pobreza |>
 # guardar
 write.csv2(pobreza, 
            "datos/pobreza/estimaciones_pobreza.csv", row.names = FALSE)
+
+
+library(writexl)
+write_xlsx(pobreza, "datos/pobreza/estimaciones_pobreza.xlsx")

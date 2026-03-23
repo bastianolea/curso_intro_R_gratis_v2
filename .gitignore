@@ -5,3 +5,9 @@
 
 /.quarto/
 **/*.quarto_ipynb
+datos/censo/personas_censo2024.zip
+datos/censo/personas_censo2024.csv
+datos/censo/hogares_censo2024.zip
+datos/censo/hogares_censo2024.csv
+datos/censo/viviendas_censo2024.zip
+datos/censo/viviendas_censo2024.csv
