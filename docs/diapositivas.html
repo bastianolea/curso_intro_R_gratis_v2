@@ -245,20 +245,57 @@ Bastián Olea Herrera
 </div><div class="column" style="width:45%;">
 <p><img data-src="imagenes/logo_r.png" class="rosa" style="height: 180px; margin-top:-30px;"></p>
 </div></div>
-<div class="boton">
+<div class="boton" style="margin-top:-20px; margin-bottom:-30px;">
 <p><a href="https://cran.r-project.org/"><i class="fa-solid fa-circle-arrow-down" aria-label="circle-arrow-down"></i> Descargar R</a></p>
 </div>
 <p><br></p>
 <div class="fragment">
 <h3 id="para-qué-sirve">¿Para qué sirve?</h3>
 <ul>
-<li class="fragment">Lógica distinta: <strong>instrucciones</strong> en vez de <strong>acciones</strong> ⚙️</li>
+<li class="fragment">Para procesar, limpiar, y analizar datos</li>
+<li class="fragment">Crear gráficos, tablas, mapas, y otros resultados visuales</li>
 <li class="fragment">Repetir, mejorar, adaptar y reutilizar lo que ya has hecho ♻️</li>
 <li class="fragment">Automatizar tareas repetitivas 🤖</li>
-<li class="fragment">Expandir tus resultados 🚀</li>
+<li class="fragment">Expandir tus resultados con aplicaciones, sitios web, APIs, y más 🚀</li>
 </ul>
 </div>
 </section>
+<section class="slide level2">
+
+<h3 id="diferencia-entre-r-y-rstudio">Diferencia entre R y RStudio</h3>
+<div class="columns">
+<div class="column">
+<div class="fragment">
+<h4 id="r">R</h4>
+<p><img data-src="imagenes/logo_r.png" class="rosa" style="height: 128px;"></p>
+<ul>
+<li>Lenguaje de programación</li>
+<li>Lanzado en 1993</li>
+<li>Usado por línea de comandos</li>
+<li>Desarrollado por R Core Team</li>
+<li>Basado en el lenguaje S (1976)</li>
+<li>Software libre</li>
+</ul>
+</div>
+</div><div class="column">
+<div class="fragment">
+<h4 id="rstudio">RStudio</h4>
+<p><img data-src="imagenes/logo_rstudio.png" class="rosa" style="height: 128px;"></p>
+<ul>
+<li>Entorno de desarrollo integrado (IDE) enfocado en R</li>
+<li>Lanzado en 2011</li>
+<li>Interfaz gráfica (ventanas y botones)</li>
+<li>Desarrollado por Posit (ex RStudio)</li>
+<li>Software libre</li>
+</ul>
+</div>
+</div></div>
+
+<aside><div>
+<div class="fragment">
+<p><em>Por favor no digan que “aprendieron RStudio”</em> 😣</p>
+</div>
+</div></aside></section>
 <section class="slide level2">
 
 <h3 id="por-qué-usar-r">¿Por qué usar R?</h3>
@@ -304,11 +341,10 @@ Bastián Olea Herrera
 </section>
 <section class="slide level2">
 
-<h3 id="caso-1-arreglar-un-problema">Caso 1: <em>arreglar un problema</em></h3>
+<h3 id="caso-1-actualización-de-datos">Caso 1: <em>actualización de datos</em></h3>
 <div class="pad">
 <p>Datos → A → B → C → Resultado</p>
 </div>
-<div class="fragment">
 <div class="columns">
 <div class="column">
 <p><span class="subtitulo">Hacer</span></p>
@@ -316,34 +352,6 @@ Bastián Olea Herrera
 <li class="fragment">Hago <strong>A</strong></li>
 <li class="fragment">Hago <strong>B</strong></li>
 <li class="fragment">Hago <strong>C</strong></li>
-<li class="fragment"><em>Me equivoqué en <strong>B</strong></em> 😣</li>
-<li class="fragment">Vuelvo a <strong>A</strong> 🙄</li>
-<li class="fragment">Hago <strong>B</strong></li>
-<li class="fragment">Hago <strong>C</strong></li>
-</ul>
-</div><div class="column">
-<p><span class="subtitulo">Programar</span></p>
-<ul>
-<li class="fragment">Haga <strong>A</strong></li>
-<li class="fragment">Haga <strong>B</strong></li>
-<li class="fragment">Haga <strong>C</strong></li>
-<li class="fragment"><em>Me equivoqué en <strong>B</strong></em> 🤨</li>
-<li class="fragment">Cambio <strong>B</strong> 😌</li>
-<li class="fragment">Re-ejecuto <strong>A</strong>, <strong>B</strong> y <strong>C</strong></li>
-</ul>
-</div></div>
-</div>
-</section>
-<section class="slide level2">
-
-<h3 id="caso-2-actualización-de-datos">Caso 2: <em>actualización de datos</em></h3>
-<div class="pad">
-<p>Datos → A → B → C → Resultado</p>
-</div>
-<div class="columns">
-<div class="column">
-<p><span class="subtitulo">Hacer</span></p>
-<ul>
 <li class="fragment"><em>Actualizar datos</em></li>
 <li class="fragment">Hago de nuevo <strong>A</strong></li>
 <li class="fragment">Hago de nuevo <strong>B</strong></li>
@@ -352,6 +360,9 @@ Bastián Olea Herrera
 </div><div class="column">
 <p><span class="subtitulo">Programar</span></p>
 <ul>
+<li class="fragment">Hago <strong>A</strong></li>
+<li class="fragment">Hago <strong>B</strong></li>
+<li class="fragment">Hago <strong>C</strong></li>
 <li class="fragment"><em>Actualizar datos</em></li>
 <li class="fragment">Re-ejecuto <strong>A</strong>, <strong>B</strong> y <strong>C</strong></li>
 </ul>
@@ -359,7 +370,7 @@ Bastián Olea Herrera
 </section>
 <section class="slide level2">
 
-<h3 id="caso-3-optimizar-procesamiento-o-cambio-en-metodología">Caso 3: <em>optimizar procesamiento o cambio en metodología</em></h3>
+<h3 id="caso-2-optimizar-procesamiento-o-cambio-en-metodología">Caso 2: <em>optimizar procesamiento o cambio en metodología</em></h3>
 <div class="pad">
 <p>Datos → A → B → C → Resultado</p>
 </div>
@@ -367,16 +378,20 @@ Bastián Olea Herrera
 <div class="column">
 <p><span class="subtitulo">Hacer</span></p>
 <ul>
+<li class="fragment">Hago <strong>A</strong></li>
+<li class="fragment">Hago <strong>B</strong></li>
+<li class="fragment">Hago <strong>C</strong></li>
 <li class="fragment"><em>Cambio en procesamiento/metodología</em></li>
-<li class="fragment">Tengo <strong>A</strong></li>
 <li class="fragment">Hago de nuevo <strong>B</strong></li>
-<li class="fragment">Hago de nuevo <strong>C</strong></li>
+<li class="fragment">Como <strong>C</strong> depende de <strong>B</strong>, lo hago de nuevo también</li>
 </ul>
 </div><div class="column">
 <p><span class="subtitulo">Programar</span></p>
 <ul>
+<li class="fragment">Hago <strong>A</strong></li>
+<li class="fragment">Hago <strong>B</strong></li>
+<li class="fragment">Hago <strong>C</strong></li>
 <li class="fragment"><em>Cambio en procesamiento/metodología</em></li>
-<li class="fragment">Ajusto <strong>A</strong> si es conveniente</li>
 <li class="fragment">Aplico cambios en <strong>B</strong></li>
 <li class="fragment">Re-ejecuto <strong>A</strong>, <strong>B</strong> y <strong>C</strong></li>
 </ul>
@@ -384,7 +399,7 @@ Bastián Olea Herrera
 </section>
 <section class="slide level2">
 
-<h3 id="caso-4-replicar-un-resultado">Caso 4: <em>replicar un resultado</em></h3>
+<h3 id="caso-3-replicar-un-resultado">Caso 3: <em>replicar un resultado</em></h3>
 <div class="pad">
 <p>Datos → A → B → C → Resultado</p>
 </div>
@@ -395,6 +410,7 @@ Bastián Olea Herrera
 <li class="fragment">Hago <strong>A</strong> para grupo 1</li>
 <li class="fragment">Hago <strong>B</strong> para grupo 1</li>
 <li class="fragment">Hago <strong>C</strong> para grupo 1</li>
+<li class="fragment"><em>Ahora necesito hacer lo mismo, de nuevo, para otro grupo</em></li>
 <li class="fragment">Hago <strong>A</strong> para grupo 2 🤨</li>
 <li class="fragment">Hago <strong>B</strong> para grupo 2</li>
 <li class="fragment">Hago <strong>C</strong> para grupo 2… 😵</li>
@@ -405,6 +421,7 @@ Bastián Olea Herrera
 <li class="fragment">Hago <strong>A</strong> para grupo 1</li>
 <li class="fragment">Hago <strong>B</strong> para grupo 1</li>
 <li class="fragment">Hago <strong>C</strong> para grupo 1</li>
+<li class="fragment"><em>Ahora necesito hacer lo mismo, de nuevo, para otro grupo</em></li>
 <li class="fragment">Ajusto scripts para que funcionen con más grupos</li>
 <li class="fragment">Re-ejecuto <strong>A</strong>, <strong>B</strong> y <strong>C</strong> para grupo 2</li>
 <li class="fragment">Re-ejecuto <strong>A</strong>, <strong>B</strong> y <strong>C</strong> para grupo 3</li>
@@ -412,41 +429,6 @@ Bastián Olea Herrera
 </ul>
 </div></div>
 </section>
-<section id="diferencia-entre-r-y-rstudio" class="slide level2">
-<h2>Diferencia entre R y RStudio</h2>
-<div class="columns">
-<div class="column">
-<div class="fragment">
-<h4 id="r">R</h4>
-<p><img data-src="imagenes/logo_r.png" class="rosa" style="height: 128px;"></p>
-<ul>
-<li>Lenguaje de programación</li>
-<li>Lanzado en 1993</li>
-<li>Usado por línea de comandos</li>
-<li>Desarrollado por R Core Team</li>
-<li>Basado en el lenguaje S (1976)</li>
-<li>Software libre</li>
-</ul>
-</div>
-</div><div class="column">
-<div class="fragment">
-<h4 id="rstudio">RStudio</h4>
-<p><img data-src="imagenes/logo_rstudio.png" class="rosa" style="height: 128px;"></p>
-<ul>
-<li>Entorno de desarrollo integrado (IDE) enfocado en R</li>
-<li>Lanzado en 2011</li>
-<li>Interfaz gráfica (ventanas y botones)</li>
-<li>Desarrollado por Posit (ex RStudio)</li>
-<li>Software libre</li>
-</ul>
-</div>
-</div></div>
-
-<aside><div>
-<div class="fragment">
-<p><em>Por favor no digan que “aprendieron RStudio”</em> 😣</p>
-</div>
-</div></aside></section>
 <section id="conceptos-clave" class="slide level2">
 <h2>Conceptos clave</h2>
 <div class="fragment">
@@ -778,50 +760,6 @@ Bastián Olea Herrera
 </div></div>
 </div>
 </section>
-<section id="comparaciones" class="slide level2">
-<h2>Comparaciones</h2>
-<p>Podemos usar cifras u objetos para compararlas entre sí: la respuesta será <code>TRUE</code> (verdadero) o <code>FALSE</code> (falso).</p>
-<div class="fragment">
-<div class="pad" style="max-width: 400px;">
-<div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>edad <span class="sc">&gt;=</span> <span class="dv">18</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>minimo <span class="ot">&lt;-</span> <span class="dv">35</span></span>
-<span id="cb30-2"><a></a>edad <span class="sc">&gt;</span> minimo</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>año <span class="sc">==</span> <span class="dv">2024</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a>año <span class="sc">!=</span> <span class="dv">2024</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p>Las comparaciones son el principio que luego nos permitirá filtrar datos, crear variables, y más!</p>
-</div>
-</section>
 <section id="vectores" class="slide level2">
 <h2>Vectores</h2>
 <p>Los vectores son <strong>secuencias</strong> de elementos. Un objeto que contiene cero o más datos.</p>
@@ -831,19 +769,19 @@ Bastián Olea Herrera
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1 2 3 4 5 6</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a><span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"d"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a><span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"d"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "a" "b" "c" "d"</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a><span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  TRUE FALSE FALSE</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a><span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.1</span>, <span class="sc">-</span><span class="fl">0.0</span>, <span class="sc">-</span><span class="fl">0.1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.1</span>, <span class="sc">-</span><span class="fl">0.0</span>, <span class="sc">-</span><span class="fl">0.1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  0.2  0.1  0.0 -0.1</code></pre>
 </div>
@@ -854,8 +792,8 @@ Bastián Olea Herrera
 
 <p>También podemos realizar <strong>comparaciones</strong> sobre los valores de un vector:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a>edades <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">54</span>, <span class="dv">34</span>, <span class="dv">65</span>, <span class="dv">21</span>, <span class="dv">32</span>)</span>
-<span id="cb44-2"><a></a>edades <span class="sc">&gt;</span> <span class="dv">40</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>edades <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">54</span>, <span class="dv">34</span>, <span class="dv">65</span>, <span class="dv">21</span>, <span class="dv">32</span>)</span>
+<span id="cb36-2"><a></a>edades <span class="sc">&gt;</span> <span class="dv">40</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  TRUE FALSE  TRUE FALSE FALSE</code></pre>
 </div>
@@ -863,59 +801,16 @@ Bastián Olea Herrera
 <p><br></p>
 <p>O cualquier <strong>operación</strong> sobre sus elementos:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a>año <span class="ot">&lt;-</span> <span class="dv">2026</span></span>
-<span id="cb46-2"><a></a>años <span class="ot">&lt;-</span> año <span class="sc">-</span> edades</span>
-<span id="cb46-3"><a></a>años</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>año <span class="ot">&lt;-</span> <span class="dv">2026</span></span>
+<span id="cb38-2"><a></a>años <span class="ot">&lt;-</span> año <span class="sc">-</span> edades</span>
+<span id="cb38-3"><a></a>años</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1972 1992 1961 2005 1994</code></pre>
 </div>
 </div>
 </section>
-<section id="funciones" class="slide level2">
-<h2>Funciones</h2>
-<ul>
-<li class="fragment">Las <strong>funciones</strong> son pequeños programas que permiten realizar distintas operaciones.</li>
-</ul>
-<div class="centrar">
-<p><code>función(argumento = 123)</code></p>
-</div>
-<div class="fragment">
-<p>Algunas funciones comunes:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>() <span class="co"># calcular promedio</span></span>
-<span id="cb48-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>() <span class="co"># calcular mediana</span></span>
-<span id="cb48-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>() <span class="co"># sumar elementos</span></span>
-<span id="cb48-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>() <span class="co"># valor mínimo</span></span>
-<span id="cb48-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>() <span class="co"># valor máximo</span></span>
-<span id="cb48-6"><a aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>() <span class="co"># tipo del objeto</span></span>
-<span id="cb48-7"><a aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>() <span class="co"># evaluar si es missing</span></span>
-<span id="cb48-8"><a aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>() <span class="co"># convertir a numérico</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-
-<aside><div>
-<div class="fragment">
-<p>Si no sabemos cómo usar una función, podemos buscar su nombre en el panel <strong>Ayuda</strong> de RStudio, o escribir el nombre de la función precedido de un signo de interrogación: <code>?funcion</code></p>
-</div>
-</div></aside></section>
 <section class="slide level2">
 
-<h4 id="funciones-en-vectores">Funciones en vectores</h4>
-<p>Las funciones también pueden operar <strong>sobre vectores</strong> de datos.</p>
-<div class="pad fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a>población <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">120</span>, <span class="dv">340</span>, <span class="dv">560</span>, <span class="dv">230</span>, <span class="dv">450</span>)</span>
-<span id="cb49-2"><a></a>prom_pob <span class="ot">&lt;-</span> <span class="fu">mean</span>(población)</span>
-<span id="cb49-3"><a></a>prom_pob</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 340</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p>Es decir que la <strong>operación</strong> que hace la función se aplica <strong>a cada elemento</strong> del vector.</p>
-<p>Pensemos las <strong>funciones</strong> como nuestras <strong>acciones</strong>, y los <strong>vectores</strong> como las columnas o <strong>variables</strong> de nuestras bases de datos.</p>
-</div>
 </section>
 <section>
 <section id="datos" class="title-slide slide level1 center">
@@ -936,13 +831,13 @@ Bastián Olea Herrera
 <div class="fragment pad">
 <p>Cargar un archivo en la misma carperta del proyecto:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"datos.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"datos.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="fragment pad">
 <p>Cargar un archivo en una subcarpeta del proyecto:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"carpeta/datos.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"carpeta/datos.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p><br></p>
@@ -967,7 +862,7 @@ Bastián Olea Herrera
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div></div>
@@ -997,7 +892,7 @@ Bastián Olea Herrera
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a></a><span class="fu">library</span>(dplyr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a><span class="fu">library</span>(dplyr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div><div class="column" style="width:30%;">
@@ -1058,27 +953,27 @@ Bastián Olea Herrera
 <div class="fragment pad">
 <p>Aplicar una función normalmente:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">funcion</span>(objeto) <span class="co"># a la función le pasamos un objeto</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">funcion</span>(objeto) <span class="co"># a la función le pasamos un objeto</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="fragment pad">
 <p>Otra forma de hacerlo con <code>|&gt;</code> es:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a aria-hidden="true" tabindex="-1"></a>objeto <span class="sc">|&gt;</span> <span class="fu">funcion</span>() <span class="co"># al objeto luego le aplicamos la función</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a aria-hidden="true" tabindex="-1"></a>objeto <span class="sc">|&gt;</span> <span class="fu">funcion</span>() <span class="co"># al objeto luego le aplicamos la función</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="fragment pad">
 <p>Luego podemos encadenar varias funciones:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a aria-hidden="true" tabindex="-1"></a>objeto <span class="sc">|&gt;</span> <span class="fu">funcion</span>() <span class="sc">|&gt;</span> <span class="fu">funcion</span>() <span class="co"># al objeto le aplicamos dos funciones</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a aria-hidden="true" tabindex="-1"></a>objeto <span class="sc">|&gt;</span> <span class="fu">funcion</span>() <span class="sc">|&gt;</span> <span class="fu">funcion</span>() <span class="co"># al objeto le aplicamos dos funciones</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="fragment pad">
 <p>También podemos ordenar las instrucciones hacia abajo:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a></a>resultado <span class="ot">&lt;-</span> objeto <span class="sc">|&gt;</span> </span>
-<span id="cb58-2"><a></a>  <span class="fu">funcion</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb58-3"><a></a>  <span class="fu">funcion</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a>resultado <span class="ot">&lt;-</span> objeto <span class="sc">|&gt;</span> </span>
+<span id="cb47-2"><a></a>  <span class="fu">funcion</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb47-3"><a></a>  <span class="fu">funcion</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
@@ -1089,10 +984,10 @@ Bastián Olea Herrera
 </div>
 <p>Cargamos un conjunto de datos de prueba:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb59-2"><a></a><span class="fu">library</span>(readr)</span>
-<span id="cb59-3"><a></a></span>
-<span id="cb59-4"><a></a>datos <span class="ot">&lt;-</span> <span class="fu">read_csv2</span>(<span class="st">"datos/pobreza/estimaciones_pobreza.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb48-2"><a></a><span class="fu">library</span>(readr)</span>
+<span id="cb48-3"><a></a></span>
+<span id="cb48-4"><a></a>datos <span class="ot">&lt;-</span> <span class="fu">read_csv2</span>(<span class="st">"datos/pobreza/estimaciones_pobreza.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Estos datos son del <a href="https://bidat.gob.cl/directorio/Pobreza%20comunal/estimaciones-de-pobreza-comunal-2022">Ministerio Desarrollo Social y Familia</a> de Chile.</p>
 <p><br></p>
@@ -1100,9 +995,9 @@ Bastián Olea Herrera
 <div class="column fragment">
 <h4 id="seleccionar">Seleccionar</h4>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a></a>datos <span class="sc">|&gt;</span> </span>
-<span id="cb60-2"><a></a>  <span class="fu">select</span>(region, comuna, personas) <span class="sc">|&gt;</span> </span>
-<span id="cb60-3"><a></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb49-2"><a></a>  <span class="fu">select</span>(region, comuna, personas) <span class="sc">|&gt;</span> </span>
+<span id="cb49-3"><a></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
   region   comuna        personas
@@ -1118,10 +1013,10 @@ Bastián Olea Herrera
 </div><div class="column fragment">
 <h4 id="ordenar">Ordenar</h4>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a></a>datos <span class="sc">|&gt;</span> </span>
-<span id="cb62-2"><a></a>  <span class="fu">select</span>(region, comuna, personas) <span class="sc">|&gt;</span> </span>
-<span id="cb62-3"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(personas)) <span class="sc">|&gt;</span> </span>
-<span id="cb62-4"><a></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb51-2"><a></a>  <span class="fu">select</span>(region, comuna, personas) <span class="sc">|&gt;</span> </span>
+<span id="cb51-3"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(personas)) <span class="sc">|&gt;</span> </span>
+<span id="cb51-4"><a></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
   region        comuna       personas
@@ -1146,12 +1041,12 @@ Bastián Olea Herrera
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb64-2"><a></a></span>
-<span id="cb64-3"><a></a>datos <span class="sc">|&gt;</span> </span>
-<span id="cb64-4"><a></a>  <span class="fu">filter</span>(porcentaje <span class="sc">&gt;</span> <span class="fl">0.35</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb64-5"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(porcentaje)) <span class="sc">|&gt;</span> </span>
-<span id="cb64-6"><a></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb53-2"><a></a></span>
+<span id="cb53-3"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb53-4"><a></a>  <span class="fu">filter</span>(porcentaje <span class="sc">&gt;</span> <span class="fl">0.35</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb53-5"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(porcentaje)) <span class="sc">|&gt;</span> </span>
+<span id="cb53-6"><a></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 10
   codigo region         comuna personas_proy personas porcentaje limite_inferior
@@ -1167,6 +1062,47 @@ Bastián Olea Herrera
 </div>
 </div>
 </section>
+<section class="slide level2">
+
+<h3 id="comparaciones">Comparaciones</h3>
+<p>Podemos usar cifras u objetos para compararlas entre sí: la respuesta será <code>TRUE</code> (verdadero) o <code>FALSE</code> (falso).</p>
+<div class="pad" style="max-width: 400px;">
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a></a>edad <span class="sc">&gt;=</span> <span class="dv">18</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a>minimo <span class="ot">&lt;-</span> <span class="dv">35</span></span>
+<span id="cb57-2"><a></a>edad <span class="sc">&gt;</span> minimo</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a></a>año <span class="sc">==</span> <span class="dv">2024</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a></a>año <span class="sc">!=</span> <span class="dv">2024</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+</div>
+</div>
+<p>Las comparaciones son el principio que luego nos permitirá filtrar datos, crear variables, y más!</p>
+</section>
 <section id="crearmodificar-variables" class="slide level2">
 <h2>Crear/modificar variables</h2>
 <div class="boton absolute" style="top: 0%; right: 0%; ">
@@ -1181,10 +1117,10 @@ Bastián Olea Herrera
 <div class="columns">
 <div class="column fragment">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a></a>datos <span class="sc">|&gt;</span> </span>
-<span id="cb66-2"><a></a>  <span class="fu">select</span>(codigo, comuna) <span class="sc">|&gt;</span> </span>
-<span id="cb66-3"><a></a>  <span class="fu">mutate</span>(<span class="at">saludo =</span> <span class="st">"hola"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb66-4"><a></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb63-2"><a></a>  <span class="fu">select</span>(codigo, comuna) <span class="sc">|&gt;</span> </span>
+<span id="cb63-3"><a></a>  <span class="fu">mutate</span>(<span class="at">saludo =</span> <span class="st">"hola"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb63-4"><a></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
   codigo comuna        saludo
@@ -1199,10 +1135,10 @@ Bastián Olea Herrera
 </div>
 </div><div class="column fragment">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a></a>datos <span class="sc">|&gt;</span> </span>
-<span id="cb68-2"><a></a>  <span class="fu">select</span>(comuna, personas) <span class="sc">|&gt;</span> </span>
-<span id="cb68-3"><a></a>  <span class="fu">mutate</span>(<span class="at">miles =</span> personas<span class="sc">/</span><span class="dv">1000</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb68-4"><a></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb65-2"><a></a>  <span class="fu">select</span>(comuna, personas) <span class="sc">|&gt;</span> </span>
+<span id="cb65-3"><a></a>  <span class="fu">mutate</span>(<span class="at">miles =</span> personas<span class="sc">/</span><span class="dv">1000</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb65-4"><a></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
   comuna        personas  miles
@@ -1216,6 +1152,58 @@ Bastián Olea Herrera
 </div>
 </div>
 </div></div>
+</section>
+<section id="funciones" class="slide level2">
+<h2>Funciones</h2>
+<ul>
+<li class="fragment">Las <strong>funciones</strong> son pequeños programas que permiten realizar distintas operaciones.</li>
+</ul>
+<div class="centrar fragment">
+<p><code>función(argumento = 123)</code></p>
+</div>
+<div class="fragment">
+<p>Algunas funciones comunes:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>() <span class="co"># calcular promedio</span></span>
+<span id="cb67-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>() <span class="co"># calcular mediana</span></span>
+<span id="cb67-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>() <span class="co"># sumar elementos</span></span>
+<span id="cb67-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>() <span class="co"># valor mínimo</span></span>
+<span id="cb67-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>() <span class="co"># valor máximo</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+
+<aside><div>
+<div class="fragment">
+<p>Si no sabemos cómo usar una función, podemos buscar su nombre en el panel <strong>Ayuda</strong> de RStudio, o escribir el nombre de la función precedido de un signo de interrogación: <code>?funcion</code></p>
+</div>
+</div></aside></section>
+<section class="slide level2">
+
+<h3 id="aplicar-funciones-a-columnas">Aplicar funciones a columnas</h3>
+<p>Al crear o modificar una columna con <code>mutate()</code> podemos usar funciones que se apliquen a una o varias columnas:</p>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a></a>datos <span class="sc">|&gt;</span></span>
+<span id="cb68-2"><a></a>  <span class="fu">select</span>(comuna, personas) <span class="sc">|&gt;</span> </span>
+<span id="cb68-3"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(personas)) <span class="sc">|&gt;</span> </span>
+<span id="cb68-4"><a></a>  <span class="fu">head</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb68-5"><a></a>  <span class="fu">mutate</span>(<span class="at">total_personas =</span> <span class="fu">sum</span>(personas)) <span class="sc">|&gt;</span> <span class="co"># aplicada a una colunma</span></span>
+<span id="cb68-6"><a></a>  <span class="fu">mutate</span>(<span class="at">orden =</span> <span class="fu">row_number</span>()) <span class="sc">|&gt;</span> <span class="co"># hace algo por sí misma</span></span>
+<span id="cb68-7"><a></a>  <span class="fu">mutate</span>(<span class="at">letras =</span> <span class="fu">nchar</span>(comuna)) <span class="sc">|&gt;</span> <span class="co"># aplicada a otra columna</span></span>
+<span id="cb68-8"><a></a>  <span class="fu">mutate</span>(<span class="at">porcentaje =</span> <span class="fu">round</span>(personas<span class="sc">/</span>total_personas, <span class="dv">2</span>)) <span class="co"># función con argumento</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 6
+  comuna       personas total_personas orden letras porcentaje
+  &lt;chr&gt;           &lt;dbl&gt;          &lt;dbl&gt; &lt;int&gt;  &lt;int&gt;      &lt;dbl&gt;
+1 Puente Alto   125235.        497846.     1     11       0.25
+2 Santiago       87355.        497846.     2      8       0.18
+3 Maipú          86976.        497846.     3      5       0.17
+4 Antofagasta    73103.        497846.     4     11       0.15
+5 San Bernardo   64276.        497846.     5     12       0.13
+6 Valparaíso     60901.        497846.     6     10       0.12</code></pre>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 

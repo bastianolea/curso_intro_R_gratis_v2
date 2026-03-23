@@ -70,7 +70,7 @@ R es un lenguaje de programación enfocado al **análisis de datos**, las **esta
 :::
 ::::
 
-::: {.boton}
+::: {.boton style="margin-top:-20px; margin-bottom:-30px;"}
 [{{< fa circle-arrow-down >}} Descargar R](https://cran.r-project.org/)
 :::
 
@@ -80,12 +80,59 @@ R es un lenguaje de programación enfocado al **análisis de datos**, las **esta
 ### ¿Para qué sirve?
 
 ::: {.incremental}
-- Lógica distinta: **instrucciones** en vez de **acciones** ⚙️
+- Para procesar, limpiar, y analizar datos
+- Crear gráficos, tablas, mapas, y otros resultados visuales
 - Repetir, mejorar, adaptar y reutilizar lo que ya has hecho ♻️
 - Automatizar tareas repetitivas 🤖
-- Expandir tus resultados 🚀
+- Expandir tus resultados con aplicaciones, sitios web, APIs, y más 🚀
 :::
 ::::
+
+----
+
+
+
+### Diferencia entre R y RStudio
+
+::::: {.columns}
+
+:::: {.column}
+::: {.fragment}
+#### R
+![](imagenes/logo_r.png){.rosa style="height: 128px;"}
+
+- Lenguaje de programación
+- Lanzado en 1993
+- Usado por línea de comandos
+- Desarrollado por R Core Team
+- Basado en el lenguaje S (1976)
+- Software libre
+:::
+::::
+:::: {.column}
+
+::: {.fragment}
+
+#### RStudio
+
+![](imagenes/logo_rstudio.png){.rosa style="height: 128px;"}
+
+- Entorno de desarrollo integrado (IDE) enfocado en R
+- Lanzado en 2011
+- Interfaz gráfica (ventanas y botones)
+- Desarrollado por Posit (ex RStudio)
+- Software libre
+:::
+::::
+:::::
+
+
+:::: aside
+::: {.fragment}
+_Por favor no digan que "aprendieron RStudio"_ 😣
+:::
+::::
+
 
 ----
 
@@ -151,13 +198,13 @@ Veamos algunos casos!
 
 ----
 
-### Caso 1: _arreglar un problema_
+### Caso 1: _actualización de datos_
 
 ::: {.pad}
 Datos → A → B → C → Resultado
 :::
 
-::: {.fragment}
+
 
 ::::: {.columns}
 
@@ -168,46 +215,6 @@ Datos → A → B → C → Resultado
 - Hago **A**
 - Hago **B**
 - Hago **C**
-- _Me equivoqué en **B**_ 😣
-- Vuelvo a **A** 🙄
-- Hago **B**
-- Hago **C**
-::: 
-::::
-
-:::: {.column}
-[Programar]{.subtitulo}
-
-::: {.incremental}
-- Haga **A**
-- Haga **B**
-- Haga **C**
-- _Me equivoqué en **B**_ 🤨
-- Cambio **B** 😌
-- Re-ejecuto **A**, **B** y **C**
-::: 
-::::
-:::::
-
-:::
-
-----
-
-
-### Caso 2: _actualización de datos_
-
-::: {.pad}
-Datos → A → B → C → Resultado
-:::
-
-
-
-::::: {.columns}
-
-:::: {.column}
-[Hacer]{.subtitulo}
-
-::: {.incremental}
 - *Actualizar datos*
 - Hago de nuevo **A**
 - Hago de nuevo **B**
@@ -220,6 +227,9 @@ Datos → A → B → C → Resultado
 [Programar]{.subtitulo}
 
 ::: {.incremental}
+- Hago **A**
+- Hago **B**
+- Hago **C**
 - *Actualizar datos*
 - Re-ejecuto **A**, **B** y **C**
 :::
@@ -231,7 +241,7 @@ Datos → A → B → C → Resultado
 
 
 
-### Caso 3: _optimizar procesamiento o cambio en metodología_
+### Caso 2: _optimizar procesamiento o cambio en metodología_
 
 ::: {.pad}
 Datos → A → B → C → Resultado
@@ -243,10 +253,12 @@ Datos → A → B → C → Resultado
 [Hacer]{.subtitulo}
 
 ::: {.incremental}
+- Hago **A**
+- Hago **B**
+- Hago **C**
 - _Cambio en procesamiento/metodología_
-- Tengo **A**
 - Hago de nuevo **B**
-- Hago de nuevo **C**
+- Como **C** depende de **B**, lo hago de nuevo también
 :::
 
 ::::
@@ -255,8 +267,10 @@ Datos → A → B → C → Resultado
 [Programar]{.subtitulo}
 
 ::: {.incremental}
+- Hago **A**
+- Hago **B**
+- Hago **C**
 - _Cambio en procesamiento/metodología_
-- Ajusto **A** si es conveniente
 - Aplico cambios en **B**
 - Re-ejecuto **A**, **B** y **C**
 :::
@@ -266,7 +280,7 @@ Datos → A → B → C → Resultado
 
 ----
 
-### Caso 4: _replicar un resultado_
+### Caso 3: _replicar un resultado_
 
 ::: {.pad}
 Datos → A → B → C → Resultado
@@ -281,6 +295,7 @@ Datos → A → B → C → Resultado
 - Hago **A** para grupo 1
 - Hago **B** para grupo 1
 - Hago **C** para grupo 1
+- _Ahora necesito hacer lo mismo, de nuevo, para otro grupo_
 - Hago **A** para grupo 2 🤨
 - Hago **B** para grupo 2
 - Hago **C** para grupo 2... 😵
@@ -295,6 +310,7 @@ Datos → A → B → C → Resultado
 - Hago **A** para grupo 1
 - Hago **B** para grupo 1
 - Hago **C** para grupo 1
+- _Ahora necesito hacer lo mismo, de nuevo, para otro grupo_
 - Ajusto scripts para que funcionen con más grupos
 - Re-ejecuto **A**, **B** y **C** para grupo 2
 - Re-ejecuto **A**, **B** y **C** para grupo 3
@@ -308,49 +324,6 @@ Datos → A → B → C → Resultado
 ----
 
 
-## Diferencia entre R y RStudio
-
-::::: {.columns}
-
-:::: {.column}
-::: {.fragment}
-#### R
-![](imagenes/logo_r.png){.rosa style="height: 128px;"}
-
-- Lenguaje de programación
-- Lanzado en 1993
-- Usado por línea de comandos
-- Desarrollado por R Core Team
-- Basado en el lenguaje S (1976)
-- Software libre
-:::
-::::
-:::: {.column}
-
-::: {.fragment}
-
-#### RStudio
-
-![](imagenes/logo_rstudio.png){.rosa style="height: 128px;"}
-
-- Entorno de desarrollo integrado (IDE) enfocado en R
-- Lanzado en 2011
-- Interfaz gráfica (ventanas y botones)
-- Desarrollado por Posit (ex RStudio)
-- Software libre
-:::
-::::
-:::::
-
-
-:::: aside
-::: {.fragment}
-_Por favor no digan que "aprendieron RStudio"_ 😣
-:::
-::::
-
-
-----
 
 ## Conceptos clave
 
@@ -785,45 +758,7 @@ presupuesto - pizza * 10
 
 ----
 
-## Comparaciones
 
-Podemos usar cifras u objetos para compararlas entre sí: la respuesta será `TRUE` (verdadero) o `FALSE` (falso).
-
-. . .
-
-:::: {.pad style="max-width: 400px;"}
-
-::: {.fragment}
-```{r}
-edad >= 18
-```
-:::
-
-::: {.fragment}
-```{r}
-minimo <- 35
-edad > minimo
-``` 
-:::
-
-::: {.fragment}
-```{r}
-año == 2024
-``` 
-:::
-
-::: {.fragment}
-```{r}
-año != 2024
-```
-:::
-::::
-
-. . .
-
-Las comparaciones son el principio que luego nos permitirá filtrar datos, crear variables, y más!
-
-----
 
 
 ## Vectores
@@ -846,6 +781,7 @@ c(0.2, 0.1, -0.0, -0.1)
 
 ----
 
+
 También podemos realizar **comparaciones** sobre los valores de un vector:
 
 ```{r}
@@ -865,63 +801,6 @@ años
 
 
 ----
-
-## Funciones
-
-::: {.incremental}
-- Las **funciones** son pequeños programas que permiten realizar distintas operaciones.
-:::
-
-::: {.centrar}
-`función(argumento = 123)`
-:::
-
-::: {.fragment}
-Algunas funciones comunes:
-
-```{r}
-#| code-line-numbers: false
-#| eval: false
-mean() # calcular promedio
-median() # calcular mediana
-sum() # sumar elementos
-min() # valor mínimo
-max() # valor máximo
-typeof() # tipo del objeto
-is.na() # evaluar si es missing
-as.numeric() # convertir a numérico
-```
-:::
-
-::: aside
-::: {.fragment}
-Si no sabemos cómo usar una función, podemos buscar su nombre en el panel **Ayuda** de RStudio, o escribir el nombre de la función precedido de un signo de interrogación: `?funcion`
-:::
-:::
-
-----
-
-#### Funciones en vectores 
-
-Las funciones también pueden operar **sobre vectores** de datos.
-
-::: {.pad .fragment}
-```{r}
-población <- c(120, 340, 560, 230, 450)
-prom_pob <- mean(población)
-prom_pob
-```
-:::
-
-::: {.fragment}
-Es decir que la **operación** que hace la función se aplica **a cada elemento** del vector.
-
-Pensemos las **funciones** como nuestras **acciones**, y los **vectores** como las columnas o **variables** de nuestras bases de datos.
-:::
-
-
-
-
 
 
 # Datos {{< fa database >}}
@@ -1222,6 +1101,43 @@ datos |>
 
 ----
 
+### Comparaciones
+
+Podemos usar cifras u objetos para compararlas entre sí: la respuesta será `TRUE` (verdadero) o `FALSE` (falso).
+
+:::: {.pad style="max-width: 400px;"}
+
+::: {.fragment}
+```{r}
+edad >= 18
+```
+:::
+
+::: {.fragment}
+```{r}
+minimo <- 35
+edad > minimo
+``` 
+:::
+
+::: {.fragment}
+```{r}
+año == 2024
+``` 
+:::
+
+::: {.fragment}
+```{r}
+año != 2024
+```
+:::
+::::
+
+
+Las comparaciones son el principio que luego nos permitirá filtrar datos, crear variables, y más!
+
+----
+
 
 
 ## Crear/modificar variables
@@ -1260,13 +1176,60 @@ datos |>
 
 ----
 
+
+## Funciones
+
+::: {.incremental}
+- Las **funciones** son pequeños programas que permiten realizar distintas operaciones.
+:::
+
+::: {.centrar .fragment}
+`función(argumento = 123)`
+:::
+
+::: {.fragment}
+Algunas funciones comunes:
+
+```{r}
+#| code-line-numbers: false
+#| eval: false
+mean() # calcular promedio
+median() # calcular mediana
+sum() # sumar elementos
+min() # valor mínimo
+max() # valor máximo
+```
+:::
+
+::: aside
+::: {.fragment}
+Si no sabemos cómo usar una función, podemos buscar su nombre en el panel **Ayuda** de RStudio, o escribir el nombre de la función precedido de un signo de interrogación: `?funcion`
+:::
+:::
+
+----
+
+### Aplicar funciones a columnas
+
+Al crear o modificar una columna con `mutate()` podemos usar funciones que se apliquen a una o varias columnas:
+
+::: {.fragment}
+```{r}
+datos |>
+  select(comuna, personas) |> 
+  arrange(desc(personas)) |> 
+  head() |> 
+  mutate(total_personas = sum(personas)) |> # aplicada a una colunma
+  mutate(orden = row_number()) |> # hace algo por sí misma
+  mutate(letras = nchar(comuna)) |> # aplicada a otra columna
+  mutate(porcentaje = round(personas/total_personas, 2)) # función con argumento
+```
+:::
+
+
+----
+
 ### Variables condicionales
-
-
-
-
-
-
 
 :::: {.columns}
 ::: {.column .fragment}

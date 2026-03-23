@@ -4,7 +4,7 @@
     "href": "diapositivas.html#qué-es-r",
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "¿Qué es R?",
-    "text": "¿Qué es R?\n\n\nR es un lenguaje de programación enfocado al análisis de datos, las estadísticas y la visualización de datos.\n\n\n\n\n Descargar R\n\n\n\n¿Para qué sirve?\n\nLógica distinta: instrucciones en vez de acciones ⚙️\nRepetir, mejorar, adaptar y reutilizar lo que ya has hecho ♻️\nAutomatizar tareas repetitivas 🤖\nExpandir tus resultados 🚀"
+    "text": "¿Qué es R?\n\n\nR es un lenguaje de programación enfocado al análisis de datos, las estadísticas y la visualización de datos.\n\n\n\n\n Descargar R\n\n\n\n¿Para qué sirve?\n\nPara procesar, limpiar, y analizar datos\nCrear gráficos, tablas, mapas, y otros resultados visuales\nRepetir, mejorar, adaptar y reutilizar lo que ya has hecho ♻️\nAutomatizar tareas repetitivas 🤖\nExpandir tus resultados con aplicaciones, sitios web, APIs, y más 🚀"
   },
   {
     "objectID": "diapositivas.html#por-qué-usar-r",
@@ -88,7 +88,7 @@
     "href": "diapositivas.html#funciones",
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Funciones",
-    "text": "Funciones\n\nLas funciones son pequeños programas que permiten realizar distintas operaciones.\n\n\nfunción(argumento = 123)\n\n\nAlgunas funciones comunes:\n\nmean() # calcular promedio\nmedian() # calcular mediana\nsum() # sumar elementos\nmin() # valor mínimo\nmax() # valor máximo\ntypeof() # tipo del objeto\nis.na() # evaluar si es missing\nas.numeric() # convertir a numérico\n\n\n\n\n\nSi no sabemos cómo usar una función, podemos buscar su nombre en el panel Ayuda de RStudio, o escribir el nombre de la función precedido de un signo de interrogación: ?funcion"
+    "text": "Funciones\n\nLas funciones son pequeños programas que permiten realizar distintas operaciones.\n\n\nfunción(argumento = 123)\n\n\nAlgunas funciones comunes:\n\nmean() # calcular promedio\nmedian() # calcular mediana\nsum() # sumar elementos\nmin() # valor mínimo\nmax() # valor máximo\n\n\n\n\n\nSi no sabemos cómo usar una función, podemos buscar su nombre en el panel Ayuda de RStudio, o escribir el nombre de la función precedido de un signo de interrogación: ?funcion"
   },
   {
     "objectID": "diapositivas.html#portafolio",
