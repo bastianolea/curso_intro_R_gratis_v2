@@ -2,7 +2,7 @@
   {
     "objectID": "diapositivas.html#qué-es-r",
     "href": "diapositivas.html#qué-es-r",
-    "title": "Introducción al análisis de datos con R",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "¿Qué es R?",
     "text": "¿Qué es R?\n\n\nR es un lenguaje de programación enfocado al análisis de datos, las estadísticas y la visualización de datos.\n\n\n\n\n Descargar R\n\n\n\n¿Para qué sirve?\n\nLógica distinta: instrucciones en vez de acciones ⚙️\nRepetir, mejorar, adaptar y reutilizar lo que ya has hecho ♻️\nAutomatizar tareas repetitivas 🤖\nExpandir tus resultados 🚀"
   },
@@ -16,21 +16,21 @@
   {
     "objectID": "diapositivas.html#diferencia-entre-r-y-rstudio",
     "href": "diapositivas.html#diferencia-entre-r-y-rstudio",
-    "title": "Introducción al análisis de datos con R",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Diferencia entre R y RStudio",
     "text": "Diferencia entre R y RStudio\n\n\n\nR\n\n\nLenguaje de programación\nLanzado en 1993\nUsado por línea de comandos\nDesarrollado por R Core Team\nBasado en el lenguaje S (1976)\nSoftware libre\n\n\n\n\nRStudio\n\n\nEntorno de desarrollo integrado (IDE) enfocado en R\nLanzado en 2011\nInterfaz gráfica (ventanas y botones)\nDesarrollado por Posit (ex RStudio)\nSoftware libre\n\n\n\n\n\n\nPor favor no digan que “aprendieron RStudio” 😣"
   },
   {
     "objectID": "diapositivas.html#conceptos-clave",
     "href": "diapositivas.html#conceptos-clave",
-    "title": "Introducción al análisis de datos con R",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Conceptos clave",
     "text": "Conceptos clave\n\n\nScript\nArchivo de texto .R en el que escribimos nuestro código, en pasos, y siguiendo un orden lógico.\n\n\n\n\nConsola\nEs la forma directa de interactuar con R, un comando a la vez, con resultados efímeros.\n\n\n\n\nProyecto\nArchivo .Rproj que marca nuestro espacio de trabajo: una carpeta específica que reúne todas las piezas de nuestro análisis."
   },
   {
     "objectID": "diapositivas.html#rstudio-1",
     "href": "diapositivas.html#rstudio-1",
-    "title": "Introducción al análisis de datos con R",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "RStudio",
     "text": "RStudio\n\n Descargar RStudio\n\n\n\n1 Scripts\n\n\n2 Consola\n\n\n3 Entorno\n\n\n4 Archivos"
   },
@@ -51,42 +51,42 @@
   {
     "objectID": "diapositivas.html#operaciones-básicas",
     "href": "diapositivas.html#operaciones-básicas",
-    "title": "Introducción al análisis de datos con R",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Operaciones básicas",
     "text": "Operaciones básicas\n\n\n\nPodemos realizar cualquier operación matemática en R.\nPara ejecutar un comando, pon el cursor de texto en la línea o expresión que desees ejecutar, o selecciónala, y presiona el botón Run, o las teclas control + enter.\nLo importante es que el cursor de texto | esté en cualquier lugar de la línea.\nEl resultado de todas las operaciones aparece en la consola.\n\n\n\n\n\n2 + 2 #suma\n\n[1] 4\n\n\n\n\n\n50 * 100 #multiplicación\n\n[1] 5000\n\n\n\n\n\n4556 - 1000 #resta\n\n[1] 3556\n\n\n\n\n\n6565 / 89 #división\n\n[1] 73.76404\n\n\n\n\n\n10^4 #potencias\n\n[1] 10000"
   },
   {
     "objectID": "diapositivas.html#tipos-de-datos",
     "href": "diapositivas.html#tipos-de-datos",
-    "title": "Introducción al análisis de datos con R",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Tipos de datos",
     "text": "Tipos de datos\nLo que podemos hacer siempre va a depender del tipo de cada objeto.\n\nEn R existen varios tipos:\n\nNuméricos\n\n1  2  3  4  5.1  5.2  5.333\n\nPueden ser decimales (doubles) o enteros (integers)\n\n\n\n\nCaracter (texto)\n\n\"ésta es una cadena de texto\"\n\n\n\n\n\nLógicos (verdadero o falso)\n\nTRUE FALSE TRUE"
   },
   {
     "objectID": "diapositivas.html#objetos",
     "href": "diapositivas.html#objetos",
-    "title": "Introducción al análisis de datos con R",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Objetos",
     "text": "Objetos\nSe le llama objeto a cualquier dato, variable, o elemento que tengas en R.\nPodemos guardar todo como un objeto.\n\nPara crear un objeto, simplemente le damos un nombre y le asignamos un contenido.\n\nnombre ← contenido\n\n\n\n\n\n\nPara asignar algo a un objeto, usamos el operador &lt;-\n\n\ncifra &lt;- 4\n\n\n\n\n\n\n\nEl objeto cifra se crea cuando declaramos que va a contener el valor 4\n\n\ncifra\n\n[1] 4"
   },
   {
     "objectID": "diapositivas.html#comparaciones",
     "href": "diapositivas.html#comparaciones",
-    "title": "Introducción al análisis de datos con R",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Comparaciones",
     "text": "Comparaciones\nPodemos usar cifras u objetos para compararlas entre sí: la respuesta será TRUE (verdadero) o FALSE (falso).\n\n\n\n\nedad &gt;= 18\n\n[1] TRUE\n\n\n\n\n\nminimo &lt;- 35\nedad &gt; minimo\n\n[1] FALSE\n\n\n\n\n\naño == 2024\n\n[1] FALSE\n\n\n\n\n\naño != 2024\n\n[1] TRUE\n\n\n\n\n\n\nLas comparaciones son el principio que luego nos permitirá filtrar datos, crear variables, y más!"
   },
   {
     "objectID": "diapositivas.html#vectores",
     "href": "diapositivas.html#vectores",
-    "title": "Introducción al análisis de datos con R",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Vectores",
     "text": "Vectores\nLos vectores son secuencias de elementos. Un objeto que contiene cero o más datos.\n\nEstos elementos son de un mismo tipo: numérico, carácter o lógico.\nSon la forma más básica de registrar e interactuar con varios datos a la vez.\n\n\n\nc(1, 2, 3, 4, 5, 6)\n\n[1] 1 2 3 4 5 6\n\nc(\"a\", \"b\", \"c\", \"d\")\n\n[1] \"a\" \"b\" \"c\" \"d\"\n\nc(TRUE, FALSE, FALSE)\n\n[1]  TRUE FALSE FALSE\n\nc(0.2, 0.1, -0.0, -0.1)\n\n[1]  0.2  0.1  0.0 -0.1"
   },
   {
     "objectID": "diapositivas.html#funciones",
     "href": "diapositivas.html#funciones",
-    "title": "Introducción al análisis de datos con R",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Funciones",
     "text": "Funciones\n\nLas funciones son pequeños programas que permiten realizar distintas operaciones.\n\n\nfunción(argumento = 123)\n\n\nAlgunas funciones comunes:\n\nmean() # calcular promedio\nmedian() # calcular mediana\nsum() # sumar elementos\nmin() # valor mínimo\nmax() # valor máximo\ntypeof() # tipo del objeto\nis.na() # evaluar si es missing\nas.numeric() # convertir a numérico\n\n\n\n\n\nSi no sabemos cómo usar una función, podemos buscar su nombre en el panel Ayuda de RStudio, o escribir el nombre de la función precedido de un signo de interrogación: ?funcion"
   },
@@ -114,7 +114,7 @@
   {
     "objectID": "diapositivas.html#inicio",
     "href": "diapositivas.html#inicio",
-    "title": "Introducción al análisis de datos con R",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Inicio",
     "text": "Inicio\nBastián Olea Herrera\nbastianolea.rbind.io\n\nEncuentra todo sobre el curso en este post de mi blog.\n\n\n\n Curso\n\n\n Código\n\n\n Grabaciones\n\n\n Diapositivas\n\n\n Contacto\n\n\n\nPuedes encontrar más contenidos para aprender R en este sitio, y más cosas de R en mi sitio web."
   },
@@ -128,7 +128,7 @@
   {
     "objectID": "diapositivas.html#paquetes",
     "href": "diapositivas.html#paquetes",
-    "title": "Introducción al análisis de datos con R",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Paquetes",
     "text": "Paquetes\n\n\n\n\n\nExtensiones de R que te permiten agregar nuevas y mejores funcionalidades.\nSe instalan desde internet\nSon creados y mantenidos por la comunidad\nSe revisan para garantizar su seguridad y estabilidad\n\n\n\ninstall.packages()"
   },
@@ -142,7 +142,7 @@
   {
     "objectID": "diapositivas.html#cargar-datos",
     "href": "diapositivas.html#cargar-datos",
-    "title": "Introducción al análisis de datos con R",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Cargar datos ",
     "text": "Cargar datos \n\nLas funciones de carga de datos usan como argumento la ruta del archivo.\n\n\nCargar un archivo en la misma carperta del proyecto:\n\ndatos &lt;- read.csv(\"datos.csv\")\n\n\n\nCargar un archivo en una subcarpeta del proyecto:\n\ndatos &lt;- read.csv(\"carpeta/datos.csv\")\n\n\n\n\nProbemos cargando unos datos!\n\n  Descargar datos de pobreza"
   },
@@ -156,63 +156,63 @@
   {
     "objectID": "diapositivas.html#funciones-comunes",
     "href": "diapositivas.html#funciones-comunes",
-    "title": "Introducción al análisis de datos con R",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Funciones comunes",
     "text": "Funciones comunes\n\nhead(), tail(), glimpse(): vistazos a los datos\nselect(): seleccionar columnas o variables de una tabla\nslice(): extraer filas de una tabla por su posición o distintos criterios\npull(): extraer una columna como vector\nfilter(): filtrar observaciones en base a condiciones personalizadas\ndistinct(): filtrar observaciones repetidas en una o más columnas\ncount(): conteo de casos únicos en una o más columnas\nmutate(): crear columnas entregando valores, funciones sobre columnas, o calculando a partir de otras columnas"
   },
   {
     "objectID": "diapositivas.html#conector",
     "href": "diapositivas.html#conector",
-    "title": "Introducción al análisis de datos con R",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Conector",
     "text": "Conector\n\n Ver tutorial\n\nEl conector o pipe |&gt; (o también %&gt;%) nos permite encadenar varias funciones de forma más legible.\n\n|&gt; %&gt;%\n\n\nSe escribe con:\n\nWindows:\n\n\n\nMac:"
   },
   {
     "objectID": "diapositivas.html#diferencia-entre-hacer-y-programar",
     "href": "diapositivas.html#diferencia-entre-hacer-y-programar",
-    "title": "Introducción al análisis de datos con R",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Diferencia entre hacer y programar",
     "text": "Diferencia entre hacer y programar\n\nAprender a programar es un cambio de perspectiva: pasamos de hacer cosas a planificar cosas 💅🏼\nAcción 🔧 → instrucción 🧠\nTrabajamos desde arriba, viendo todos sus pasos y componentes 👩🏻‍💻\nPasos independientes, reutilizables, mejorables, intercambiables ⚙️\nEl trabajo que hagas puede servirte a futuro, a ti y a otrxs ♻️\nResultados replicables 🏭\n\n\nVeamos algunos casos!"
   },
   {
     "objectID": "diapositivas.html#qué-se-puede-hacer-con-r",
     "href": "diapositivas.html#qué-se-puede-hacer-con-r",
-    "title": "Introducción al análisis de datos con R",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "¿Qué se puede hacer con R?",
     "text": "¿Qué se puede hacer con R?\n\n\nMuestra de algunas aplicaciones, gráficos, tablas, y mapas hechos con R. También algunos trabajos que he hecho."
   },
   {
     "objectID": "diapositivas.html#crearmodificar-variables",
     "href": "diapositivas.html#crearmodificar-variables",
-    "title": "Introducción al análisis de datos con R",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Crear/modificar variables",
     "text": "Crear/modificar variables\n\n Ver tutorial\n\n\nCon mutate() para crear una nueva variable o columna\n\n\nLe aplicamos mutate() a un data frame conectando los datos a la función con un conector (|&gt; o %&gt;%)\n\n\n\n\ndatos |&gt; \n  select(codigo, comuna) |&gt; \n  mutate(saludo = \"hola\") |&gt; \n  head()\n\n# A tibble: 6 × 3\n  codigo comuna        saludo\n   &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt; \n1   1101 Iquique       hola  \n2   1107 Alto Hospicio hola  \n3   1401 Pozo Almonte  hola  \n4   1402 Camiña        hola  \n5   1403 Colchane      hola  \n6   1404 Huara         hola  \n\n\n\n\ndatos |&gt; \n  select(comuna, personas) |&gt; \n  mutate(miles = personas/1000) |&gt; \n  head()\n\n# A tibble: 6 × 3\n  comuna        personas  miles\n  &lt;chr&gt;            &lt;dbl&gt;  &lt;dbl&gt;\n1 Iquique         41967. 42.0  \n2 Alto Hospicio   45162. 45.2  \n3 Pozo Almonte     4563.  4.56 \n4 Camiña            308.  0.308\n5 Colchane          473.  0.473\n6 Huara            1185.  1.18"
   },
   {
     "objectID": "diapositivas.html#tutoriales-de-dplyr",
     "href": "diapositivas.html#tutoriales-de-dplyr",
-    "title": "Introducción al análisis de datos con R",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Tutoriales de {dplyr}",
     "text": "Tutoriales de {dplyr}\nPara que puedan repasar o guiarse con casos básicos de uso de {dplyr} con datos reales, dejo un par de tutoriales:\n\n Tutorial con datos censales\n\n\n Tutorial con datos sociales"
   },
   {
     "objectID": "diapositivas.html#filtrar-datos",
     "href": "diapositivas.html#filtrar-datos",
-    "title": "Introducción al análisis de datos con R",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Filtrar datos",
     "text": "Filtrar datos\n\n Ver tutorial\n\n\nPara filtrar, realizamos una comparación entre los valores de una columna y un valor específico.\n\n\n\nlibrary(dplyr)\n\ndatos |&gt; \n  filter(porcentaje &gt; 0.35) |&gt; \n  arrange(desc(porcentaje)) |&gt; \n  head()\n\n# A tibble: 6 × 10\n  codigo region         comuna personas_proy personas porcentaje limite_inferior\n   &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;          &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt;           &lt;dbl&gt;\n1  15202 Arica y Parin… Gener…           668     392.      0.586           0.435\n2   9116 La Araucanía   Saave…         12717    5654.      0.445           0.361\n3   9204 La Araucanía   Ercil…          8422    3503.      0.416           0.361\n4   9106 La Araucanía   Galva…         12594    5029.      0.399           0.313\n5   8314 Biobío         Alto …          6784    2640.      0.389           0.319\n6  10306 Los Lagos      San J…          7521    2923.      0.389           0.314\n# ℹ 3 more variables: limite_superior &lt;dbl&gt;, casen &lt;chr&gt;, tipo_estimacion &lt;chr&gt;"
   },
   {
     "objectID": "diapositivas.html#resúmenes-de-datos",
     "href": "diapositivas.html#resúmenes-de-datos",
-    "title": "Introducción al análisis de datos con R",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Resúmenes de datos",
     "text": "Resúmenes de datos\n\n Ver tutorial\n\n\nAplicar una función para resumir todas las filas de una tabla en un sólo resultado:\n\ndatos |&gt; \n  summarize(total = sum(personas))\n\n# A tibble: 1 × 1\n     total\n     &lt;dbl&gt;\n1 3368245.\n\n\n\n\nSi agrupamos los datos, obtendremos una fila de resultado por cada grupo:\n\ndatos |&gt; \n  group_by(region) |&gt; \n  summarize(total = sum(personas)) |&gt; \n  head(n = 4)\n\n# A tibble: 4 × 2\n  region               total\n  &lt;chr&gt;                &lt;dbl&gt;\n1 Antofagasta        121379.\n2 Arica y Parinacota  48086.\n3 Atacama             64481.\n4 Aysén               15113."
   },
   {
     "objectID": "diapositivas.html#seleccionar-y-ordenar",
     "href": "diapositivas.html#seleccionar-y-ordenar",
-    "title": "Introducción al análisis de datos con R",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Seleccionar y ordenar",
     "text": "Seleccionar y ordenar\n\n Ver tutorial\n\nCargamos un conjunto de datos de prueba:\n\nlibrary(dplyr)\nlibrary(readr)\n\ndatos &lt;- read_csv2(\"datos/pobreza/estimaciones_pobreza.csv\")\n\nEstos datos son del Ministerio Desarrollo Social y Familia de Chile.\n\n\n\nSeleccionar\n\ndatos |&gt; \n  select(region, comuna, personas) |&gt; \n  head()\n\n# A tibble: 6 × 3\n  region   comuna        personas\n  &lt;chr&gt;    &lt;chr&gt;            &lt;dbl&gt;\n1 Tarapacá Iquique         41967.\n2 Tarapacá Alto Hospicio   45162.\n3 Tarapacá Pozo Almonte     4563.\n4 Tarapacá Camiña            308.\n5 Tarapacá Colchane          473.\n6 Tarapacá Huara            1185.\n\n\n\nOrdenar\n\ndatos |&gt; \n  select(region, comuna, personas) |&gt; \n  arrange(desc(personas)) |&gt; \n  head()\n\n# A tibble: 6 × 3\n  region        comuna       personas\n  &lt;chr&gt;         &lt;chr&gt;           &lt;dbl&gt;\n1 Metropolitana Puente Alto   125235.\n2 Metropolitana Santiago       87355.\n3 Metropolitana Maipú          86976.\n4 Antofagasta   Antofagasta    73103.\n5 Metropolitana San Bernardo   64276.\n6 Valparaíso    Valparaíso     60901."
   },
@@ -226,35 +226,35 @@
   {
     "objectID": "diapositivas.html#datos-para-practicar",
     "href": "diapositivas.html#datos-para-practicar",
-    "title": "Introducción al análisis de datos con R",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Datos para practicar ",
     "text": "Datos para practicar \n\n Estimaciones de población Censo\n\n\n Variables educacionales Censo 2024\n\n\n Estimación de pobreza multidimensional 2022\n\n\n Clasificaciones comunales 2024\n\nPuedes encontrar más datos en mi repositorio de datos sociales, en el banco integrado de datos del Ministerio de Desarrollo, en los datos abiertos del Estado Chile, y muchos más.\n\n\n\nAhora que ya sabes lo básico, todo lo demás se trata de aprender piezas y herramientas que puedes ir agregando a tus análisis! 🧩🛠️"
   },
   {
     "objectID": "diapositivas.html#cruzar-datos",
     "href": "diapositivas.html#cruzar-datos",
-    "title": "Introducción al análisis de datos con R",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Cruzar datos",
     "text": "Cruzar datos\n\n Ver tutorial\n\nPara cruzar dos tablas de datosusamos left_join() de {dplyr}"
   },
   {
     "objectID": "diapositivas.html#transformar-datos",
     "href": "diapositivas.html#transformar-datos",
-    "title": "Introducción al análisis de datos con R",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Transformar datos",
     "text": "Transformar datos\n\n Ver tutorial\n\n\nEl paquete {tidyr} se especializa en transformar la estructura de los datos.\nEsto nos permite manipular los datos para que sea más cómodo o lógico realizar ciertas operaciones.\n\nPor ejemplo:\n\nSi necesitamos sumar varias variables, es más cómodo tenerlas en filas (para poder usar algo como sum(valores)) que en columnas (y tener que sumar a+b+c+d…)\nSi queremos comparar varias variables, o mostrarlas a un público, es mejor que estén lado a lado, como en las tablas comunes."
   },
   {
     "objectID": "diapositivas.html#datos-de-texto",
     "href": "diapositivas.html#datos-de-texto",
-    "title": "Introducción al análisis de datos con R",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Datos de texto",
     "text": "Datos de texto\n\nEl paquete {stringr} se especializa en texto.\n\n\nlibrary(stringr)\n\n\n\ntexto &lt;- \"todxs pueden aprender a programar 💕\" \n\nstr_detect(texto, \"todos\")\n\n[1] FALSE\n\nstr_detect(texto, \"aprender\")\n\n[1] TRUE\n\n\n\n\n\ndatos |&gt; \n  filter(str_detect(comuna, \"Alto\")) |&gt; \n  select(region, comuna)\n\n# A tibble: 4 × 2\n  region        comuna         \n  &lt;chr&gt;         &lt;chr&gt;          \n1 Tarapacá      Alto Hospicio  \n2 Atacama       Alto Del Carmen\n3 Biobío        Alto Biobío    \n4 Metropolitana Puente Alto"
   },
   {
     "objectID": "diapositivas.html#consejos",
     "href": "diapositivas.html#consejos",
-    "title": "Introducción al análisis de datos con R",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Consejos",
     "text": "Consejos\n\nMantengan su propio libro de aprendizajes\nLeer bien los errores\nProbar paso a paso\nDevolverse y empezar de nuevo\nNo se vuelvan dependientes de la IA\nAsistencia con IA: autocompletado de GitHub Copilot\nMensaje de sistema para su proveedor de IA\nAprender a googlear bien"
   }

@@ -1,7 +1,8 @@
 ---
-title: "Introducción al análisis de datos con R"
-subtitle: "Curso dirigido a Ciencias Sociales y Humanidades"
+title: "Introducción al análisis de datos con R, _2ª versión_"
+subtitle: "Curso dirigido a personas de las Ciencias Sociales"
 author: "Bastián Olea Herrera"
+date: "2026-03-25"
 format: 
   revealjs:
     theme: [default, estilos.scss]
@@ -24,24 +25,24 @@ editor_options:
 [bastianolea.rbind.io](https://bastianolea.rbind.io)
 
 :::: {.pad}
-Encuentra todo sobre el curso [en este post](https://bastianolea.rbind.io/blog/curso_gratis_r_intro_1/) de mi blog.
+Encuentra todo sobre el curso [en este post](https://bastianolea.rbind.io/blog/curso_gratis_r_intro_2/) de mi blog.
 ::::
 
 :::: {.pad style="max-width: 50%;"}
 ::: {.boton}
-[{{< fa book-open >}} Curso](https://bastianolea.rbind.io/blog/curso_gratis_r_intro_1/)
+[{{< fa book-open >}} Curso](https://bastianolea.rbind.io/blog/curso_gratis_r_intro_2/)
 :::
 
 ::: {.boton}
-[{{< fa file-code >}} Código](https://github.com/bastianolea/curso_intro_R_gratis)
+[{{< fa file-code >}} Código](https://github.com/bastianolea/curso_intro_R_gratis_v2)
 :::
 
 ::: {.boton}
-[{{< fa video >}} Grabaciones](https://bastianolea.rbind.io/blog/curso_gratis_r_intro_1/#streaming-y-grabaciones)
+[{{< fa video >}} Grabaciones](https://bastianolea.rbind.io/blog/curso_gratis_r_intro_2/#streaming)
 :::
 
 ::: {.boton}
-[{{< fa chalkboard-user >}} Diapositivas](https://bastianolea.github.io/curso_intro_R_gratis)
+[{{< fa chalkboard-user >}} Diapositivas](https://bastianolea.github.io/curso_intro_R_gratis_v2)
 :::
 
 ::: {.boton}
@@ -1578,7 +1579,7 @@ Ahora que ya sabes lo básico, todo lo demás se trata de aprender piezas y herr
 # Gracias <span style="font-size: 110%; color: #9F69C7;">♥</span>
 
 
-Puedes escribirme cualquier duda o comentario [por aquí](https://bastianolea.rbind.io/contact/)
+Puedes escribirme cualquier duda o comentario [por aquí](https://bastianolea.rbind.io/contacto/)
 
 <br>
 
@@ -1589,15 +1590,15 @@ Puedes escribirme cualquier duda o comentario [por aquí](https://bastianolea.rb
 :::
 
 ::: {.boton}
-[{{< fa book-open >}} Curso](https://bastianolea.rbind.io/clases/curso_gratis_r_intro_1/)
+[{{< fa book-open >}} Curso](https://bastianolea.rbind.io/clases/curso_gratis_r_intro_2/)
 :::
 
 ::: {.boton}
-[{{< fa file-code >}} Código](https://github.com/bastianolea/curso_intro_R_gratis)
+[{{< fa file-code >}} Código](https://github.com/bastianolea/curso_intro_R_gratis_v2)
 :::
 
 ::: {.boton}
-[{{< fa video >}} Grabaciones](https://bastianolea.rbind.io/blog/curso_gratis_r_intro_1/#streaming-y-grabaciones)
+[{{< fa video >}} Grabaciones](https://bastianolea.rbind.io/blog/curso_gratis_r_intro_2/#streaming)
 :::
 ::::
 
