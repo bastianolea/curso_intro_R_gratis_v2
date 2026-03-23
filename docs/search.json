@@ -53,7 +53,7 @@
     "href": "diapositivas.html#operaciones-básicas",
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Operaciones básicas",
-    "text": "Operaciones básicas\n\n\n\nPodemos realizar cualquier operación matemática en R.\nPara ejecutar un comando, pon el cursor de texto en la línea o expresión que desees ejecutar, o selecciónala, y presiona el botón Run, o las teclas control + enter.\nLo importante es que el cursor de texto | esté en cualquier lugar de la línea.\nEl resultado de todas las operaciones aparece en la consola.\n\n\n\n\n\n2 + 2 #suma\n\n[1] 4\n\n\n\n\n\n50 * 100 #multiplicación\n\n[1] 5000\n\n\n\n\n\n4556 - 1000 #resta\n\n[1] 3556\n\n\n\n\n\n6565 / 89 #división\n\n[1] 73.76404\n\n\n\n\n\n10^4 #potencias\n\n[1] 10000"
+    "text": "Operaciones básicas\n\n Ver tutorial\n\n\n\n\nPodemos realizar cualquier operación matemática en R.\nPara ejecutar un comando, pon el cursor de texto en la línea o expresión que desees ejecutar, o selecciónala, y presiona el botón Run, o las teclas control + enter.\nLo importante es que el cursor de texto | esté en cualquier lugar de la línea.\nEl resultado de todas las operaciones aparece en la consola.\n\n\n\n\n\n2 + 2 #suma\n\n[1] 4\n\n\n\n\n\n50 * 100 #multiplicación\n\n[1] 5000\n\n\n\n\n\n4556 - 1000 #resta\n\n[1] 3556\n\n\n\n\n\n6565 / 89 #división\n\n[1] 73.76404\n\n\n\n\n\n10^4 #potencias\n\n[1] 10000"
   },
   {
     "objectID": "diapositivas.html#tipos-de-datos",
@@ -172,7 +172,7 @@
     "href": "diapositivas.html#diferencia-entre-hacer-y-programar",
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Diferencia entre hacer y programar",
-    "text": "Diferencia entre hacer y programar\n\nAprender a programar es un cambio de perspectiva: pasamos de hacer cosas a planificar cosas 💅🏼\nAcción 🔧 → instrucción 🧠\nTrabajamos desde arriba, viendo todos sus pasos y componentes 👩🏻‍💻\nPasos independientes, reutilizables, mejorables, intercambiables ⚙️\nEl trabajo que hagas puede servirte a futuro, a ti y a otrxs ♻️\nResultados replicables 🏭\n\n\nVeamos algunos casos!"
+    "text": "Diferencia entre hacer y programar\n\nAprender a programar es un cambio de perspectiva: pasamos de hacer cosas a planificar cosas 💅🏼\nAcción 🔧 → instrucción 🧠\nTrabajamos desde arriba, viendo todos sus pasos y componentes 👩🏻‍💻\nPasos independientes, reutilizables, mejorables, intercambiables ⚙️\nEl trabajo que hagas puede servirte a futuro, a ti y a otrxs ♻️\nResultados replicables 🏭"
   },
   {
     "objectID": "diapositivas.html#qué-se-puede-hacer-con-r",
@@ -256,6 +256,20 @@
     "href": "diapositivas.html#consejos",
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Consejos",
-    "text": "Consejos\n\nMantengan su propio libro de aprendizajes\nLeer bien los errores\nProbar paso a paso\nDevolverse y empezar de nuevo\nNo se vuelvan dependientes de la IA\nAsistencia con IA: autocompletado de GitHub Copilot\nMensaje de sistema para su proveedor de IA\nAprender a googlear bien"
+    "text": "Consejos\n\nMantengan su propio libro de aprendizajes 📝\nLean bien los errores y busquen su significado\nSi algo sale mal, prueben paso a paso\nTambién pueden devolverse y empezar de nuevo\nDense una vuelta y a veces la respuesta llega solita 😌\nNo se vuelvan dependientes de la IA 😵\n\nSi quieren usar IA:\n\nAutocompletado de GitHub Copilot\nMensaje de sistema para su proveedor de IA\n\n\nAprendendan a buscar bien en internet\nCompartan lo que hacen y socialicen sus aprendizajes! ✨"
+  },
+  {
+    "objectID": "diapositivas.html#paneles-de-rstudio",
+    "href": "diapositivas.html#paneles-de-rstudio",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
+    "section": "Paneles de RStudio",
+    "text": "Paneles de RStudio\n\n Descargar RStudio\n\n\n\n1 Scripts\n\n\n2 Consola\n\n\n3 Entorno\n\n\n4 Archivos"
+  },
+  {
+    "objectID": "diapositivas.html#operaciones-básicas-con-r",
+    "href": "diapositivas.html#operaciones-básicas-con-r",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
+    "section": "Operaciones básicas con R",
+    "text": "Operaciones básicas con R\n\n\n\nPodemos realizar cualquier operación matemática en R.\nPara ejecutar un comando, pon el cursor de texto en la línea o expresión que desees ejecutar, o selecciónala, y presiona el botón Run, o las teclas control + enter.\nLo importante es que el cursor de texto | esté en cualquier lugar de la línea.\nEl resultado de todas las operaciones aparece en la consola.\n\n\n\n\n\n2 + 2 #suma\n\n[1] 4\n\n\n\n\n\n50 * 100 #multiplicación\n\n[1] 5000\n\n\n\n\n\n4556 - 1000 #resta\n\n[1] 3556\n\n\n\n\n\n6565 / 89 #división\n\n[1] 73.76404\n\n\n\n\n\n10^4 #potencias\n\n[1] 10000"
   }
 ]

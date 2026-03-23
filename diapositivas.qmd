@@ -91,52 +91,6 @@ R es un lenguaje de programación enfocado al **análisis de datos**, las **esta
 ----
 
 
-
-### Diferencia entre R y RStudio
-
-::::: {.columns}
-
-:::: {.column}
-::: {.fragment}
-#### R
-![](imagenes/logo_r.png){.rosa style="height: 128px;"}
-
-- Lenguaje de programación
-- Lanzado en 1993
-- Usado por línea de comandos
-- Desarrollado por R Core Team
-- Basado en el lenguaje S (1976)
-- Software libre
-:::
-::::
-:::: {.column}
-
-::: {.fragment}
-
-#### RStudio
-
-![](imagenes/logo_rstudio.png){.rosa style="height: 128px;"}
-
-- Entorno de desarrollo integrado (IDE) enfocado en R
-- Lanzado en 2011
-- Interfaz gráfica (ventanas y botones)
-- Desarrollado por Posit (ex RStudio)
-- Software libre
-:::
-::::
-:::::
-
-
-:::: aside
-::: {.fragment}
-_Por favor no digan que "aprendieron RStudio"_ 😣
-:::
-::::
-
-
-----
-
-
 ### ¿Por qué usar R?
 
 :::: {.fragment}
@@ -192,172 +146,6 @@ Muestra de algunas [aplicaciones](https://bastianolea.github.io/shiny_apps/), [g
 - Resultados **replicables** 🏭
 :::
 
-::: {.fragment}
-Veamos algunos casos!
-:::
-
-----
-
-### Caso 1: _actualización de datos_
-
-::: {.pad}
-Datos → A → B → C → Resultado
-:::
-
-
-
-::::: {.columns}
-
-:::: {.column}
-[Hacer]{.subtitulo}
-
-::: {.incremental}
-- Hago **A**
-- Hago **B**
-- Hago **C**
-- *Actualizar datos*
-- Hago de nuevo **A**
-- Hago de nuevo **B**
-- Hago de nuevo **C**
-:::
-
-::::
-
-:::: {.column}
-[Programar]{.subtitulo}
-
-::: {.incremental}
-- Hago **A**
-- Hago **B**
-- Hago **C**
-- *Actualizar datos*
-- Re-ejecuto **A**, **B** y **C**
-:::
-
-::::
-:::::
-
-----
-
-
-
-### Caso 2: _cambio en cálculos o metodología_
-
-::: {.pad}
-Datos → A → B → C → Resultado
-:::
-
-::::: {.columns}
-
-:::: {.column}
-[Hacer]{.subtitulo}
-
-::: {.incremental}
-- Hago **A**
-- Hago **B**
-- Hago **C**
-- _Cambio en cálculos o metodología_
-- Hago de nuevo **B**
-- Como **C** depende de **B**, lo hago de nuevo también
-:::
-
-::::
-
-:::: {.column}
-[Programar]{.subtitulo}
-
-::: {.incremental}
-- Hago **A**
-- Hago **B**
-- Hago **C**
-- _Cambio en cálculos o metodología_
-- Aplico cambios en **B**
-- Re-ejecuto **A**, **B** y **C**
-:::
-
-::::
-:::::
-
-----
-
-### Caso 3: _replicar un resultado_
-
-::: {.pad}
-Datos → A → B → C → Resultado
-:::
-
-::::: {.columns}
-
-:::: {.column}
-[Hacer]{.subtitulo}
-
-::: {.incremental}
-- Hago **A** para grupo 1
-- Hago **B** para grupo 1
-- Hago **C** para grupo 1
-- _Ahora necesito hacer lo mismo, de nuevo, para otro grupo_
-- Hago **A** para grupo 2 🤨
-- Hago **B** para grupo 2
-- Hago **C** para grupo 2... 😵
-:::
-
-::::
-
-:::: {.column}
-[Programar]{.subtitulo}
-
-::: {.incremental}
-- Hago **A** para grupo 1
-- Hago **B** para grupo 1
-- Hago **C** para grupo 1
-- _Ahora necesito hacer lo mismo, de nuevo, para otro grupo_
-- Ajusto scripts para que funcionen con más grupos
-- Re-ejecuto los scripts para grupo 2
-- Re-ejecuto los scripts  para grupo 3
-- O mejor, hago un loop que haga **A**, **B** y **C** para todos los grupos 😌
-:::
-
-::::
-:::::
-
-
-----
-
-
-
-### Caso 4: _modificar gráficos_
-
-::: {.pad}
-Datos → A → B → C → Resultado
-:::
-
-::::: {.columns}
-
-:::: {.column}
-[Hacer]{.subtitulo}
-
-::: {.incremental}
-- Hago **A, B** y **C**
-- Hago 10 gráficos
-- _Necesito modificar los gráficos_
-- Hago el mismo cambio en cada uno de los gráficos... 😵
-:::
-
-::::
-
-:::: {.column}
-[Programar]{.subtitulo}
-
-::: {.incremental}
-- Hago **A, B** y **C**
-- Hago un script que genera 10 gráficos
-- _Necesito modificar los gráficos_
-- Ajusto el script y vuelvo a generar los gráficos 😌
-:::
-
-::::
-:::::
-
 
 ----
 
@@ -394,9 +182,42 @@ Archivo .Rproj que marca nuestro espacio de trabajo: una carpeta específica que
 :::
 
 
+# RStudio
+
+::::: {.columns}
+
+:::: {.column width="55%"}
+
+RStudio es una IDE (entorno de desarrollo integrado) que nos permite escribir código en R de forma más cómoda, organizada, y visual.
+
+::: {.incremental}
+- Entorno de desarrollo integrado (IDE) enfocado en R
+- Lanzado en 2011
+- Software libre (licencia de código abierto AGPL)
+:::
+
+::: {.boton .fragment}
+[{{< fa circle-arrow-down >}} Descargar RStudio](https://posit.co/download/rstudio-desktop/)
+:::
+
+::::
+
+:::: {.column width="45%"}
+![](imagenes/logo_rstudio.png){.rosa style="height: 200px; margin-top:-36px;"}
+::::
+
+:::::
+
+
+
+
+
+
+
+
 ----
 
-## RStudio
+## Paneles de RStudio
 
 ::: {.boton .absolute top=-1% right=0%}
 [{{< fa circle-arrow-down >}} Descargar RStudio](https://posit.co/download/rstudio-desktop/)
@@ -518,10 +339,39 @@ Cambiar de **proyecto** o crear uno nuevo
 
 ::::
 
+
+# Introducción a R
+
+
+::::: {.columns}
+
+:::: {.column width="55%"}
+
+Veamos ahora los **elementos más básicos** del lenguaje R, para luego avanzar a su aplicación al **análisis de datos**.
+
+::: {.boton .fragment}
+[{{< fa file-lines >}} Guía de aprendizaje](https://bastianolea.github.io/aprende_r/#basico)
+:::
+
+::::
+
+:::: {.column width="45%"}
+![](imagenes/logo_r.png){.rosa style="height: 200px; margin-top:-36px;"}
+::::
+
+:::::
+
+
+
 ----
 
 
 ## Operaciones básicas
+
+::: {.boton .absolute top=0% right=0%}
+[{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/r_introduccion/r_basico/#primeras-operaciones-en-r)
+:::
+
 
 ::::: {.columns}
 
@@ -691,6 +541,11 @@ cifra
 ----
 
 ### Asignación
+
+::: {.boton .absolute top=0% right=0%}
+[{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/r_introduccion/r_basico/#asignaciones)
+:::
+
 
 Con el _operador de **asignación**_ creamos objetos nuevos.
 
@@ -946,9 +801,6 @@ head(datos)
 ```
 
 :::
-
-
-----
 
 
 
@@ -1271,7 +1123,17 @@ Si no sabemos cómo usar una función, podemos buscar su nombre en el panel **Ay
 
 ### Aplicar funciones a columnas
 
-Al crear o modificar una columna con `mutate()` podemos usar funciones que se apliquen a una o varias columnas:
+::: {.boton .absolute top=-2% right=0%}
+[{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/r_introduccion/dplyr_mutate/)
+:::
+
+::: {.fragment}
+Las funciones realizan operaciones sobre todos los datos de una columna, **reemplazando** los datos existentes, o **rellenando** datos de una columna nueva.
+:::
+
+::: {.fragment}
+Dependiendo de lo que queramos hacer, las funciones que apliquemos con `mutate()` pueden hacer referencia a **una o a varias** columnas:
+:::
 
 ::: {.fragment}
 ```{r}
@@ -1279,9 +1141,9 @@ datos |>
   select(comuna, personas) |> 
   arrange(desc(personas)) |> 
   head() |> 
-  mutate(total_personas = sum(personas)) |> # aplicada a una colunma
-  mutate(orden = row_number()) |> # hace algo por sí misma
+  mutate(total_personas = sum(personas)) |> # aplicada a una columna
   mutate(letras = nchar(comuna)) |> # aplicada a otra columna
+  mutate(orden = row_number()) |> # hace algo por sí misma
   mutate(porcentaje = round(personas/total_personas, 2)) # función con argumento
 ```
 :::
@@ -1290,6 +1152,11 @@ datos |>
 ----
 
 ### Variables condicionales
+
+
+::: {.boton .absolute top=0% right=0%}
+[{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/r_introduccion/dplyr_mutate/#crear-una-variable-condicional-con-if_else)
+:::
 
 :::: {.columns}
 ::: {.column .fragment}
@@ -1512,14 +1379,17 @@ Ahora que ya sabes lo básico, todo lo demás se trata de aprender piezas y herr
 ## Consejos 
 
 ::: {.incremental}
-- Mantengan su propio **libro de aprendizajes**
-- Leer bien los **errores**
-- Probar **paso a paso**
-- Devolverse y **empezar de nuevo**
-- No se vuelvan dependientes de la IA
-- Asistencia con IA: **autocompletado** de GitHub Copilot
-- **Mensaje de sistema** para su proveedor de IA
-- Aprender a **googlear** bien 
+- Mantengan su propio **libro de aprendizajes** 📝
+- Lean bien los **errores** y busquen su significado
+- Si algo sale mal, prueben **paso a paso** 
+- También pueden devolverse y **empezar de nuevo**
+- Dense una vuelta y a veces la respuesta llega solita 😌
+- No se vuelvan dependientes de la IA 😵
+  - Si quieren usar IA: 
+    - **Autocompletado** de GitHub Copilot
+    - **Mensaje de sistema** para su proveedor de IA
+- Aprendendan a **buscar** bien en internet
+- Compartan lo que hacen y socialicen sus aprendizajes! ✨
 :::
 
 

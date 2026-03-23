@@ -262,42 +262,6 @@ Bastián Olea Herrera
 </section>
 <section class="slide level2">
 
-<h3 id="diferencia-entre-r-y-rstudio">Diferencia entre R y RStudio</h3>
-<div class="columns">
-<div class="column">
-<div class="fragment">
-<h4 id="r">R</h4>
-<p><img data-src="imagenes/logo_r.png" class="rosa" style="height: 128px;"></p>
-<ul>
-<li>Lenguaje de programación</li>
-<li>Lanzado en 1993</li>
-<li>Usado por línea de comandos</li>
-<li>Desarrollado por R Core Team</li>
-<li>Basado en el lenguaje S (1976)</li>
-<li>Software libre</li>
-</ul>
-</div>
-</div><div class="column">
-<div class="fragment">
-<h4 id="rstudio">RStudio</h4>
-<p><img data-src="imagenes/logo_rstudio.png" class="rosa" style="height: 128px;"></p>
-<ul>
-<li>Entorno de desarrollo integrado (IDE) enfocado en R</li>
-<li>Lanzado en 2011</li>
-<li>Interfaz gráfica (ventanas y botones)</li>
-<li>Desarrollado por Posit (ex RStudio)</li>
-<li>Software libre</li>
-</ul>
-</div>
-</div></div>
-
-<aside><div>
-<div class="fragment">
-<p><em>Por favor no digan que “aprendieron RStudio”</em> 😣</p>
-</div>
-</div></aside></section>
-<section class="slide level2">
-
 <h3 id="por-qué-usar-r">¿Por qué usar R?</h3>
 <div class="fragment">
 <div class="cuadro">
@@ -335,124 +299,6 @@ Bastián Olea Herrera
 <li class="fragment">El trabajo que hagas puede <strong>servirte</strong> a futuro, a ti y a otrxs ♻️</li>
 <li class="fragment">Resultados <strong>replicables</strong> 🏭</li>
 </ul>
-<div class="fragment">
-<p>Veamos algunos casos!</p>
-</div>
-</section>
-<section class="slide level2">
-
-<h3 id="caso-1-actualización-de-datos">Caso 1: <em>actualización de datos</em></h3>
-<div class="pad">
-<p>Datos → A → B → C → Resultado</p>
-</div>
-<div class="columns">
-<div class="column">
-<p><span class="subtitulo">Hacer</span></p>
-<ul>
-<li class="fragment">Hago <strong>A</strong></li>
-<li class="fragment">Hago <strong>B</strong></li>
-<li class="fragment">Hago <strong>C</strong></li>
-<li class="fragment"><em>Actualizar datos</em></li>
-<li class="fragment">Hago de nuevo <strong>A</strong></li>
-<li class="fragment">Hago de nuevo <strong>B</strong></li>
-<li class="fragment">Hago de nuevo <strong>C</strong></li>
-</ul>
-</div><div class="column">
-<p><span class="subtitulo">Programar</span></p>
-<ul>
-<li class="fragment">Hago <strong>A</strong></li>
-<li class="fragment">Hago <strong>B</strong></li>
-<li class="fragment">Hago <strong>C</strong></li>
-<li class="fragment"><em>Actualizar datos</em></li>
-<li class="fragment">Re-ejecuto <strong>A</strong>, <strong>B</strong> y <strong>C</strong></li>
-</ul>
-</div></div>
-</section>
-<section class="slide level2">
-
-<h3 id="caso-2-cambio-en-cálculos-o-metodología">Caso 2: <em>cambio en cálculos o metodología</em></h3>
-<div class="pad">
-<p>Datos → A → B → C → Resultado</p>
-</div>
-<div class="columns">
-<div class="column">
-<p><span class="subtitulo">Hacer</span></p>
-<ul>
-<li class="fragment">Hago <strong>A</strong></li>
-<li class="fragment">Hago <strong>B</strong></li>
-<li class="fragment">Hago <strong>C</strong></li>
-<li class="fragment"><em>Cambio en cálculos o metodología</em></li>
-<li class="fragment">Hago de nuevo <strong>B</strong></li>
-<li class="fragment">Como <strong>C</strong> depende de <strong>B</strong>, lo hago de nuevo también</li>
-</ul>
-</div><div class="column">
-<p><span class="subtitulo">Programar</span></p>
-<ul>
-<li class="fragment">Hago <strong>A</strong></li>
-<li class="fragment">Hago <strong>B</strong></li>
-<li class="fragment">Hago <strong>C</strong></li>
-<li class="fragment"><em>Cambio en cálculos o metodología</em></li>
-<li class="fragment">Aplico cambios en <strong>B</strong></li>
-<li class="fragment">Re-ejecuto <strong>A</strong>, <strong>B</strong> y <strong>C</strong></li>
-</ul>
-</div></div>
-</section>
-<section class="slide level2">
-
-<h3 id="caso-3-replicar-un-resultado">Caso 3: <em>replicar un resultado</em></h3>
-<div class="pad">
-<p>Datos → A → B → C → Resultado</p>
-</div>
-<div class="columns">
-<div class="column">
-<p><span class="subtitulo">Hacer</span></p>
-<ul>
-<li class="fragment">Hago <strong>A</strong> para grupo 1</li>
-<li class="fragment">Hago <strong>B</strong> para grupo 1</li>
-<li class="fragment">Hago <strong>C</strong> para grupo 1</li>
-<li class="fragment"><em>Ahora necesito hacer lo mismo, de nuevo, para otro grupo</em></li>
-<li class="fragment">Hago <strong>A</strong> para grupo 2 🤨</li>
-<li class="fragment">Hago <strong>B</strong> para grupo 2</li>
-<li class="fragment">Hago <strong>C</strong> para grupo 2… 😵</li>
-</ul>
-</div><div class="column">
-<p><span class="subtitulo">Programar</span></p>
-<ul>
-<li class="fragment">Hago <strong>A</strong> para grupo 1</li>
-<li class="fragment">Hago <strong>B</strong> para grupo 1</li>
-<li class="fragment">Hago <strong>C</strong> para grupo 1</li>
-<li class="fragment"><em>Ahora necesito hacer lo mismo, de nuevo, para otro grupo</em></li>
-<li class="fragment">Ajusto scripts para que funcionen con más grupos</li>
-<li class="fragment">Re-ejecuto los scripts para grupo 2</li>
-<li class="fragment">Re-ejecuto los scripts para grupo 3</li>
-<li class="fragment">O mejor, hago un loop que haga <strong>A</strong>, <strong>B</strong> y <strong>C</strong> para todos los grupos 😌</li>
-</ul>
-</div></div>
-</section>
-<section class="slide level2">
-
-<h3 id="caso-4-modificar-gráficos">Caso 4: <em>modificar gráficos</em></h3>
-<div class="pad">
-<p>Datos → A → B → C → Resultado</p>
-</div>
-<div class="columns">
-<div class="column">
-<p><span class="subtitulo">Hacer</span></p>
-<ul>
-<li class="fragment">Hago <strong>A, B</strong> y <strong>C</strong></li>
-<li class="fragment">Hago 10 gráficos</li>
-<li class="fragment"><em>Necesito modificar los gráficos</em></li>
-<li class="fragment">Hago el mismo cambio en cada uno de los gráficos… 😵</li>
-</ul>
-</div><div class="column">
-<p><span class="subtitulo">Programar</span></p>
-<ul>
-<li class="fragment">Hago <strong>A, B</strong> y <strong>C</strong></li>
-<li class="fragment">Hago un script que genera 10 gráficos</li>
-<li class="fragment"><em>Necesito modificar los gráficos</em></li>
-<li class="fragment">Ajusto el script y vuelvo a generar los gráficos 😌</li>
-</ul>
-</div></div>
 </section>
 <section id="conceptos-clave" class="slide level2">
 <h2>Conceptos clave</h2>
@@ -474,8 +320,26 @@ Bastián Olea Herrera
 <p>Archivo .Rproj que marca nuestro espacio de trabajo: una carpeta específica que reúne todas las piezas de nuestro análisis.</p>
 </div>
 </section>
-<section id="rstudio-1" class="slide level2">
-<h2>RStudio</h2>
+<section>
+<section id="rstudio" class="title-slide slide level1 center">
+<h1>RStudio</h1>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>RStudio es una IDE (entorno de desarrollo integrado) que nos permite escribir código en R de forma más cómoda, organizada, y visual.</p>
+<ul>
+<li class="fragment">Entorno de desarrollo integrado (IDE) enfocado en R</li>
+<li class="fragment">Lanzado en 2011</li>
+<li class="fragment">Software libre (licencia de código abierto AGPL)</li>
+</ul>
+<div class="boton fragment">
+<p><a href="https://posit.co/download/rstudio-desktop/"><i class="fa-solid fa-circle-arrow-down" aria-label="circle-arrow-down"></i> Descargar RStudio</a></p>
+</div>
+</div><div class="column" style="width:45%;">
+<p><img data-src="imagenes/logo_rstudio.png" class="rosa" style="height: 200px; margin-top:-36px;"></p>
+</div></div>
+</section>
+<section id="paneles-de-rstudio" class="slide level2">
+<h2>Paneles de RStudio</h2>
 <div class="boton absolute" style="top: -1%; right: 0%; ">
 <p><a href="https://posit.co/download/rstudio-desktop/"><i class="fa-solid fa-circle-arrow-down" aria-label="circle-arrow-down"></i> Descargar RStudio</a></p>
 </div>
@@ -558,9 +422,25 @@ Bastián Olea Herrera
 </div>
 </div>
 </div>
+</section></section>
+<section>
+<section id="introducción-a-r" class="title-slide slide level1 center">
+<h1>Introducción a R</h1>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>Veamos ahora los <strong>elementos más básicos</strong> del lenguaje R, para luego avanzar a su aplicación al <strong>análisis de datos</strong>.</p>
+<div class="boton fragment">
+<p><a href="https://bastianolea.github.io/aprende_r/#basico"><i class="fa-solid fa-file-lines" aria-label="file-lines"></i> Guía de aprendizaje</a></p>
+</div>
+</div><div class="column" style="width:45%;">
+<p><img data-src="imagenes/logo_r.png" class="rosa" style="height: 200px; margin-top:-36px;"></p>
+</div></div>
 </section>
 <section id="operaciones-básicas" class="slide level2">
 <h2>Operaciones básicas</h2>
+<div class="boton absolute" style="top: 0%; right: 0%; ">
+<p><a href="https://bastianolea.rbind.io/blog/r_introduccion/r_basico/#primeras-operaciones-en-r"><i class="fa-solid fa-file-lines" aria-label="file-lines"></i> Ver tutorial</a></p>
+</div>
 <div class="columns">
 <div class="column" style="padding-right:28px;">
 <ul>
@@ -701,6 +581,9 @@ Bastián Olea Herrera
 <section class="slide level2">
 
 <h3 id="asignación">Asignación</h3>
+<div class="boton absolute" style="top: 0%; right: 0%; ">
+<p><a href="https://bastianolea.rbind.io/blog/r_introduccion/r_basico/#asignaciones"><i class="fa-solid fa-file-lines" aria-label="file-lines"></i> Ver tutorial</a></p>
+</div>
 <p>Con el <em>operador de <strong>asignación</strong></em> creamos objetos nuevos.</p>
 <div class="centrar" style="font-size: 200%">
 <p><code>-&gt;</code></p>
@@ -852,7 +735,7 @@ Bastián Olea Herrera
 </div>
 </div>
 </div></div>
-</section>
+</section></section>
 <section>
 <section id="datos" class="title-slide slide level1 center">
 <h1>Datos <i class="fa-solid fa-database" aria-label="database"></i></h1>
@@ -927,9 +810,6 @@ Bastián Olea Herrera
 </div>
 </div>
 </div>
-</section>
-<section class="slide level2">
-
 </section></section>
 <section>
 <section id="dplyr" class="title-slide slide level1 center">
@@ -1233,27 +1113,35 @@ Bastián Olea Herrera
 <section class="slide level2">
 
 <h3 id="aplicar-funciones-a-columnas">Aplicar funciones a columnas</h3>
-<p>Al crear o modificar una columna con <code>mutate()</code> podemos usar funciones que se apliquen a una o varias columnas:</p>
+<div class="boton absolute" style="top: -2%; right: 0%; ">
+<p><a href="https://bastianolea.rbind.io/blog/r_introduccion/dplyr_mutate/"><i class="fa-solid fa-file-lines" aria-label="file-lines"></i> Ver tutorial</a></p>
+</div>
+<div class="fragment">
+<p>Las funciones realizan operaciones sobre todos los datos de una columna, <strong>reemplazando</strong> los datos existentes, o <strong>rellenando</strong> datos de una columna nueva.</p>
+</div>
+<div class="fragment">
+<p>Dependiendo de lo que queramos hacer, las funciones que apliquemos con <code>mutate()</code> pueden hacer referencia a <strong>una o a varias</strong> columnas:</p>
+</div>
 <div class="fragment">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a></a>datos <span class="sc">|&gt;</span></span>
 <span id="cb70-2"><a></a>  <span class="fu">select</span>(comuna, personas) <span class="sc">|&gt;</span> </span>
 <span id="cb70-3"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(personas)) <span class="sc">|&gt;</span> </span>
 <span id="cb70-4"><a></a>  <span class="fu">head</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb70-5"><a></a>  <span class="fu">mutate</span>(<span class="at">total_personas =</span> <span class="fu">sum</span>(personas)) <span class="sc">|&gt;</span> <span class="co"># aplicada a una colunma</span></span>
-<span id="cb70-6"><a></a>  <span class="fu">mutate</span>(<span class="at">orden =</span> <span class="fu">row_number</span>()) <span class="sc">|&gt;</span> <span class="co"># hace algo por sí misma</span></span>
-<span id="cb70-7"><a></a>  <span class="fu">mutate</span>(<span class="at">letras =</span> <span class="fu">nchar</span>(comuna)) <span class="sc">|&gt;</span> <span class="co"># aplicada a otra columna</span></span>
+<span id="cb70-5"><a></a>  <span class="fu">mutate</span>(<span class="at">total_personas =</span> <span class="fu">sum</span>(personas)) <span class="sc">|&gt;</span> <span class="co"># aplicada a una columna</span></span>
+<span id="cb70-6"><a></a>  <span class="fu">mutate</span>(<span class="at">letras =</span> <span class="fu">nchar</span>(comuna)) <span class="sc">|&gt;</span> <span class="co"># aplicada a otra columna</span></span>
+<span id="cb70-7"><a></a>  <span class="fu">mutate</span>(<span class="at">orden =</span> <span class="fu">row_number</span>()) <span class="sc">|&gt;</span> <span class="co"># hace algo por sí misma</span></span>
 <span id="cb70-8"><a></a>  <span class="fu">mutate</span>(<span class="at">porcentaje =</span> <span class="fu">round</span>(personas<span class="sc">/</span>total_personas, <span class="dv">2</span>)) <span class="co"># función con argumento</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 6
-  comuna       personas total_personas orden letras porcentaje
-  &lt;chr&gt;           &lt;dbl&gt;          &lt;dbl&gt; &lt;int&gt;  &lt;int&gt;      &lt;dbl&gt;
-1 Puente Alto   125235.        497846.     1     11       0.25
-2 Santiago       87355.        497846.     2      8       0.18
-3 Maipú          86976.        497846.     3      5       0.17
-4 Antofagasta    73103.        497846.     4     11       0.15
-5 San Bernardo   64276.        497846.     5     12       0.13
-6 Valparaíso     60901.        497846.     6     10       0.12</code></pre>
+  comuna       personas total_personas letras orden porcentaje
+  &lt;chr&gt;           &lt;dbl&gt;          &lt;dbl&gt;  &lt;int&gt; &lt;int&gt;      &lt;dbl&gt;
+1 Puente Alto   125235.        497846.     11     1       0.25
+2 Santiago       87355.        497846.      8     2       0.18
+3 Maipú          86976.        497846.      5     3       0.17
+4 Antofagasta    73103.        497846.     11     4       0.15
+5 San Bernardo   64276.        497846.     12     5       0.13
+6 Valparaíso     60901.        497846.     10     6       0.12</code></pre>
 </div>
 </div>
 </div>
@@ -1261,6 +1149,9 @@ Bastián Olea Herrera
 <section class="slide level2">
 
 <h3 id="variables-condicionales">Variables condicionales</h3>
+<div class="boton absolute" style="top: 0%; right: 0%; ">
+<p><a href="https://bastianolea.rbind.io/blog/r_introduccion/dplyr_mutate/#crear-una-variable-condicional-con-if_else"><i class="fa-solid fa-file-lines" aria-label="file-lines"></i> Ver tutorial</a></p>
+</div>
 <div class="columns">
 <div class="column fragment">
 <h4 id="ifelse"><code>ifelse()</code></h4>
@@ -1494,14 +1385,21 @@ Bastián Olea Herrera
 <section id="consejos" class="slide level2">
 <h2>Consejos</h2>
 <ul>
-<li class="fragment">Mantengan su propio <strong>libro de aprendizajes</strong></li>
-<li class="fragment">Leer bien los <strong>errores</strong></li>
-<li class="fragment">Probar <strong>paso a paso</strong></li>
-<li class="fragment">Devolverse y <strong>empezar de nuevo</strong></li>
-<li class="fragment">No se vuelvan dependientes de la IA</li>
-<li class="fragment">Asistencia con IA: <strong>autocompletado</strong> de GitHub Copilot</li>
+<li class="fragment">Mantengan su propio <strong>libro de aprendizajes</strong> 📝</li>
+<li class="fragment">Lean bien los <strong>errores</strong> y busquen su significado</li>
+<li class="fragment">Si algo sale mal, prueben <strong>paso a paso</strong></li>
+<li class="fragment">También pueden devolverse y <strong>empezar de nuevo</strong></li>
+<li class="fragment">Dense una vuelta y a veces la respuesta llega solita 😌</li>
+<li class="fragment">No se vuelvan dependientes de la IA 😵
+<ul>
+<li class="fragment">Si quieren usar IA:
+<ul>
+<li class="fragment"><strong>Autocompletado</strong> de GitHub Copilot</li>
 <li class="fragment"><strong>Mensaje de sistema</strong> para su proveedor de IA</li>
-<li class="fragment">Aprender a <strong>googlear</strong> bien</li>
+</ul></li>
+</ul></li>
+<li class="fragment">Aprendendan a <strong>buscar</strong> bien en internet</li>
+<li class="fragment">Compartan lo que hacen y socialicen sus aprendizajes! ✨</li>
 </ul>
 </section></section>
 <section id="gracias" class="title-slide slide level1 center">
