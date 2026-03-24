@@ -306,5 +306,12 @@
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Temas",
     "text": "Temas\n\n\nFunciones de temas\n\ntheme_minimal()\ntheme_classic()\ntheme_void()\ntheme_linedraw()\n\n\nComponentes del gráfico\n\npanel\ngrid\nscales\naxis\nstrip\nlegend\n\n\nTipos de componente\n\nelement_text(), txtos\nelement_line(), líneas\nelement_rect(), rectángulos\nelement_blank(), ocultar"
+  },
+  {
+    "objectID": "diapositivas.html#extensiones-de-ggplot2",
+    "href": "diapositivas.html#extensiones-de-ggplot2",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
+    "section": "Extensiones de {ggplot2}",
+    "text": "Extensiones de {ggplot2}\n\nExisten muchos paquetes que extienden las capacidades de {ggplot2}:\n\n\n{ggforce}: nuevas geometrías\n{patchwork}: combinación de gráficos\n{ggrepel}: separación de textos sobrepuestos\n{gganimate}: gráficos animados\n{marquee} y {ggtext}: textos con formato, color, y más\n{ggfx}: shaders, filtros y efectos especiales\n{ggiraph} y {plotly}: gráficos interactivos\n\n\n\n\nAcá hay una lista de extensiones de ggplot2"
   }
 ]

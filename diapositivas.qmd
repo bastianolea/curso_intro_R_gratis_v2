@@ -1423,6 +1423,34 @@ grafico_color +
 
 ----
 
+## Extensiones de `{ggplot2}`
+
+
+![](imagenes/ggplot2_extensiones.png){.absolute top=25% right=-15%}
+
+
+Existen muchos paquetes que extienden las capacidades de `{ggplot2}`:
+
+:::: {style="max-width: 50%;"}
+::: {.incremental}
+- `{ggforce}`: nuevas geometrías
+- `{patchwork}`: combinación de gráficos
+- `{ggrepel}`: separación de textos sobrepuestos
+- `{gganimate}`: gráficos animados
+- `{marquee}` y `{ggtext}`: textos con formato, color, y más
+- `{ggfx}`: shaders, filtros y efectos especiales
+- `{ggiraph}` y `{plotly}`: gráficos interactivos
+:::
+::::
+
+::: {.aside}
+Acá hay una [lista de extensiones de `ggplot2`](https://exts.ggplot2.tidyverse.org/gallery/)
+:::
+
+
+
+----
+
 
 ## Datos de texto {visibility=hidden}
 
