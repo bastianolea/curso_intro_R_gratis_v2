@@ -98,7 +98,7 @@
     code span.vs { color: #9ecbff; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-f3b7ff798fdab3e80a3beb2e0d794e6c.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-84192b6e6883e7989259ba476c779d60.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -1237,47 +1237,182 @@ Bastián Olea Herrera
 </div>
 </div>
 </div>
-</section>
-<section id="datos-de-texto" class="slide level2">
-<h2>Datos de texto</h2>
-<p><img data-src="imagenes/stringr.png" class="esquina-der" style="height:128px;"></p>
-<p>El paquete <code>{stringr}</code> se especializa en texto.</p>
-<div class="pad">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a></a><span class="fu">library</span>(stringr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+</section></section>
+<section>
+<section id="ggplot2" class="title-slide slide level1 center">
+<h1><code>{ggplot2}</code></h1>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ul>
+<li class="fragment">Librería de visualización de datos</li>
+<li class="fragment">Dibuja gráficos por medio de capas</li>
+<li class="fragment">Entre sus beneficios está su flexibilidad, adaptabilidad y reusabilidad</li>
+</ul>
 <div class="fragment">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a></a>texto <span class="ot">&lt;-</span> <span class="st">"todxs pueden aprender a programar 💕"</span> </span>
-<span id="cb81-2"><a></a></span>
-<span id="cb81-3"><a></a><span class="fu">str_detect</span>(texto, <span class="st">"todos"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a></a><span class="fu">str_detect</span>(texto, <span class="st">"aprender"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a></a><span class="fu">library</span>(ggplot2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a></a>datos <span class="sc">|&gt;</span> </span>
-<span id="cb85-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(comuna, <span class="st">"Alto"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb85-3"><a></a>  <span class="fu">select</span>(region, comuna)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 × 2
-  region        comuna         
-  &lt;chr&gt;         &lt;chr&gt;          
-1 Tarapacá      Alto Hospicio  
-2 Atacama       Alto Del Carmen
-3 Biobío        Alto Biobío    
-4 Metropolitana Puente Alto    </code></pre>
-</div>
-</div>
-</div>
+</div><div class="column" style="width:30%;">
+<p><img data-src="imagenes/ggplot2.png"></p>
+</div></div>
+<p><br></p>
+<div class="boton fragment">
+<p><a href="https://bastianolea.rbind.io/blog/r_introduccion/tutorial_visualizacion_ggplot/"><i class="fa-solid fa-file-lines" aria-label="file-lines"></i> Ver tutorial</a></p>
 </div>
 </section>
+<section id="gramática-de-gráficos" class="slide level2">
+<h2>Gramática de gráficos</h2>
+<p><img data-src="imagenes/ggplot2_layers.png" class="absolute" style="top: 10%; left: -20%; "></p>
+<div class="columns">
+<div class="column" style="width:30%;">
+
+</div><div class="column" style="width:70%;">
+<div style="margin-top: 20px;">
+<ul>
+<li><strong>Datos:</strong> variables disponibles para construir el gráfico</li>
+<li><strong>Mapeos:</strong> conexión de variables a distintos aspectos de la visualización</li>
+<li><strong>Capas:</strong> elementos geométricos agregados unos sobre otros</li>
+<li><strong>Escalas:</strong> especificación de la forma en que se mapean las variables a los ejes</li>
+<li><strong>Facetas:</strong> dividir la visualización en paneles distintos según una variable</li>
+<li><strong>Coordenadas:</strong> proyección de las coordenadas en el plano</li>
+<li><strong>Temas:</strong> definición de la apariencia general del gráfico, y específica para cada elemento</li>
+</ul>
+</div>
+</div></div>
+</section>
+<section id="gramática-aplicada-al-código" class="slide level2">
+<h2>Gramática aplicada al código</h2>
+<p>Por un lado tenemos los conceptos que constituyen la <strong>gramática</strong> de los gráficos, y por el otro un ejemplo de código aplicando estos conceptos.</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div style="font-align: right;">
+<ul>
+<li>Datos <span class="linea">línea 1</span></li>
+<li>Mapeos <span class="linea">línea 2</span></li>
+<li>Capas <span class="linea">línea 3</span></li>
+<li>Escalas <span class="linea">línea 4</span></li>
+<li>Facetas <span class="linea">línea 5</span></li>
+<li>Coordenadas <span class="linea">línea 6</span></li>
+<li>Temas <span class="linea">línea 7</span></li>
+</ul>
+</div>
+</div><div class="column" style="width:60%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a></a><span class="fu">ggplot</span>(iris) <span class="sc">+</span> <span class="co"># datos</span></span>
+<span id="cb81-2"><a></a>  <span class="fu">aes</span>(Sepal.Width, Sepal.Length, <span class="at">color =</span> Species) <span class="sc">+</span> <span class="co"># mapeos</span></span>
+<span id="cb81-3"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="co"># capas</span></span>
+<span id="cb81-4"><a></a>  <span class="fu">scale_color_discrete</span>() <span class="sc">+</span> <span class="co"># escalas</span></span>
+<span id="cb81-5"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Species) <span class="sc">+</span> <span class="co"># facetas</span></span>
+<span id="cb81-6"><a></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">5</span>)) <span class="sc">+</span> <span class="co"># coordenadas</span></span>
+<span id="cb81-7"><a></a>  <span class="fu">theme_linedraw</span>() <span class="co"># temas</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="diapositivas_files/figure-revealjs/unnamed-chunk-45-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="colores-del-gráfico" class="slide level2">
+<h2>Colores del gráfico</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a></a>grafico <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(iris) <span class="sc">+</span></span>
+<span id="cb82-2"><a></a>  <span class="fu">aes</span>(Sepal.Width, Sepal.Length, <span class="at">color =</span> Species) <span class="sc">+</span> </span>
+<span id="cb82-3"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="columns">
+<div class="column">
+<h5 id="colores-generales-del-gráfico">Colores generales del gráfico</h5>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a></a>grafico_tema <span class="ot">&lt;-</span> grafico <span class="sc">+</span></span>
+<span id="cb83-2"><a></a>  <span class="fu">theme_linedraw</span>(<span class="at">paper =</span> <span class="st">"#EAD2FA"</span>, </span>
+<span id="cb83-3"><a></a>                <span class="at">ink =</span> <span class="st">"#553A74"</span>, </span>
+<span id="cb83-4"><a></a>                <span class="at">accent =</span> <span class="st">"#9069C0"</span>)</span>
+<span id="cb83-5"><a></a></span>
+<span id="cb83-6"><a></a>grafico_tema</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="diapositivas_files/figure-revealjs/unnamed-chunk-47-1.png" width="384"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column">
+<h5 id="colores-de-las-categorías">Colores de las categorías</h5>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a></a>grafico_color <span class="ot">&lt;-</span> grafico_tema <span class="sc">+</span></span>
+<span id="cb84-2"><a></a>    <span class="fu">scale_color_discrete</span>(</span>
+<span id="cb84-3"><a></a>      <span class="at">palette =</span> <span class="fu">c</span>(<span class="st">"#AC558A"</span>, <span class="st">"#553A74"</span>, </span>
+<span id="cb84-4"><a></a>                  <span class="st">"#666BC7"</span>))</span>
+<span id="cb84-5"><a></a></span>
+<span id="cb84-6"><a></a>grafico_color</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="diapositivas_files/figure-revealjs/unnamed-chunk-48-1.png" width="384"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="temas" class="slide level2">
+<h2>Temas</h2>
+<div class="columns">
+<div class="column" style="width:33%;">
+<h5 id="funciones-de-temas">Funciones de temas</h5>
+<ul>
+<li><code>theme_minimal()</code></li>
+<li><code>theme_classic()</code></li>
+<li><code>theme_void()</code></li>
+<li><code>theme_linedraw()</code></li>
+</ul>
+</div><div class="column" style="width:33%;">
+<h5 id="componentes-del-gráfico">Componentes del gráfico</h5>
+<ul>
+<li><code>panel</code></li>
+<li><code>grid</code></li>
+<li><code>scales</code></li>
+<li><code>axis</code></li>
+<li><code>strip</code></li>
+<li><code>legend</code></li>
+</ul>
+</div><div class="column" style="width:33%;">
+<h5 id="tipos-de-componente">Tipos de componente</h5>
+<ul>
+<li><code>element_text()</code>, txtos</li>
+<li><code>element_line()</code>, líneas</li>
+<li><code>element_rect()</code>, rectángulos</li>
+<li><code>element_blank()</code>, ocultar</li>
+</ul>
+</div></div>
+</section>
+<section class="slide level2">
+
+<h3 id="personalización-de-temas">Personalización de temas</h3>
+<div class="cell" data-fig-scale="1.5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a></a>grafico_color <span class="sc">+</span></span>
+<span id="cb85-2"><a></a>  <span class="fu">theme</span>(<span class="at">panel.grid.major =</span> <span class="fu">element_line</span>(<span class="at">linewidth =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">"#C2A1D6"</span>),</span>
+<span id="cb85-3"><a></a>        <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb85-4"><a></a>        <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#DBBFEC"</span>, <span class="at">color =</span> <span class="cn">NA</span>),</span>
+<span id="cb85-5"><a></a>        <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb85-6"><a></a>        <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">8</span>)),</span>
+<span id="cb85-7"><a></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb85-8"><a></a>        <span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
+<span id="cb85-9"><a></a>        <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb85-10"><a></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">l =</span> <span class="dv">4</span>)),</span>
+<span id="cb85-11"><a></a>        <span class="at">legend.key =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#DBBFEC"</span>, <span class="at">color =</span> <span class="st">"#C2A1D6"</span>),</span>
+<span id="cb85-12"><a></a>        <span class="at">legend.key.spacing.y =</span> <span class="fu">unit</span>(<span class="fl">1.8</span>, <span class="st">"mm"</span>),</span>
+<span id="cb85-13"><a></a>        <span class="at">panel.spacing.x =</span> <span class="fu">unit</span>(<span class="dv">6</span>, <span class="st">"mm"</span>),</span>
+<span id="cb85-14"><a></a>        <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold.italic"</span>, <span class="at">size =</span> <span class="dv">12</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+</div>
+<img data-src="diapositivas_files/figure-revealjs/unnamed-chunk-49-1.png" width="672" class="r-stretch"></section>
+
 <section id="cruzar-datos" class="slide level2">
 <h2>Cruzar datos</h2>
 <div class="boton absolute" style="top: 0%; right: 0%; ">
@@ -1295,23 +1430,23 @@ Bastián Olea Herrera
 <p>Veamos un ejemplo donde cruzamos dos tablas, la de <strong>pobreza</strong> y una nueva de <strong>clasificación comunal</strong> (urbana, mixta, rural según la <a href="https://bibliotecadigital.odepa.gob.cl/handle/20.500.12650/74476">PNDR</a>), a partir de la columna que tienen en común: <code>codigo</code></p>
 <div class="fragment">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a></a>clasificacion <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv2</span>(<span class="st">"datos/clasificacion/clasificacion.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a></a>clasificacion <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv2</span>(<span class="st">"datos/clasificacion/clasificacion.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a></a>clasificacion_b <span class="ot">&lt;-</span> clasificacion <span class="sc">|&gt;</span> </span>
-<span id="cb88-2"><a></a>  <span class="fu">select</span>(codigo, clasificacion)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a></a>clasificacion_b <span class="ot">&lt;-</span> clasificacion <span class="sc">|&gt;</span> </span>
+<span id="cb94-2"><a></a>  <span class="fu">select</span>(codigo, clasificacion)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a></a>datos_clasif <span class="ot">&lt;-</span> datos <span class="sc">|&gt;</span> </span>
-<span id="cb89-2"><a></a>  <span class="fu">select</span>(codigo, comuna, personas, porcentaje) <span class="sc">|&gt;</span> </span>
-<span id="cb89-3"><a></a>  <span class="fu">mutate</span>(<span class="at">codigo =</span> <span class="fu">as.numeric</span>(codigo)) <span class="sc">|&gt;</span></span>
-<span id="cb89-4"><a></a>  <span class="fu">left_join</span>(clasificacion_b, <span class="at">by =</span> <span class="st">"codigo"</span>)</span>
-<span id="cb89-5"><a></a></span>
-<span id="cb89-6"><a></a>datos_clasif <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb95"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a></a>datos_clasif <span class="ot">&lt;-</span> datos <span class="sc">|&gt;</span> </span>
+<span id="cb95-2"><a></a>  <span class="fu">select</span>(codigo, comuna, personas, porcentaje) <span class="sc">|&gt;</span> </span>
+<span id="cb95-3"><a></a>  <span class="fu">mutate</span>(<span class="at">codigo =</span> <span class="fu">as.numeric</span>(codigo)) <span class="sc">|&gt;</span></span>
+<span id="cb95-4"><a></a>  <span class="fu">left_join</span>(clasificacion_b, <span class="at">by =</span> <span class="st">"codigo"</span>)</span>
+<span id="cb95-5"><a></a></span>
+<span id="cb95-6"><a></a>datos_clasif <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 5
   codigo comuna        personas porcentaje clasificacion

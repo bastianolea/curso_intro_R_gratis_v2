@@ -321,3 +321,26 @@ h4 {
 .fondo {
   background-color: $body-bg !important;
 }
+
+
+.linea {
+  padding: 2px 8px;
+  background-color: #9F69CA;
+  border-radius: 6px;
+  border: none;
+  font-size: 65%;
+  color: #23102A;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+figure {
+  margin: 16px;
+  
+  img {
+    border-radius: 6px;
+  }
+}
+
+.r-stretch {
+  border-radius: 6px;
+}

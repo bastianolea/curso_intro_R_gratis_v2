@@ -1219,11 +1219,212 @@ datos |>
 :::
 
 
+
+
+# `{ggplot2}`
+
+
+:::: {.columns}
+::: {.incremental .column width=70%}
+- Librería de visualización de datos
+- Dibuja gráficos por medio de capas
+- Entre sus beneficios está su flexibilidad, adaptabilidad y reusabilidad
+
+::: {.fragment}
+```{r}
+#| message: false
+library(ggplot2)
+```
+:::
+:::
+
+::: {.column width=30%}
+![](imagenes/ggplot2.png){}
+:::
+::::
+
+<br>
+
+::: {.boton .fragment}
+[{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/r_introduccion/tutorial_visualizacion_ggplot/)
+:::
+
+
+----
+
+## Gramática de gráficos
+
+
+![](imagenes/ggplot2_layers.png){.absolute top=10% left=-20%}
+
+:::: {.columns}
+
+::: {.column width="30%"}
+:::
+
+::: {.column width="70%"}
+
+::: {style="margin-top: 20px;"}
+* **Datos:** variables disponibles para construir el gráfico
+* **Mapeos:** conexión de variables a distintos aspectos de la visualización
+* **Capas:** elementos geométricos agregados unos sobre otros
+* **Escalas:** especificación de la forma en que se mapean las variables a los ejes
+* **Facetas:** dividir la visualización en paneles distintos según una variable
+* **Coordenadas:** proyección de las coordenadas en el plano
+* **Temas:** definición de la apariencia general del gráfico, y específica para cada elemento
+:::
+
+:::
+::::
+
+
 ----
 
 
+## Gramática aplicada al código
 
-## Datos de texto
+Por un lado tenemos los conceptos que constituyen la **gramática** de los gráficos, y por el otro un ejemplo de código aplicando estos conceptos.
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+::: {style="font-align: right;"}
+- Datos [línea 1]{.linea}
+- Mapeos [línea 2]{.linea}
+- Capas [línea 3]{.linea}
+- Escalas [línea 4]{.linea}
+- Facetas [línea 5]{.linea}
+- Coordenadas [línea 6]{.linea}
+- Temas [línea 7]{.linea}
+:::
+
+:::
+
+::: {.column width="60%"}
+```{r}
+#| fig-height: 4
+#| fig-width: 7
+ggplot(iris) + # datos
+  aes(Sepal.Width, Sepal.Length, color = Species) + # mapeos
+  geom_point(size = 1) + # capas
+  scale_color_discrete() + # escalas
+  facet_wrap(~Species) + # facetas
+  coord_cartesian(xlim = c(2, 5)) + # coordenadas
+  theme_linedraw() # temas
+```
+
+:::
+
+::::
+
+----
+
+## Colores del gráfico
+
+```{r}
+grafico <- ggplot(iris) +
+  aes(Sepal.Width, Sepal.Length, color = Species) + 
+  geom_point(size = 1)
+```
+
+:::: {.columns}
+
+::: {.column}
+
+##### Colores generales del gráfico
+```{r}
+#| fig-height: 3
+#| fig-width: 4
+grafico_tema <- grafico +
+  theme_linedraw(paper = "#EAD2FA", 
+                ink = "#553A74", 
+                accent = "#9069C0")
+
+grafico_tema
+```
+:::
+
+::: {.column}
+
+##### Colores de las categorías
+```{r}
+#| fig-height: 3
+#| fig-width: 4
+grafico_color <- grafico_tema +
+    scale_color_discrete(
+      palette = c("#AC558A", "#553A74", 
+                  "#666BC7"))
+
+grafico_color
+```
+
+:::
+::::
+
+
+----
+
+## Temas
+
+:::: {.columns}
+
+::: {.column width="33%"}
+##### Funciones de temas
+
+- `theme_minimal()`
+- `theme_classic()`
+- `theme_void()`
+- `theme_linedraw()`
+:::
+::: {.column width="33%"}
+##### Componentes del gráfico
+
+- `panel`
+- `grid`
+- `scales`
+- `axis`
+- `strip`
+- `legend`
+:::
+::: {.column width="33%"}
+#####  Tipos de componente
+- `element_text()`, txtos
+- `element_line()`, líneas
+- `element_rect()`, rectángulos
+- `element_blank()`, ocultar
+:::
+::::
+
+----
+
+### Personalización de temas
+
+```{r}
+#| fig-height: 5
+#| fig-width: 7
+#| fig-scale: 1.5
+grafico_color +
+  theme(panel.grid.major = element_line(linewidth = 0.5, color = "#C2A1D6"),
+        panel.grid.minor = element_blank(),
+        panel.background = element_rect(fill = "#DBBFEC", color = NA),
+        axis.title = element_text(face = "bold"),
+        axis.title.x = element_text(margin = margin(t = 8)),
+        axis.text.x = element_text(angle = 90, vjust = 0.5),
+        legend.position = "top",
+        legend.title = element_text(face = "bold", size = 14),
+        legend.text = element_text(margin = margin(l = 4)),
+        legend.key = element_rect(fill = "#DBBFEC", color = "#C2A1D6"),
+        legend.key.spacing.y = unit(1.8, "mm"),
+        panel.spacing.x = unit(6, "mm"),
+        strip.text = element_text(face = "bold.italic", size = 12))
+```
+
+
+----
+
+
+## Datos de texto {visibility=hidden}
 
 ![](imagenes/stringr.png){.esquina-der style='height:128px;'}
 

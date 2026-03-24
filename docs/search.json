@@ -271,5 +271,40 @@
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Operaciones básicas con R",
     "text": "Operaciones básicas con R\n\n\n\nPodemos realizar cualquier operación matemática en R.\nPara ejecutar un comando, pon el cursor de texto en la línea o expresión que desees ejecutar, o selecciónala, y presiona el botón Run, o las teclas control + enter.\nLo importante es que el cursor de texto | esté en cualquier lugar de la línea.\nEl resultado de todas las operaciones aparece en la consola.\n\n\n\n\n\n2 + 2 #suma\n\n[1] 4\n\n\n\n\n\n50 * 100 #multiplicación\n\n[1] 5000\n\n\n\n\n\n4556 - 1000 #resta\n\n[1] 3556\n\n\n\n\n\n6565 / 89 #división\n\n[1] 73.76404\n\n\n\n\n\n10^4 #potencias\n\n[1] 10000"
+  },
+  {
+    "objectID": "diapositivas.html#gramática-de-gráficos",
+    "href": "diapositivas.html#gramática-de-gráficos",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
+    "section": "Gramática de gráficos",
+    "text": "Gramática de gráficos\n\n\n\n\n\n\n\nDatos: variables disponibles para construir el gráfico\nMapeos: conexión de variables a distintos aspectos de la visualización\nCapas: elementos geométricos agregados unos sobre otros\nEscalas: especificación de la forma en que se mapean las variables a los ejes\nFacetas: dividir la visualización en paneles distintos según una variable\nCoordenadas: proyección de las coordenadas en el plano\nTemas: definición de la apariencia general del gráfico, y específica para cada elemento"
+  },
+  {
+    "objectID": "diapositivas.html#conceptos-aplicados-al-código",
+    "href": "diapositivas.html#conceptos-aplicados-al-código",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
+    "section": "Conceptos aplicados al código",
+    "text": "Conceptos aplicados al código\nPor un lado tenemos los conceptos que constituyen la gramática de los gráficos, y por el otro un ejemplo de código aplicando estos conceptos.\n\n\n\n\nDatos línea 1\nMapeos línea 2\nCapas línea 3\nEscalas línea 4\nFacetas línea 5\nCoordenadas línea 6\nTemas línea 7\n\n\n\n\nggplot(iris) + # datos\n  aes(Sepal.Width, Sepal.Length, color = Species) + # mapeos\n  geom_point(size = 1) + # capas\n  scale_color_discrete() + # escalas\n  facet_wrap(~Species) + # facetas\n  coord_cartesian(xlim = c(2, 5)) + # coordenadas\n  theme_linedraw() # temas"
+  },
+  {
+    "objectID": "diapositivas.html#gramática-aplicada-al-código",
+    "href": "diapositivas.html#gramática-aplicada-al-código",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
+    "section": "Gramática aplicada al código",
+    "text": "Gramática aplicada al código\nPor un lado tenemos los conceptos que constituyen la gramática de los gráficos, y por el otro un ejemplo de código aplicando estos conceptos.\n\n\n\n\nDatos línea 1\nMapeos línea 2\nCapas línea 3\nEscalas línea 4\nFacetas línea 5\nCoordenadas línea 6\nTemas línea 7\n\n\n\n\nggplot(iris) + # datos\n  aes(Sepal.Width, Sepal.Length, color = Species) + # mapeos\n  geom_point(size = 1) + # capas\n  scale_color_discrete() + # escalas\n  facet_wrap(~Species) + # facetas\n  coord_cartesian(xlim = c(2, 5)) + # coordenadas\n  theme_linedraw() # temas"
+  },
+  {
+    "objectID": "diapositivas.html#colores-del-gráfico",
+    "href": "diapositivas.html#colores-del-gráfico",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
+    "section": "Colores del gráfico",
+    "text": "Colores del gráfico\n\ngrafico &lt;- ggplot(iris) +\n  aes(Sepal.Width, Sepal.Length, color = Species) + \n  geom_point(size = 1)\n\n\n\nColores generales del gráfico\n\ngrafico_tema &lt;- grafico +\n  theme_linedraw(paper = \"#EAD2FA\", \n                ink = \"#553A74\", \n                accent = \"#9069C0\")\n\ngrafico_tema\n\n\n\n\n\n\n\n\n\nColores de las categorías\n\ngrafico_color &lt;- grafico_tema +\n    scale_color_discrete(\n      palette = c(\"#AC558A\", \"#553A74\", \n                  \"#666BC7\"))\n\ngrafico_color"
+  },
+  {
+    "objectID": "diapositivas.html#temas",
+    "href": "diapositivas.html#temas",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
+    "section": "Temas",
+    "text": "Temas\n\n\nFunciones de temas\n\ntheme_minimal()\ntheme_classic()\ntheme_void()\ntheme_linedraw()\n\n\nComponentes del gráfico\n\npanel\ngrid\nscales\naxis\nstrip\nlegend\n\n\nTipos de componente\n\nelement_text(), txtos\nelement_line(), líneas\nelement_rect(), rectángulos\nelement_blank(), ocultar"
   }
 ]
