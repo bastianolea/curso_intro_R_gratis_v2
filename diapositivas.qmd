@@ -56,6 +56,22 @@ Puedes encontrar más contenidos para [aprender R en este sitio](https://bastian
 
 ----
 
+## ¿Por qué programar para analizar datos?
+
+Existen muchas diferencias entre _hacer_ algo y **programarlo:**
+
+::: {.incremental}
+- Aprender a programar es un **cambio de perspectiva**: pasamos de _hacer_ cosas a _planificar_ cosas 💅🏼
+  - Desde la mera **Acción** 🔧 a la **Instrucción** 🧠 y luego al **Proceso** ⚙️
+- Trabajamos **desde arriba**, viendo todos sus pasos y componentes 👩🏻‍💻
+- Pasos independientes, reutilizables, mejorables, intercambiables ⚙️
+- El trabajo que hagas puede **servirte** a futuro, a ti y a otrxs ♻️
+- Resultados **replicables** 🔄 que dan paso a la **automatización** 🏭
+:::
+
+
+----
+
 
 ## ¿Qué es R?
 
@@ -130,21 +146,6 @@ style="border-radius: 8px; border: solid 1px #442A54; margin-bottom: 20px;"/>
 Muestra de algunas [aplicaciones](https://bastianolea.github.io/shiny_apps/), [gráficos](https://bastianolea.rbind.io/tags/gráficos/), [tablas](https://bastianolea.rbind.io/tags/tablas/), y [mapas](https://bastianolea.rbind.io/tags/mapas/) hechos con R. También algunos [trabajos](https://bastianolea.rbind.io/blog/portafolio_trabajos_r/) que he hecho.
 </div>
 
-
-
-----
-
-
-## Diferencia entre _hacer_ y programar
-
-::: {.incremental}
-- Aprender a programar es un **cambio de perspectiva**: pasamos de _hacer_ cosas a _planificar_ cosas 💅🏼
-- Acción 🔧 → instrucción 🧠
-- Trabajamos **desde arriba**, viendo todos sus pasos y componentes 👩🏻‍💻
-- Pasos independientes, reutilizables, mejorables, intercambiables ⚙️
-- El trabajo que hagas puede **servirte** a futuro, a ti y a otrxs ♻️
-- Resultados **replicables** 🏭
-:::
 
 
 ----
@@ -816,6 +817,7 @@ head(datos)
 ::: {.fragment}
 ```{r}
 #| message: false
+# install.packages("dplyr")
 library(dplyr)
 ```
 :::
@@ -1233,6 +1235,7 @@ datos |>
 ::: {.fragment}
 ```{r}
 #| message: false
+# install.packages("ggplot2")
 library(ggplot2)
 ```
 :::
@@ -1264,7 +1267,7 @@ library(ggplot2)
 
 ::: {.column width="70%"}
 
-::: {style="margin-top: 20px;"}
+::: {.incremental style="margin-top: 20px;"}
 * **Datos:** variables disponibles para construir el gráfico
 * **Mapeos:** conexión de variables a distintos aspectos de la visualización
 * **Capas:** elementos geométricos agregados unos sobre otros
@@ -1483,9 +1486,11 @@ datos |>
 :::
 
 
+# Herramientas avanzadas para trabajar con datos
+
 ----
 
-## Cruzar datos
+## Cruce de datos o _left join_
 
 ::: {.boton .absolute top=0% right=0%}
 [{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/left_join/)
@@ -1570,8 +1575,71 @@ datos_clasif |> head()
 ![](imagenes/pivot_wider.png){.centrar style='max-height: 200px;'}
 :::
 
+
+
+
+# Mapas
+
+:::: {.columns}
+::: {.incremental .column width=70%}
+- El [paquete `{sf}`](https://r-spatial.github.io/sf/) entrega herramientas para trabajar con datos geoespaciales en R
+- Permite representar características espaciales en _data frames_
+- Se complementa con `{ggplot2}`
+
+::: {.fragment}
+```{r}
+#| message: false
+# install.packages("sf")
+library(sf)
+```
+:::
+:::
+
+::: {.column width=30%}
+![](imagenes/sf.png){}
+:::
+::::
+
+<br>
+
+::: {.boton .fragment}
+[{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/mapas_sf/)
+:::
+
+
 ----
 
+
+## Mapas de Chile
+
+::: {.boton .absolute top=-1% right=0%}
+[{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/tutorial_mapa_urbano/)
+:::
+
+
+El [paquete `{chilemapas}`](https://pacha.dev/chilemapas/) ofrece funciones que simplifican la obtención de mapas de Chile en R.
+
+```{r}
+# install.packages("chilemapas")
+library(chilemapas)
+
+mapa_comunas |> 
+  filter(codigo_region == 14)
+```
+
+----
+
+
+## Cargar datos geoespaciales
+
+```{r}
+#| eval: false
+library(sf)
+mapa_comunas <- st_read("datos/mapas/mapa_comunas.geojson")
+
+```
+
+----
 
 ## Datos para practicar {{< fa file-code >}}
 

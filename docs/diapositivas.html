@@ -98,7 +98,7 @@
     code span.vs { color: #9ecbff; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-84192b6e6883e7989259ba476c779d60.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-6ccef190d9fc906153c333ce73b4462c.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -237,6 +237,20 @@ Bastián Olea Herrera
 <p>Puedes encontrar más contenidos para <a href="https://bastianolea.github.io/aprende_r/">aprender R en este sitio</a>, y más cosas de R <a href="https://bastianolea.rbind.io">en mi sitio web</a>.</p>
 </div>
 </section>
+<section id="por-qué-programar-para-analizar-datos" class="slide level2">
+<h2>¿Por qué programar para analizar datos?</h2>
+<p>Existen muchas diferencias entre <em>hacer</em> algo y <strong>programarlo:</strong></p>
+<ul>
+<li class="fragment">Aprender a programar es un <strong>cambio de perspectiva</strong>: pasamos de <em>hacer</em> cosas a <em>planificar</em> cosas 💅🏼
+<ul>
+<li class="fragment">Desde la mera <strong>Acción</strong> 🔧 a la <strong>Instrucción</strong> 🧠 y luego al <strong>Proceso</strong> ⚙️</li>
+</ul></li>
+<li class="fragment">Trabajamos <strong>desde arriba</strong>, viendo todos sus pasos y componentes 👩🏻‍💻</li>
+<li class="fragment">Pasos independientes, reutilizables, mejorables, intercambiables ⚙️</li>
+<li class="fragment">El trabajo que hagas puede <strong>servirte</strong> a futuro, a ti y a otrxs ♻️</li>
+<li class="fragment">Resultados <strong>replicables</strong> 🔄 que dan paso a la <strong>automatización</strong> 🏭</li>
+</ul>
+</section>
 <section id="qué-es-r" class="slide level2">
 <h2>¿Qué es R?</h2>
 <div class="columns">
@@ -288,17 +302,6 @@ Bastián Olea Herrera
 <img class="r-stretch" src="imagenes/shiny_apps.jpg" style="border-radius: 8px; border: solid 1px #442A54; margin-bottom: 20px;"><div style="text-align: center; font-size: 90%;">
 <p>Muestra de algunas <a href="https://bastianolea.github.io/shiny_apps/">aplicaciones</a>, <a href="https://bastianolea.rbind.io/tags/gráficos/">gráficos</a>, <a href="https://bastianolea.rbind.io/tags/tablas/">tablas</a>, y <a href="https://bastianolea.rbind.io/tags/mapas/">mapas</a> hechos con R. También algunos <a href="https://bastianolea.rbind.io/blog/portafolio_trabajos_r/">trabajos</a> que he hecho.</p>
 </div>
-</section>
-<section id="diferencia-entre-hacer-y-programar" class="slide level2">
-<h2>Diferencia entre <em>hacer</em> y programar</h2>
-<ul>
-<li class="fragment">Aprender a programar es un <strong>cambio de perspectiva</strong>: pasamos de <em>hacer</em> cosas a <em>planificar</em> cosas 💅🏼</li>
-<li class="fragment">Acción 🔧 → instrucción 🧠</li>
-<li class="fragment">Trabajamos <strong>desde arriba</strong>, viendo todos sus pasos y componentes 👩🏻‍💻</li>
-<li class="fragment">Pasos independientes, reutilizables, mejorables, intercambiables ⚙️</li>
-<li class="fragment">El trabajo que hagas puede <strong>servirte</strong> a futuro, a ti y a otrxs ♻️</li>
-<li class="fragment">Resultados <strong>replicables</strong> 🏭</li>
-</ul>
 </section>
 <section id="conceptos-clave" class="slide level2">
 <h2>Conceptos clave</h2>
@@ -823,7 +826,8 @@ Bastián Olea Herrera
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a><span class="fu">library</span>(dplyr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a><span class="co"># install.packages("dplyr")</span></span>
+<span id="cb45-2"><a></a><span class="fu">library</span>(dplyr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div><div class="column" style="width:30%;">
@@ -1250,7 +1254,8 @@ Bastián Olea Herrera
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a></a><span class="fu">library</span>(ggplot2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a></a><span class="co"># install.packages("ggplot2")</span></span>
+<span id="cb80-2"><a></a><span class="fu">library</span>(ggplot2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div><div class="column" style="width:30%;">
@@ -1270,13 +1275,13 @@ Bastián Olea Herrera
 </div><div class="column" style="width:70%;">
 <div style="margin-top: 20px;">
 <ul>
-<li><strong>Datos:</strong> variables disponibles para construir el gráfico</li>
-<li><strong>Mapeos:</strong> conexión de variables a distintos aspectos de la visualización</li>
-<li><strong>Capas:</strong> elementos geométricos agregados unos sobre otros</li>
-<li><strong>Escalas:</strong> especificación de la forma en que se mapean las variables a los ejes</li>
-<li><strong>Facetas:</strong> dividir la visualización en paneles distintos según una variable</li>
-<li><strong>Coordenadas:</strong> proyección de las coordenadas en el plano</li>
-<li><strong>Temas:</strong> definición de la apariencia general del gráfico, y específica para cada elemento</li>
+<li class="fragment"><strong>Datos:</strong> variables disponibles para construir el gráfico</li>
+<li class="fragment"><strong>Mapeos:</strong> conexión de variables a distintos aspectos de la visualización</li>
+<li class="fragment"><strong>Capas:</strong> elementos geométricos agregados unos sobre otros</li>
+<li class="fragment"><strong>Escalas:</strong> especificación de la forma en que se mapean las variables a los ejes</li>
+<li class="fragment"><strong>Facetas:</strong> dividir la visualización en paneles distintos según una variable</li>
+<li class="fragment"><strong>Coordenadas:</strong> proyección de las coordenadas en el plano</li>
+<li class="fragment"><strong>Temas:</strong> definición de la apariencia general del gráfico, y específica para cada elemento</li>
 </ul>
 </div>
 </div></div>
@@ -1431,9 +1436,14 @@ Bastián Olea Herrera
 <aside><div>
 <p>Acá hay una <a href="https://exts.ggplot2.tidyverse.org/gallery/">lista de extensiones de <code>ggplot2</code></a></p>
 </div></aside></section>
+</section>
+<section>
+<section id="herramientas-avanzadas-para-trabajar-con-datos" class="title-slide slide level1 center">
+<h1>Herramientas avanzadas para trabajar con datos</h1>
 
-<section id="cruzar-datos" class="slide level2">
-<h2>Cruzar datos</h2>
+</section>
+<section id="cruce-de-datos-o-left-join" class="slide level2">
+<h2>Cruce de datos o <em>left join</em></h2>
 <div class="boton absolute" style="top: 0%; right: 0%; ">
 <p><a href="https://bastianolea.rbind.io/blog/left_join/"><i class="fa-solid fa-file-lines" aria-label="file-lines"></i> Ver tutorial</a></p>
 </div>
@@ -1513,6 +1523,68 @@ Bastián Olea Herrera
 </div>
 <div class="fragment">
 <p><img data-src="imagenes/pivot_wider.png" class="centrar" style="max-height: 200px;"></p>
+</div>
+</section></section>
+<section>
+<section id="mapas" class="title-slide slide level1 center">
+<h1>Mapas</h1>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ul>
+<li class="fragment">El <a href="https://r-spatial.github.io/sf/">paquete <code>{sf}</code></a> entrega herramientas para trabajar con datos geoespaciales en R</li>
+<li class="fragment">Permite representar características espaciales en <em>data frames</em></li>
+<li class="fragment">Se complementa con <code>{ggplot2}</code></li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb97"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a></a><span class="co"># install.packages("sf")</span></span>
+<span id="cb97-2"><a></a><span class="fu">library</span>(sf)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div><div class="column" style="width:30%;">
+<p><img data-src="imagenes/sf.png"></p>
+</div></div>
+<p><br></p>
+<div class="boton fragment">
+<p><a href="https://bastianolea.rbind.io/blog/mapas_sf/"><i class="fa-solid fa-file-lines" aria-label="file-lines"></i> Ver tutorial</a></p>
+</div>
+</section>
+<section id="mapas-de-chile" class="slide level2">
+<h2>Mapas de Chile</h2>
+<div class="boton absolute" style="top: -1%; right: 0%; ">
+<p><a href="https://bastianolea.rbind.io/blog/tutorial_mapa_urbano/"><i class="fa-solid fa-file-lines" aria-label="file-lines"></i> Ver tutorial</a></p>
+</div>
+<p>El <a href="https://pacha.dev/chilemapas/">paquete <code>{chilemapas}</code></a> ofrece funciones que simplifican la obtención de mapas de Chile en R.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a></a><span class="co"># install.packages("chilemapas")</span></span>
+<span id="cb98-2"><a></a><span class="fu">library</span>(chilemapas)</span>
+<span id="cb98-3"><a></a></span>
+<span id="cb98-4"><a></a>mapa_comunas <span class="sc">|&gt;</span> </span>
+<span id="cb98-5"><a></a>  <span class="fu">filter</span>(codigo_region <span class="sc">==</span> <span class="dv">14</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 12 × 4
+   codigo_comuna codigo_provincia codigo_region                         geometry
+   &lt;chr&gt;         &lt;chr&gt;            &lt;chr&gt;                       &lt;MULTIPOLYGON [°]&gt;
+ 1 14203         142              14            (((-71.65597 -40.35386, -71.657…
+ 2 14204         142              14            (((-71.88915 -40.55144, -71.891…
+ 3 14201         142              14            (((-73.15077 -40.06596, -73.147…
+ 4 14202         142              14            (((-71.81459 -40.08101, -71.820…
+ 5 14104         141              14            (((-72.02965 -39.93203, -72.034…
+ 6 14105         141              14            (((-72.61245 -39.62475, -72.607…
+ 7 14103         141              14            (((-72.32959 -39.51024, -72.327…
+ 8 14106         141              14            (((-72.83588 -39.41328, -72.841…
+ 9 14107         141              14            (((-72.92395 -39.94016, -72.916…
+10 14108         141              14            (((-71.81459 -40.08101, -71.815…
+11 14102         141              14            (((-73.39203 -39.88653, -73.389…
+12 14101         141              14            (((-73.2668 -39.88605, -73.2621…</code></pre>
+</div>
+</div>
+</section>
+<section id="cargar-datos-geoespaciales" class="slide level2">
+<h2>Cargar datos geoespaciales</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a></a><span class="fu">library</span>(sf)</span>
+<span id="cb100-2"><a></a>mapa_comunas <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"datos/mapas/mapa_comunas.geojson"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="datos-para-practicar" class="slide level2">

@@ -313,5 +313,33 @@
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Extensiones de {ggplot2}",
     "text": "Extensiones de {ggplot2}\n\nExisten muchos paquetes que extienden las capacidades de {ggplot2}:\n\n\n{ggforce}: nuevas geometrías\n{patchwork}: combinación de gráficos\n{ggrepel}: separación de textos sobrepuestos\n{gganimate}: gráficos animados\n{marquee} y {ggtext}: textos con formato, color, y más\n{ggfx}: shaders, filtros y efectos especiales\n{ggiraph} y {plotly}: gráficos interactivos\n\n\n\n\nAcá hay una lista de extensiones de ggplot2"
+  },
+  {
+    "objectID": "diapositivas.html#por-qué-programar-para-analizar-datos",
+    "href": "diapositivas.html#por-qué-programar-para-analizar-datos",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
+    "section": "¿Por qué programar para analizar datos?",
+    "text": "¿Por qué programar para analizar datos?\nExisten muchas diferencias entre hacer algo y programarlo:\n\nAprender a programar es un cambio de perspectiva: pasamos de hacer cosas a planificar cosas 💅🏼\n\nDesde la mera Acción 🔧 a la Instrucción 🧠 y luego al Proceso ⚙️\n\nTrabajamos desde arriba, viendo todos sus pasos y componentes 👩🏻‍💻\nPasos independientes, reutilizables, mejorables, intercambiables ⚙️\nEl trabajo que hagas puede servirte a futuro, a ti y a otrxs ♻️\nResultados replicables 🔄 que dan paso a la automatización 🏭"
+  },
+  {
+    "objectID": "diapositivas.html#cruce-de-datos-o-left-join",
+    "href": "diapositivas.html#cruce-de-datos-o-left-join",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
+    "section": "Cruce de datos o left join",
+    "text": "Cruce de datos o left join\n\n Ver tutorial\n\nPara cruzar dos tablas de datosusamos left_join() de {dplyr}"
+  },
+  {
+    "objectID": "diapositivas.html#mapas-de-chile",
+    "href": "diapositivas.html#mapas-de-chile",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
+    "section": "Mapas de Chile",
+    "text": "Mapas de Chile\n\n Ver tutorial\n\nEl paquete {chilemapas} ofrece funciones que simplifican la obtención de mapas de Chile en R.\n\n# install.packages(\"chilemapas\")\nlibrary(chilemapas)\n\nmapa_comunas |&gt; \n  filter(codigo_region == 14)\n\n# A tibble: 12 × 4\n   codigo_comuna codigo_provincia codigo_region                         geometry\n   &lt;chr&gt;         &lt;chr&gt;            &lt;chr&gt;                       &lt;MULTIPOLYGON [°]&gt;\n 1 14203         142              14            (((-71.65597 -40.35386, -71.657…\n 2 14204         142              14            (((-71.88915 -40.55144, -71.891…\n 3 14201         142              14            (((-73.15077 -40.06596, -73.147…\n 4 14202         142              14            (((-71.81459 -40.08101, -71.820…\n 5 14104         141              14            (((-72.02965 -39.93203, -72.034…\n 6 14105         141              14            (((-72.61245 -39.62475, -72.607…\n 7 14103         141              14            (((-72.32959 -39.51024, -72.327…\n 8 14106         141              14            (((-72.83588 -39.41328, -72.841…\n 9 14107         141              14            (((-72.92395 -39.94016, -72.916…\n10 14108         141              14            (((-71.81459 -40.08101, -71.815…\n11 14102         141              14            (((-73.39203 -39.88653, -73.389…\n12 14101         141              14            (((-73.2668 -39.88605, -73.2621…"
+  },
+  {
+    "objectID": "diapositivas.html#cargar-datos-geoespaciales",
+    "href": "diapositivas.html#cargar-datos-geoespaciales",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
+    "section": "Cargar datos geoespaciales",
+    "text": "Cargar datos geoespaciales\n\nlibrary(sf)\nmapa_comunas &lt;- st_read(\"datos/mapas/mapa_comunas.geojson\")"
   }
 ]

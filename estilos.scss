@@ -38,8 +38,12 @@ p {
   color: $body-color;
   
   code {
-    padding: 3px;
+    padding: 3px !important;
   }
+}
+
+.cell code {
+  padding: 14px 6px !important; 
 }
 
 a {
