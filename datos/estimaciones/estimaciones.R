@@ -111,4 +111,60 @@ migracion |>
   pivot_longer(cols = where(is.numeric),
                names_to = "año", 
                values_to = "migrantes")
-  
+
+
+
+poblacion <- read_xlsx("datos/estimaciones/estimaciones-y-proyecciones-tabulados.xlsx",
+                       sheet = 3)
+
+poblacion_2 <- poblacion |> 
+  slice(-c(1:5)) |> 
+  row_to_names(1) |> 
+  rename(variables = 1) |> 
+  print(n=Inf)
+
+# pob_total <- poblacion_2 |> 
+#   slice(2:103) |> 
+#   mutate(sexo = "Total") |> 
+#   print(n=Inf)
+# 
+# pob_hombres <- poblacion_2 |> 
+#   slice(106:207) |> 
+#   mutate(sexo = "Hombres") |> 
+#   print(n=Inf)
+# 
+# pob_mujeres <- poblacion_2 |> 
+#   slice(210:311) |> 
+#   mutate(sexo = "Mujeres") |> 
+#   print(n=Inf)
+
+poblacion_3 <- poblacion_2 |> 
+  mutate(sexo = case_when(
+    row_number() >= 2 & row_number() <= 103 ~ "Ambos",
+    row_number() >= 106 & row_number() <= 207 ~ "Hombres",
+    row_number() >= 210 & row_number() <= 311 ~ "Mujeres",
+    TRUE ~ NA_character_
+  )) |> 
+  relocate(sexo, .after = 1) |> 
+  filter(!is.na(`1992`)) |> 
+  filter(variables != "Total") |> 
+  filter(sexo != "Ambos")
+
+poblacion_3 |> 
+  distinct(variables) |> print(n=Inf)
+
+poblacion_3 |> 
+  distinct(sexo) |> print(n=Inf)
+
+
+poblacion_3 |> 
+  distinct(sexo, variables) |> 
+  print(n=Inf)
+
+poblacion_3 |> 
+  filter(sexo == "Mujeres")
+
+poblacion_3 |> names()
+
+
+writexl::write_xlsx(poblacion_3, "datos/estimaciones/estimaciones_poblacion.xlsx")

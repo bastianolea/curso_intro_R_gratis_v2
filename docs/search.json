@@ -326,7 +326,7 @@
     "href": "diapositivas.html#cruce-de-datos-o-left-join",
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Cruce de datos o left join",
-    "text": "Cruce de datos o left join\n\n Ver tutorial\n\nPara cruzar dos tablas de datosusamos left_join() de {dplyr}"
+    "text": "Cruce de datos o left join\n\n Ver tutorial\n\nPara cruzar dos tablas de datosusamos left_join() de {dplyr}\n\n\n\n\n\n\n  Descargar datos de clasificación comunal en Excel"
   },
   {
     "objectID": "diapositivas.html#mapas-de-chile",
@@ -341,5 +341,12 @@
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Cargar datos geoespaciales",
     "text": "Cargar datos geoespaciales\n\nlibrary(sf)\nmapa_comunas &lt;- st_read(\"datos/mapas/mapa_comunas.geojson\")"
+  },
+  {
+    "objectID": "diapositivas.html#ejercicios",
+    "href": "diapositivas.html#ejercicios",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
+    "section": "Ejercicios",
+    "text": "Ejercicios\nAlgunos conjuntos de datos limpios para practicar\n\n  Datos de clasificaciones comunales\n\n\n  Datos de estimaciones de población\n\n\n  Datos de población según género"
   }
 ]

@@ -14,3 +14,4 @@ clasificacion <- clasificacion |>
 
 # guardar
 readr::write_csv2(clasificacion, "datos/clasificacion/clasificacion.csv")
+writexl::write_xlsx(clasificacion, "datos/clasificacion/clasificacion.xlsx")

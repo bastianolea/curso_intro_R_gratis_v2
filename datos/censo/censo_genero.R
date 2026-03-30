@@ -16,6 +16,11 @@ genero_long <- genero |>
                names_to = "genero",
                values_to = "poblacion") |> 
   rename(total = 3)
+
+
+genero_long |> 
+  clean_names() |> 
+  writexl::write_xlsx("datos/censo/genero.xlsx")
   
 
 genero_porcentaje <- genero_long |> 

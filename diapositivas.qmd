@@ -1249,6 +1249,85 @@ datos |>
 :::
 
 
+----
+
+
+## Cruce de datos o _left join_
+
+::: {.boton .absolute top=0% right=0%}
+[{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/left_join/)
+:::
+
+Para cruzar dos tablas de datos<br>usamos `left_join()` de `{dplyr}`
+
+<br>
+
+::: {.fragment}
+![](imagenes/left_join.png){.centrar style='max-height: 340px;'}
+:::
+
+<br>
+
+::: {.fragment .boton}
+<a href="https://github.com/bastianolea/curso_intro_R_gratis_v2/raw/main/datos/clasificacion/clasificacion.xlsx" target="_blank"> {{< fa file-download >}} Descargar datos de clasificación comunal en Excel</a>
+:::
+
+
+----
+
+
+### Cruzando datos {{< fa table >}}
+
+Veamos un ejemplo donde cruzamos dos tablas, la de **pobreza** y una nueva de **clasificación comunal** (urbana, mixta, rural según la [PNDR](https://bibliotecadigital.odepa.gob.cl/handle/20.500.12650/74476)), a partir de la columna que tienen en común: `codigo`
+
+::: {.fragment}
+```{r}
+#| message: false
+clasificacion <- readr::read_csv2("datos/clasificacion/clasificacion.csv")
+```
+:::
+
+::: {.fragment}
+```{r}
+clasificacion_b <- clasificacion |> 
+  select(codigo, clasificacion)
+```
+:::
+
+::: {.fragment}
+```{r left_join}
+datos_clasif <- datos |> 
+  select(codigo, comuna, personas, porcentaje) |> 
+  mutate(codigo = as.numeric(codigo)) |>
+  left_join(clasificacion_b, by = "codigo")
+
+datos_clasif |> head(n = 3)
+```
+:::
+
+
+----
+
+
+## Ejercicios
+
+Algunos conjuntos de datos limpios para practicar
+
+
+::: { .boton}
+<a href="https://github.com/bastianolea/curso_intro_R_gratis_v2/raw/main/datos/clasificacion/clasificacion.xlsx" target="_blank"> {{< fa file-download >}} Datos de clasificaciones comunales</a>
+:::
+
+
+::: {.boton}
+<a href="https://github.com/bastianolea/curso_intro_R_gratis_v2/raw/main/datos/estimaciones/estimaciones_poblacion.xlsx" target="_blank"> {{< fa file-download >}} Datos de estimaciones de población</a>
+:::
+
+::: {.boton}
+<a href="https://github.com/bastianolea/curso_intro_R_gratis_v2/raw/main/datos/censo/genero.xlsx" target="_blank"> {{< fa file-download >}} Datos de población según género</a>
+:::
+
+
 
 
 # `{ggplot2}`
@@ -1515,55 +1594,6 @@ datos |>
 
 
 # Herramientas avanzadas para trabajar con datos
-
-----
-
-## Cruce de datos o _left join_
-
-::: {.boton .absolute top=0% right=0%}
-[{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/left_join/)
-:::
-
-Para cruzar dos tablas de datos<br>usamos `left_join()` de `{dplyr}`
-
-<br>
-
-::: {.fragment}
-![](imagenes/left_join.png){.centrar style='max-height: 400px;'}
-:::
-
-----
-
-
-### Cruzando datos {{< fa table >}}
-
-Veamos un ejemplo donde cruzamos dos tablas, la de **pobreza** y una nueva de **clasificación comunal** (urbana, mixta, rural según la [PNDR](https://bibliotecadigital.odepa.gob.cl/handle/20.500.12650/74476)), a partir de la columna que tienen en común: `codigo`
-
-::: {.fragment}
-```{r}
-#| message: false
-clasificacion <- readr::read_csv2("datos/clasificacion/clasificacion.csv")
-```
-:::
-
-::: {.fragment}
-```{r}
-clasificacion_b <- clasificacion |> 
-  select(codigo, clasificacion)
-```
-:::
-
-::: {.fragment}
-```{r left_join}
-datos_clasif <- datos |> 
-  select(codigo, comuna, personas, porcentaje) |> 
-  mutate(codigo = as.numeric(codigo)) |>
-  left_join(clasificacion_b, by = "codigo")
-
-datos_clasif |> head()
-```
-:::
-
 
 ----
 
