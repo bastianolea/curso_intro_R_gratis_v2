@@ -20,6 +20,7 @@ genero_long <- genero |>
 
 genero_long |> 
   clean_names() |> 
+  filter(!is.na(region)) |>
   writexl::write_xlsx("datos/censo/genero.xlsx")
   
 
