@@ -837,35 +837,7 @@ library(dplyr)
 
 ----
 
-## Funciones comunes
 
-::: {.incremental}
-- `head()`, `tail()`, `glimpse()`: vistazos a los datos
-- `select()`: seleccionar columnas o variables de una tabla
-- `slice()`: extraer filas de una tabla por su posición o distintos criterios
-- `pull()`: extraer una columna como vector
-- `filter()`: filtrar observaciones en base a condiciones personalizadas
-- `distinct()`: filtrar observaciones repetidas en una o más columnas
-- `count()`: conteo de casos únicos en una o más columnas
-- `mutate()`: crear columnas entregando valores, funciones sobre columnas, o calculando a partir de otras columnas
-:::
-
-----
-
-
-## Tutoriales de `{dplyr}`
-
-Para que puedan repasar o guiarse con **casos básicos de uso** de `{dplyr}` con **datos reales**, dejo un par de tutoriales:
-
-::: {.boton .pad}
-[{{< fa file-lines >}} Tutorial con datos censales ](https://bastianolea.rbind.io/blog/r_introduccion/tutorial_dplyr_censo/)
-:::
-
-::: {.boton .pad}
-[{{< fa file-lines >}} Tutorial con datos sociales](https://bastianolea.rbind.io/blog/r_introduccion/tutorial_dplyr_campamentos/)
-:::
-
-----
 
 ## Conector
 
@@ -876,7 +848,7 @@ Para que puedan repasar o guiarse con **casos básicos de uso** de `{dplyr}` con
 El conector o _pipe_ `|>` (o también `%>%`) nos permite encadenar varias funciones de forma más legible.
 
 ::: {.centrar style="font-size: 200%"}
-`|>`  `%>%`
+`|>` o `%>%`
 :::
 
 ::: {.fragment}
@@ -990,32 +962,30 @@ datos |>
 
 ----
 
+### ¿Qué estamos haciendo?
 
-## Filtrar datos
+Al aplicar una función sobre un _dataframe,_ por ejemplo, `select()` para seleccionar columnas, **no estamos modificando los datos**, sino que estamos **trabajando con una copia** de los datos para no afectar los datos originales.
 
-::: {.boton .absolute top=-1% right=0%}
-[{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/r_introduccion/dplyr_intro/#filtrar-datos)
-:::
+Todo lo que hagamos con `{dplyr}` serán **pruebas** y **exploración** de los datos, hasta que **decidamos** que los cambios que hagamos deben guardarse, así que entonces los **asignamos** a un **objeto nuevo**.
 
-- Para filtrar, realizamos una **comparación** entre los valores de una columna y un valor específico.
-
-
-::: {.fragment}
 ```{r}
-#| message: false
-library(dplyr)
+#| eval: false
 
+# prueba sin consecuencias
 datos |> 
-  filter(porcentaje > 0.35) |> 
-  arrange(desc(porcentaje)) |> 
-  head()
-```
-:::
+  select(comuna, personas)
 
+# creamos un nuevo objeto a partir de los datos originales
+datos_filtrados <- datos |> 
+  select(comuna, personas)
+```
+
+Como asignamos los resultados a un **objeto nuevo**, tampoco estamos modificando ni afectando los datos originales. Así mantenemos un proceso **reproducible!**
 
 ----
 
-### Comparaciones
+
+## Comparaciones
 
 Podemos usar cifras u objetos para compararlas entre sí: la respuesta será `TRUE` (verdadero) o `FALSE` (falso).
 
@@ -1053,6 +1023,30 @@ Las comparaciones son el principio que luego nos permitirá filtrar datos, crear
 ----
 
 
+## Filtrar datos
+
+::: {.boton .absolute top=-1% right=0%}
+[{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/r_introduccion/dplyr_intro/#filtrar-datos)
+:::
+
+- Para filtrar, realizamos una **comparación** entre los valores de una columna y un valor específico.
+
+
+::: {.fragment}
+```{r}
+#| message: false
+library(dplyr)
+
+datos |> 
+  filter(porcentaje > 0.35) |> 
+  arrange(desc(porcentaje)) |> 
+  head()
+```
+:::
+
+
+----
+
 
 ## Crear/modificar variables
 
@@ -1087,6 +1081,23 @@ datos |>
 ```
 :::
 ::::
+
+----
+
+## Funciones comunes
+
+Algunas de las funciones más comunes de usar en `{dplyr}`, que son también las que usaremos para interactuar con los datos.
+
+::: {.incremental}
+- `head()`, `tail()`, `glimpse()`: vistazos a los datos
+- `select()`: seleccionar columnas o variables de una tabla
+- `slice()`: extraer filas de una tabla por su posición o distintos criterios
+- `pull()`: extraer una columna como vector
+- `filter()`: filtrar observaciones en base a condiciones personalizadas
+- `distinct()`: filtrar observaciones repetidas en una o más columnas
+- `count()`: conteo de casos únicos en una o más columnas
+- `mutate()`: crear columnas entregando valores, funciones sobre columnas, o calculando a partir de otras columnas
+:::
 
 ----
 
@@ -1193,6 +1204,23 @@ datos |>
 
 
 ----
+
+
+## Tutoriales de `{dplyr}`
+
+Para que puedan repasar o guiarse con **casos básicos de uso** de `{dplyr}` con **datos reales**, dejo un par de tutoriales:
+
+::: {.boton .pad}
+[{{< fa file-lines >}} Tutorial con datos censales ](https://bastianolea.rbind.io/blog/r_introduccion/tutorial_dplyr_censo/)
+:::
+
+::: {.boton .pad}
+[{{< fa file-lines >}} Tutorial con datos sociales](https://bastianolea.rbind.io/blog/r_introduccion/tutorial_dplyr_campamentos/)
+:::
+
+----
+
+
 
 ## Resúmenes de datos
 
@@ -1447,7 +1475,7 @@ Existen muchos paquetes que extienden las capacidades de `{ggplot2}`:
 ::::
 
 ::: {.aside}
-Acá hay una [lista de extensiones de `ggplot2`](https://exts.ggplot2.tidyverse.org/gallery/)
+Acá hay una [lista de extensiones de `ggplot2`](https://bastianolea.rbind.io/blog/ggplot_extensiones/)
 :::
 
 

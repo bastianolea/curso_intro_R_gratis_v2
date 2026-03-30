@@ -74,7 +74,7 @@
     "href": "diapositivas.html#comparaciones",
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Comparaciones",
-    "text": "Comparaciones\nPodemos usar cifras u objetos para compararlas entre sí: la respuesta será TRUE (verdadero) o FALSE (falso).\n\n\n\n\nedad &gt;= 18\n\n[1] TRUE\n\n\n\n\n\nminimo &lt;- 35\nedad &gt; minimo\n\n[1] FALSE\n\n\n\n\n\naño == 2024\n\n[1] FALSE\n\n\n\n\n\naño != 2024\n\n[1] TRUE\n\n\n\n\n\n\nLas comparaciones son el principio que luego nos permitirá filtrar datos, crear variables, y más!"
+    "text": "Comparaciones\nPodemos usar cifras u objetos para compararlas entre sí: la respuesta será TRUE (verdadero) o FALSE (falso).\n\n\n\nedad &gt;= 18\n\n[1] TRUE\n\n\n\n\n\nminimo &lt;- 35\nedad &gt; minimo\n\n[1] FALSE\n\n\n\n\n\naño == 2024\n\n[1] FALSE\n\n\n\n\n\naño != 2024\n\n[1] TRUE\n\n\n\n\nLas comparaciones son el principio que luego nos permitirá filtrar datos, crear variables, y más!"
   },
   {
     "objectID": "diapositivas.html#vectores",
@@ -158,14 +158,14 @@
     "href": "diapositivas.html#funciones-comunes",
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Funciones comunes",
-    "text": "Funciones comunes\n\nhead(), tail(), glimpse(): vistazos a los datos\nselect(): seleccionar columnas o variables de una tabla\nslice(): extraer filas de una tabla por su posición o distintos criterios\npull(): extraer una columna como vector\nfilter(): filtrar observaciones en base a condiciones personalizadas\ndistinct(): filtrar observaciones repetidas en una o más columnas\ncount(): conteo de casos únicos en una o más columnas\nmutate(): crear columnas entregando valores, funciones sobre columnas, o calculando a partir de otras columnas"
+    "text": "Funciones comunes\nAlgunas de las funciones más comunes de usar en {dplyr}, que son también las que usaremos para interactuar con los datos.\n\nhead(), tail(), glimpse(): vistazos a los datos\nselect(): seleccionar columnas o variables de una tabla\nslice(): extraer filas de una tabla por su posición o distintos criterios\npull(): extraer una columna como vector\nfilter(): filtrar observaciones en base a condiciones personalizadas\ndistinct(): filtrar observaciones repetidas en una o más columnas\ncount(): conteo de casos únicos en una o más columnas\nmutate(): crear columnas entregando valores, funciones sobre columnas, o calculando a partir de otras columnas"
   },
   {
     "objectID": "diapositivas.html#conector",
     "href": "diapositivas.html#conector",
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Conector",
-    "text": "Conector\n\n Ver tutorial\n\nEl conector o pipe |&gt; (o también %&gt;%) nos permite encadenar varias funciones de forma más legible.\n\n|&gt; %&gt;%\n\n\nSe escribe con:\n\nWindows:\n\n\n\nMac:"
+    "text": "Conector\n\n Ver tutorial\n\nEl conector o pipe |&gt; (o también %&gt;%) nos permite encadenar varias funciones de forma más legible.\n\n|&gt; o %&gt;%\n\n\nSe escribe con:\n\nWindows:\n\n\n\nMac:"
   },
   {
     "objectID": "diapositivas.html#diferencia-entre-hacer-y-programar",
