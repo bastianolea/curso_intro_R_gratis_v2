@@ -38,7 +38,7 @@ Encuentra todo sobre el curso [en este post](https://bastianolea.rbind.io/blog/c
 :::
 
 ::: {.boton}
-[{{< fa video >}} Grabaciones](https://bastianolea.rbind.io/blog/curso_gratis_r_intro_2/#streaming)
+[{{< fa video >}} Grabaciones](https://www.youtube.com/@bastianolea/streams)
 :::
 
 ::: {.boton}
@@ -1765,6 +1765,14 @@ Puedes escribirme cualquier duda o comentario [por aquí](https://bastianolea.rb
 :::
 
 ::: {.boton}
+[{{< fa brands slack >}} Chat grupal](https://join.slack.com/t/aprende-r/shared_invite/zt-3u1bvfzf6-IenbDD_FfXqK6HnbxZdM2Q)
+:::
+::::
+
+<br>
+
+:::: {.centrar}
+::: {.boton}
 [{{< fa book-open >}} Curso](https://bastianolea.rbind.io/clases/curso_gratis_r_intro_2/)
 :::
 
@@ -1773,7 +1781,7 @@ Puedes escribirme cualquier duda o comentario [por aquí](https://bastianolea.rb
 :::
 
 ::: {.boton}
-[{{< fa video >}} Grabaciones](https://bastianolea.rbind.io/blog/curso_gratis_r_intro_2/#streaming)
+[{{< fa video >}} Grabaciones](https://www.youtube.com/@bastianolea/streams)
 :::
 ::::
 
