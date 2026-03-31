@@ -1,6 +1,7 @@
 # Clase 1
 # Introducción al análisis de datos con R para ciencias sociales
-# Bastián Olea Herrera - https://bastianolea.rbind.io
+# 25-03-2026
+# Bastián Olea Herrera - https://bastianolea.rbind.io - bastianolea@gmail.com
 
 # diapositivas: https://bastianolea.github.io/curso_intro_R_gratis_v2/
 

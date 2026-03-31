@@ -1048,6 +1048,56 @@ datos |>
 ----
 
 
+## Funciones
+
+::: {.incremental}
+- Las **funciones** son pequeños programas que permiten realizar distintas operaciones.
+:::
+
+::: {.centrar .fragment}
+`función(argumento = 123)`
+:::
+
+::: {.fragment}
+Algunas funciones comunes:
+
+```{r}
+#| code-line-numbers: false
+#| eval: false
+mean() # calcular promedio
+median() # calcular mediana
+sum() # sumar elementos
+min() # valor mínimo
+max() # valor máximo
+```
+:::
+
+::: aside
+::: {.fragment}
+Si no sabemos cómo usar una función, podemos buscar su nombre en el panel **Ayuda** de RStudio, o escribir el nombre de la función precedido de un signo de interrogación: `?funcion`
+:::
+:::
+
+----
+
+### Funciones comunes
+
+Algunas de las funciones más comunes de usar en `{dplyr}`, que son también las que usaremos para interactuar con los datos.
+
+::: {.incremental}
+- `head()`, `tail()`, `glimpse()`: vistazos a los datos
+- `select()`: seleccionar columnas o variables de una tabla
+- `slice()`: extraer filas de una tabla por su posición o distintos criterios
+- `pull()`: extraer una columna como vector
+- `filter()`: filtrar observaciones en base a condiciones personalizadas
+- `distinct()`: filtrar observaciones repetidas en una o más columnas
+- `count()`: conteo de casos únicos en una o más columnas
+- `mutate()`: crear columnas entregando valores, funciones sobre columnas, o calculando a partir de otras columnas
+:::
+
+----
+
+
 ## Crear/modificar variables
 
 ::: {.boton .absolute top=0% right=0%}
@@ -1084,55 +1134,6 @@ datos |>
 
 ----
 
-## Funciones comunes
-
-Algunas de las funciones más comunes de usar en `{dplyr}`, que son también las que usaremos para interactuar con los datos.
-
-::: {.incremental}
-- `head()`, `tail()`, `glimpse()`: vistazos a los datos
-- `select()`: seleccionar columnas o variables de una tabla
-- `slice()`: extraer filas de una tabla por su posición o distintos criterios
-- `pull()`: extraer una columna como vector
-- `filter()`: filtrar observaciones en base a condiciones personalizadas
-- `distinct()`: filtrar observaciones repetidas en una o más columnas
-- `count()`: conteo de casos únicos en una o más columnas
-- `mutate()`: crear columnas entregando valores, funciones sobre columnas, o calculando a partir de otras columnas
-:::
-
-----
-
-
-## Funciones
-
-::: {.incremental}
-- Las **funciones** son pequeños programas que permiten realizar distintas operaciones.
-:::
-
-::: {.centrar .fragment}
-`función(argumento = 123)`
-:::
-
-::: {.fragment}
-Algunas funciones comunes:
-
-```{r}
-#| code-line-numbers: false
-#| eval: false
-mean() # calcular promedio
-median() # calcular mediana
-sum() # sumar elementos
-min() # valor mínimo
-max() # valor máximo
-```
-:::
-
-::: aside
-::: {.fragment}
-Si no sabemos cómo usar una función, podemos buscar su nombre en el panel **Ayuda** de RStudio, o escribir el nombre de la función precedido de un signo de interrogación: `?funcion`
-:::
-:::
-
-----
 
 ### Aplicar funciones a columnas
 

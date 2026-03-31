@@ -1032,6 +1032,45 @@ Bastián Olea Herrera
 </div>
 </div>
 </section>
+<section id="funciones" class="slide level2">
+<h2>Funciones</h2>
+<ul>
+<li class="fragment">Las <strong>funciones</strong> son pequeños programas que permiten realizar distintas operaciones.</li>
+</ul>
+<div class="centrar fragment">
+<p><code>función(argumento = 123)</code></p>
+</div>
+<div class="fragment">
+<p>Algunas funciones comunes:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>() <span class="co"># calcular promedio</span></span>
+<span id="cb66-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>() <span class="co"># calcular mediana</span></span>
+<span id="cb66-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>() <span class="co"># sumar elementos</span></span>
+<span id="cb66-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>() <span class="co"># valor mínimo</span></span>
+<span id="cb66-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>() <span class="co"># valor máximo</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+
+<aside><div>
+<div class="fragment">
+<p>Si no sabemos cómo usar una función, podemos buscar su nombre en el panel <strong>Ayuda</strong> de RStudio, o escribir el nombre de la función precedido de un signo de interrogación: <code>?funcion</code></p>
+</div>
+</div></aside></section>
+<section class="slide level2">
+
+<h3 id="funciones-comunes">Funciones comunes</h3>
+<p>Algunas de las funciones más comunes de usar en <code>{dplyr}</code>, que son también las que usaremos para interactuar con los datos.</p>
+<ul>
+<li class="fragment"><code>head()</code>, <code>tail()</code>, <code>glimpse()</code>: vistazos a los datos</li>
+<li class="fragment"><code>select()</code>: seleccionar columnas o variables de una tabla</li>
+<li class="fragment"><code>slice()</code>: extraer filas de una tabla por su posición o distintos criterios</li>
+<li class="fragment"><code>pull()</code>: extraer una columna como vector</li>
+<li class="fragment"><code>filter()</code>: filtrar observaciones en base a condiciones personalizadas</li>
+<li class="fragment"><code>distinct()</code>: filtrar observaciones repetidas en una o más columnas</li>
+<li class="fragment"><code>count()</code>: conteo de casos únicos en una o más columnas</li>
+<li class="fragment"><code>mutate()</code>: crear columnas entregando valores, funciones sobre columnas, o calculando a partir de otras columnas</li>
+</ul>
+</section>
 <section id="crearmodificar-variables" class="slide level2">
 <h2>Crear/modificar variables</h2>
 <div class="boton absolute" style="top: 0%; right: 0%; ">
@@ -1046,10 +1085,10 @@ Bastián Olea Herrera
 <div class="columns">
 <div class="column fragment">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a></a>datos <span class="sc">|&gt;</span> </span>
-<span id="cb66-2"><a></a>  <span class="fu">select</span>(codigo, comuna) <span class="sc">|&gt;</span> </span>
-<span id="cb66-3"><a></a>  <span class="fu">mutate</span>(<span class="at">saludo =</span> <span class="st">"hola"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb66-4"><a></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb67-2"><a></a>  <span class="fu">select</span>(codigo, comuna) <span class="sc">|&gt;</span> </span>
+<span id="cb67-3"><a></a>  <span class="fu">mutate</span>(<span class="at">saludo =</span> <span class="st">"hola"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb67-4"><a></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
   codigo comuna        saludo
@@ -1064,10 +1103,10 @@ Bastián Olea Herrera
 </div>
 </div><div class="column fragment">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a></a>datos <span class="sc">|&gt;</span> </span>
-<span id="cb68-2"><a></a>  <span class="fu">select</span>(comuna, personas) <span class="sc">|&gt;</span> </span>
-<span id="cb68-3"><a></a>  <span class="fu">mutate</span>(<span class="at">miles =</span> personas<span class="sc">/</span><span class="dv">1000</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb68-4"><a></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a></a>datos <span class="sc">|&gt;</span> </span>
+<span id="cb69-2"><a></a>  <span class="fu">select</span>(comuna, personas) <span class="sc">|&gt;</span> </span>
+<span id="cb69-3"><a></a>  <span class="fu">mutate</span>(<span class="at">miles =</span> personas<span class="sc">/</span><span class="dv">1000</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb69-4"><a></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
   comuna        personas  miles
@@ -1082,44 +1121,6 @@ Bastián Olea Herrera
 </div>
 </div></div>
 </section>
-<section id="funciones-comunes" class="slide level2">
-<h2>Funciones comunes</h2>
-<p>Algunas de las funciones más comunes de usar en <code>{dplyr}</code>, que son también las que usaremos para interactuar con los datos.</p>
-<ul>
-<li class="fragment"><code>head()</code>, <code>tail()</code>, <code>glimpse()</code>: vistazos a los datos</li>
-<li class="fragment"><code>select()</code>: seleccionar columnas o variables de una tabla</li>
-<li class="fragment"><code>slice()</code>: extraer filas de una tabla por su posición o distintos criterios</li>
-<li class="fragment"><code>pull()</code>: extraer una columna como vector</li>
-<li class="fragment"><code>filter()</code>: filtrar observaciones en base a condiciones personalizadas</li>
-<li class="fragment"><code>distinct()</code>: filtrar observaciones repetidas en una o más columnas</li>
-<li class="fragment"><code>count()</code>: conteo de casos únicos en una o más columnas</li>
-<li class="fragment"><code>mutate()</code>: crear columnas entregando valores, funciones sobre columnas, o calculando a partir de otras columnas</li>
-</ul>
-</section>
-<section id="funciones" class="slide level2">
-<h2>Funciones</h2>
-<ul>
-<li class="fragment">Las <strong>funciones</strong> son pequeños programas que permiten realizar distintas operaciones.</li>
-</ul>
-<div class="centrar fragment">
-<p><code>función(argumento = 123)</code></p>
-</div>
-<div class="fragment">
-<p>Algunas funciones comunes:</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>() <span class="co"># calcular promedio</span></span>
-<span id="cb70-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>() <span class="co"># calcular mediana</span></span>
-<span id="cb70-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>() <span class="co"># sumar elementos</span></span>
-<span id="cb70-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>() <span class="co"># valor mínimo</span></span>
-<span id="cb70-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>() <span class="co"># valor máximo</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-
-<aside><div>
-<div class="fragment">
-<p>Si no sabemos cómo usar una función, podemos buscar su nombre en el panel <strong>Ayuda</strong> de RStudio, o escribir el nombre de la función precedido de un signo de interrogación: <code>?funcion</code></p>
-</div>
-</div></aside></section>
 <section class="slide level2">
 
 <h3 id="aplicar-funciones-a-columnas">Aplicar funciones a columnas</h3>
