@@ -88,7 +88,7 @@
     "href": "diapositivas.html#funciones",
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Funciones",
-    "text": "Funciones\n\nLas funciones son pequeños programas que permiten realizar distintas operaciones.\n\n\nfunción(argumento = 123)\n\n\nAlgunas funciones comunes:\n\nmean() # calcular promedio\nmedian() # calcular mediana\nsum() # sumar elementos\nmin() # valor mínimo\nmax() # valor máximo\n\n\n\n\n\nSi no sabemos cómo usar una función, podemos buscar su nombre en el panel Ayuda de RStudio, o escribir el nombre de la función precedido de un signo de interrogación: ?funcion"
+    "text": "Funciones\n\nLas funciones son pequeños programas que permiten realizar distintas operaciones.\n\n\nfunción(argumento = 123)\n\n\nAlgunas funciones comunes:\n\nmean() # calcular promedio\nmedian() # calcular mediana\nsum() # sumar elementos\nmin() # valor mínimo\nmax() # valor máximo\n\n\n\nPor ejemplo:\n\nmean(c(1, 2, 3, 4, 5))\n\n[1] 3\n\n\n\n\n\n\nSi no sabemos cómo usar una función, podemos buscar su nombre en el panel Ayuda de RStudio, o escribir el nombre de la función precedido de un signo de interrogación: ?funcion"
   },
   {
     "objectID": "diapositivas.html#portafolio",
@@ -130,7 +130,7 @@
     "href": "diapositivas.html#paquetes",
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Paquetes",
-    "text": "Paquetes\n\n\n\n\n\nExtensiones de R que te permiten agregar nuevas y mejores funcionalidades.\nSe instalan desde internet\nSon creados y mantenidos por la comunidad\nSe revisan para garantizar su seguridad y estabilidad\n\n\n\ninstall.packages()"
+    "text": "Paquetes\n\n\n\n\n\nExtensiones de R que te permiten agregar nuevas funciones al lenguaje, datos, y más.\nSe instalan desde internet\nSon creados y mantenidos por la comunidad\nSe revisan para garantizar su seguridad y estabilidad\n\n\n\ninstall.packages()"
   },
   {
     "objectID": "diapositivas.html#dplyr",
@@ -227,8 +227,8 @@
     "objectID": "diapositivas.html#datos-para-practicar",
     "href": "diapositivas.html#datos-para-practicar",
     "title": "Introducción al análisis de datos con R, 2ª versión",
-    "section": "Datos para practicar ",
-    "text": "Datos para practicar \n\n Estimaciones de población Censo\n\n\n Variables educacionales Censo 2024\n\n\n Estimación de pobreza multidimensional 2022\n\n\n Clasificaciones comunales 2024\n\nPuedes encontrar más datos en mi repositorio de datos sociales, en el banco integrado de datos del Ministerio de Desarrollo, en los datos abiertos del Estado Chile, y muchos más.\n\n\n\nAhora que ya sabes lo básico, todo lo demás se trata de aprender piezas y herramientas que puedes ir agregando a tus análisis! 🧩🛠️"
+    "section": "Datos para practicar",
+    "text": "Datos para practicar\nAlgunos conjuntos de datos limpios para practicar\n\n  Datos de clasificaciones comunales\n\n\n  Datos de estimaciones de población\n\n\n  Datos de escolaridad por comuna\n\n\n  Datos de población según género"
   },
   {
     "objectID": "diapositivas.html#cruzar-datos",
@@ -242,7 +242,7 @@
     "href": "diapositivas.html#transformar-datos",
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Transformar datos",
-    "text": "Transformar datos\n\n Ver tutorial\n\n\nEl paquete {tidyr} se especializa en transformar la estructura de los datos.\nEsto nos permite manipular los datos para que sea más cómodo o lógico realizar ciertas operaciones.\n\nPor ejemplo:\n\nSi necesitamos sumar varias variables, es más cómodo tenerlas en filas (para poder usar algo como sum(valores)) que en columnas (y tener que sumar a+b+c+d…)\nSi queremos comparar varias variables, o mostrarlas a un público, es mejor que estén lado a lado, como en las tablas comunes."
+    "text": "Transformar datos\n\n Ver tutorial\n\n\nlibrary(tidyr)\n\n\nEl paquete {tidyr} se especializa en transformar la estructura de los datos.\nEsto nos permite manipular los datos para que sea más cómodo o lógico realizar ciertas operaciones.\nPor ejemplo:\nSi necesitamos sumar varias variables, es más cómodo tenerlas en filas (para poder usar algo como sum(valores)) que en columnas (y tener que sumar a+b+c+d…)\nSi queremos comparar varias variables, o mostrarlas a un público, es mejor que estén lado a lado, como en las tablas comunes."
   },
   {
     "objectID": "diapositivas.html#datos-de-texto",
@@ -256,7 +256,7 @@
     "href": "diapositivas.html#consejos",
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Consejos",
-    "text": "Consejos\n\nMantengan su propio libro de aprendizajes 📝\nLean bien los errores y busquen su significado\nSi algo sale mal, prueben paso a paso\nTambién pueden devolverse y empezar de nuevo\nDense una vuelta y a veces la respuesta llega solita 😌\nNo se vuelvan dependientes de la IA 😵\n\nSi quieren usar IA:\n\nAutocompletado de GitHub Copilot\nMensaje de sistema para su proveedor de IA\n\n\nAprendendan a buscar bien en internet\nCompartan lo que hacen y socialicen sus aprendizajes! ✨"
+    "text": "Consejos\n\nMantengan su propio libro de aprendizajes 📝\nLean bien los errores y busquen su significado\nSi algo sale mal, prueben paso a paso\nTambién pueden devolverse y empezar de nuevo\nDense una vuelta y a veces la respuesta llega solita 😌\nNo se vuelvan dependientes de la IA 😵\nSi quieren usar IA:\nAutocompletado de GitHub Copilot\nMensaje de sistema para su proveedor de IA\nAprendendan a buscar bien en internet\nCompartan lo que hacen y socialicen sus aprendizajes! ✨"
   },
   {
     "objectID": "diapositivas.html#paneles-de-rstudio",
@@ -291,35 +291,35 @@
     "href": "diapositivas.html#gramática-aplicada-al-código",
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Gramática aplicada al código",
-    "text": "Gramática aplicada al código\nPor un lado tenemos los conceptos que constituyen la gramática de los gráficos, y por el otro un ejemplo de código aplicando estos conceptos.\n\n\n\n\nDatos línea 1\nMapeos línea 2\nCapas línea 3\nEscalas línea 4\nFacetas línea 5\nCoordenadas línea 6\nTemas línea 7\n\n\n\n\nggplot(iris) + # datos\n  aes(Sepal.Width, Sepal.Length, color = Species) + # mapeos\n  geom_point(size = 1) + # capas\n  scale_color_discrete() + # escalas\n  facet_wrap(~Species) + # facetas\n  coord_cartesian(xlim = c(2, 5)) + # coordenadas\n  theme_linedraw() # temas"
+    "text": "Gramática aplicada al código\n\n\nConceptos que constituyen la gramática de los gráficos:\n\n\nDatos línea 1\nMapeos línea 2\nCapas línea 3\nEscalas línea 4\nFacetas línea 5\nCoordenadas línea 6\nTemas línea 7\n\n\n\nConceptos de la gramática de gráficos aplicados al código:\n\nggplot(iris) + # datos\n  aes(Sepal.Width, Sepal.Length, color = Species) + # mapeos\n  geom_point(size = 1) + # capas\n  scale_color_discrete() + # escalas\n  facet_wrap(~Species) + # facetas\n  coord_cartesian(xlim = c(2, 5)) + # coordenadas\n  theme_linedraw() # temas"
   },
   {
     "objectID": "diapositivas.html#colores-del-gráfico",
     "href": "diapositivas.html#colores-del-gráfico",
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Colores del gráfico",
-    "text": "Colores del gráfico\n\ngrafico &lt;- ggplot(iris) +\n  aes(Sepal.Width, Sepal.Length, color = Species) + \n  geom_point(size = 1)\n\n\n\nColores generales del gráfico\n\ngrafico_tema &lt;- grafico +\n  theme_linedraw(paper = \"#EAD2FA\", \n                ink = \"#553A74\", \n                accent = \"#9069C0\")\n\ngrafico_tema\n\n\n\n\n\n\n\n\n\nColores de las categorías\n\ngrafico_color &lt;- grafico_tema +\n    scale_color_discrete(\n      palette = c(\"#AC558A\", \"#553A74\", \n                  \"#666BC7\"))\n\ngrafico_color"
+    "text": "Colores del gráfico\n\ngrafico &lt;- ggplot(iris) +\n  aes(Sepal.Width, Sepal.Length, color = Species) + \n  geom_point(alpha = 0.7)\n\n\n\nColores generales del gráfico\n\ngrafico_tema &lt;- grafico +\n  theme_linedraw(paper = \"#EAD2FA\", \n                 ink = \"#553A74\", \n                 accent = \"#9069C0\")\ngrafico_tema\n\n\n\n\n\n\n\n\n\nColores de las categorías\n\ngrafico_color &lt;- grafico_tema +\n  scale_color_discrete(\n    palette = c(\"#AC558A\", \"#553A74\", \n                \"#666BC7\"))\ngrafico_color"
   },
   {
     "objectID": "diapositivas.html#temas",
     "href": "diapositivas.html#temas",
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Temas",
-    "text": "Temas\n\n\nFunciones de temas\n\ntheme_minimal()\ntheme_classic()\ntheme_void()\ntheme_linedraw()\n\n\nComponentes del gráfico\n\npanel\ngrid\nscales\naxis\nstrip\nlegend\n\n\nTipos de componente\n\nelement_text(), txtos\nelement_line(), líneas\nelement_rect(), rectángulos\nelement_blank(), ocultar"
+    "text": "Temas\nConfiguración completa de cualquier aspecto o elemento del gráfico.\n\n\nFunciones de temas\nAgregar un tema prediseñado que cambia la apariencia general del gráfico:\n\ntheme_minimal()\ntheme_classic()\ntheme_void()\ntheme_linedraw()\n\n\nComponentes del gráfico\nEn theme() podemos cambiar aspectos específicos. Los principales empiezan con:\n\npanel\ngrid\nscales\naxis\nstrip\nlegend\n\n\nTipos de componente\nCada aspecto del gráfico es de un tipo distinto, y cada tipo se configura mediante una función:\n\nelement_text(), txtos\nelement_line(), líneas\nelement_rect(), rectángulos\nelement_blank(), ocultar"
   },
   {
     "objectID": "diapositivas.html#extensiones-de-ggplot2",
     "href": "diapositivas.html#extensiones-de-ggplot2",
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Extensiones de {ggplot2}",
-    "text": "Extensiones de {ggplot2}\n\nExisten muchos paquetes que extienden las capacidades de {ggplot2}:\n\n\n{ggforce}: nuevas geometrías\n{patchwork}: combinación de gráficos\n{ggrepel}: separación de textos sobrepuestos\n{gganimate}: gráficos animados\n{marquee} y {ggtext}: textos con formato, color, y más\n{ggfx}: shaders, filtros y efectos especiales\n{ggiraph} y {plotly}: gráficos interactivos\n\n\n\n\nAcá hay una lista de extensiones de ggplot2"
+    "text": "Extensiones de {ggplot2}\n\nExisten muchos paquetes que extienden las capacidades de {ggplot2}:\n\n\n{ggforce}: nuevas geometrías\n{patchwork}: combinación de gráficos\n{ggrepel}: separación de textos sobrepuestos\n{gganimate}: gráficos animados\n{marquee} y {ggtext}: textos con formato, color, y más\n{ggiraph} y {plotly}: gráficos interactivos\n\n\n\n\nAcá hay una lista de extensiones de ggplot2"
   },
   {
     "objectID": "diapositivas.html#por-qué-programar-para-analizar-datos",
     "href": "diapositivas.html#por-qué-programar-para-analizar-datos",
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "¿Por qué programar para analizar datos?",
-    "text": "¿Por qué programar para analizar datos?\nExisten muchas diferencias entre hacer algo y programarlo:\n\nAprender a programar es un cambio de perspectiva: pasamos de hacer cosas a planificar cosas 💅🏼\n\nDesde la mera Acción 🔧 a la Instrucción 🧠 y luego al Proceso ⚙️\n\nTrabajamos desde arriba, viendo todos sus pasos y componentes 👩🏻‍💻\nPasos independientes, reutilizables, mejorables, intercambiables ⚙️\nEl trabajo que hagas puede servirte a futuro, a ti y a otrxs ♻️\nResultados replicables 🔄 que dan paso a la automatización 🏭"
+    "text": "¿Por qué programar para analizar datos?\nExisten muchas diferencias entre hacer algo y programarlo:\n\nAprender a programar es un cambio de perspectiva: pasamos de hacer cosas a planificar cosas 💅🏼\nDesde la mera Acción 🔧 a la Instrucción 🧠 y luego al Proceso ⚙️\nTrabajamos desde arriba, viendo todos sus pasos y componentes 👩🏻‍💻\nPasos independientes, reutilizables, mejorables, intercambiables ⚙️\nEl trabajo que hagas puede servirte a futuro, a ti y a otrxs ♻️\nResultados replicables 🔄 que dan paso a la automatización 🏭"
   },
   {
     "objectID": "diapositivas.html#cruce-de-datos-o-left-join",
@@ -333,7 +333,7 @@
     "href": "diapositivas.html#mapas-de-chile",
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Mapas de Chile",
-    "text": "Mapas de Chile\n\n Ver tutorial\n\nEl paquete {chilemapas} ofrece funciones que simplifican la obtención de mapas de Chile en R.\n\n# install.packages(\"chilemapas\")\nlibrary(chilemapas)\n\nmapa_comunas |&gt; \n  filter(codigo_region == 14)\n\n# A tibble: 12 × 4\n   codigo_comuna codigo_provincia codigo_region                         geometry\n   &lt;chr&gt;         &lt;chr&gt;            &lt;chr&gt;                       &lt;MULTIPOLYGON [°]&gt;\n 1 14203         142              14            (((-71.65597 -40.35386, -71.657…\n 2 14204         142              14            (((-71.88915 -40.55144, -71.891…\n 3 14201         142              14            (((-73.15077 -40.06596, -73.147…\n 4 14202         142              14            (((-71.81459 -40.08101, -71.820…\n 5 14104         141              14            (((-72.02965 -39.93203, -72.034…\n 6 14105         141              14            (((-72.61245 -39.62475, -72.607…\n 7 14103         141              14            (((-72.32959 -39.51024, -72.327…\n 8 14106         141              14            (((-72.83588 -39.41328, -72.841…\n 9 14107         141              14            (((-72.92395 -39.94016, -72.916…\n10 14108         141              14            (((-71.81459 -40.08101, -71.815…\n11 14102         141              14            (((-73.39203 -39.88653, -73.389…\n12 14101         141              14            (((-73.2668 -39.88605, -73.2621…"
+    "text": "Mapas de Chile\n\n Ver tutorial\n\nEl paquete {chilemapas} ofrece funciones que simplifican la obtención de mapas de Chile en R.\n\n# install.packages(\"chilemapas\")\nlibrary(chilemapas)\n\nmapa_comunas |&gt; \n  filter(codigo_region == \"14\")\n\n# A tibble: 12 × 4\n   codigo_comuna codigo_provincia codigo_region                         geometry\n   &lt;chr&gt;         &lt;chr&gt;            &lt;chr&gt;                       &lt;MULTIPOLYGON [°]&gt;\n 1 14203         142              14            (((-71.65597 -40.35386, -71.657…\n 2 14204         142              14            (((-71.88915 -40.55144, -71.891…\n 3 14201         142              14            (((-73.15077 -40.06596, -73.147…\n 4 14202         142              14            (((-71.81459 -40.08101, -71.820…\n 5 14104         141              14            (((-72.02965 -39.93203, -72.034…\n 6 14105         141              14            (((-72.61245 -39.62475, -72.607…\n 7 14103         141              14            (((-72.32959 -39.51024, -72.327…\n 8 14106         141              14            (((-72.83588 -39.41328, -72.841…\n 9 14107         141              14            (((-72.92395 -39.94016, -72.916…\n10 14108         141              14            (((-71.81459 -40.08101, -71.815…\n11 14102         141              14            (((-73.39203 -39.88653, -73.389…\n12 14101         141              14            (((-73.2668 -39.88605, -73.2621…"
   },
   {
     "objectID": "diapositivas.html#cargar-datos-geoespaciales",
@@ -347,6 +347,27 @@
     "href": "diapositivas.html#ejercicios",
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Ejercicios",
-    "text": "Ejercicios\nAlgunos conjuntos de datos limpios para practicar\n\n  Datos de clasificaciones comunales\n\n\n  Datos de estimaciones de población\n\n\n  Datos de población según género"
+    "text": "Ejercicios\nAlgunos conjuntos de datos limpios para practicar\n\n  Datos de clasificaciones comunales\n\n\n  Datos de estimaciones de población\n\n\n  Datos de escolaridad por comuna\n\n\n  Datos de población según género"
+  },
+  {
+    "objectID": "diapositivas.html#textos-del-gráfico",
+    "href": "diapositivas.html#textos-del-gráfico",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
+    "section": "Textos del gráfico",
+    "text": "Textos del gráfico\nPodemos configurar y agregar textos del gráfico con la capa labs():\n\n\ngrafico_textos &lt;- grafico_color +\n  labs(x = \"Ancho del sépalo\", \n       y = \"Largo del sépalo\", \n       color = \"Especies\",\n       title = \"Gráfico de dispersión\",\n       subtitle = \"Iris Setosa\")\n\ngrafico_textos"
+  },
+  {
+    "objectID": "diapositivas.html#visualizando-datos-en-un-mapa",
+    "href": "diapositivas.html#visualizando-datos-en-un-mapa",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
+    "section": "Visualizando datos en un mapa",
+    "text": "Visualizando datos en un mapa\nSólo basta con cruzar una tabla con las geometrías\n\n\n# cargar datos de pobreza por comuna\npobreza &lt;- read_xlsx(\"datos/pobreza/estimaciones_pobreza.xlsx\") |&gt; \n  mutate(codigo = as.numeric(codigo))\n\n# filtrar mapa en una región específica\nmapa_region &lt;- mapa_comunas |&gt; \n  filter(codigo_region == \"04\") |&gt; \n  mutate(codigo = as.numeric(codigo_comuna))\n\n# unir el mapa con los datos\nmapa_datos &lt;- mapa_region |&gt; \n  left_join(pobreza, by = \"codigo\")\n\n# visualizar\nmapa_datos |&gt; \n  ggplot() +\n  aes(geometry = geometry,\n      fill = porcentaje * 100) +\n  geom_sf(linewidth = 0) +\n  scale_fill_gradient(low = \"#9F69C7\", high = \"#23102A\") +\n  labs(fill = \"Pobreza\")"
+  },
+  {
+    "objectID": "diapositivas.html#datos-para-practicar-1",
+    "href": "diapositivas.html#datos-para-practicar-1",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
+    "section": "Datos para practicar ",
+    "text": "Datos para practicar \n\n Estimaciones de población Censo\n\n\n Variables educacionales Censo 2024\n\n\n Estimación de pobreza multidimensional 2022\n\n\n Clasificaciones comunales 2024\n\nPuedes encontrar más datos en mi repositorio de datos sociales, en el banco integrado de datos del Ministerio de Desarrollo, en los datos abiertos del Estado Chile, y muchos más.\n\n\n\nAhora que ya sabes lo básico, todo lo demás se trata de aprender piezas y herramientas que puedes ir agregando a tus análisis! 🧩🛠️"
   }
 ]

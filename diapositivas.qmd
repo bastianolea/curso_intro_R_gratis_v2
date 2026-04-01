@@ -62,7 +62,7 @@ Existen muchas diferencias entre _hacer_ algo y **programarlo:**
 
 ::: {.incremental}
 - Aprender a programar es un **cambio de perspectiva**: pasamos de _hacer_ cosas a _planificar_ cosas 💅🏼
-  - Desde la mera **Acción** 🔧 a la **Instrucción** 🧠 y luego al **Proceso** ⚙️
+- Desde la mera **Acción** 🔧 a la **Instrucción** 🧠 y luego al **Proceso** ⚙️
 - Trabajamos **desde arriba**, viendo todos sus pasos y componentes 👩🏻‍💻
 - Pasos independientes, reutilizables, mejorables, intercambiables ⚙️
 - El trabajo que hagas puede **servirte** a futuro, a ti y a otrxs ♻️
@@ -654,7 +654,6 @@ presupuesto - pizza * 10
 
 
 
-
 ## Vectores
 
 Los vectores son **secuencias** de elementos. Un objeto que contiene cero o más datos.
@@ -675,24 +674,57 @@ c(0.2, 0.1, -0.0, -0.1)
 
 ----
 
+### Operaciones sobre vectores
 
-También podemos realizar **comparaciones** sobre los valores de un vector:
-
-```{r}
-edades <- c(54, 34, 65, 21, 32)
-edades > 40
-```
-
-<br> 
-
-O cualquier **operación** sobre sus elementos:
+Podemos realizar cualquier **operación** sobre los elementos de un vector:
 ```{r}
 año <- 2026
-años <- año - edades
-años
+edades <- c(54, 34, 65, 21, 32)
+año - edades
 ```
 
 
+----
+
+
+
+## Funciones
+
+::: {.incremental}
+- Las **funciones** son pequeños programas que permiten realizar distintas operaciones.
+:::
+
+::: {.centrar .fragment}
+`función(argumento = 123)`
+:::
+
+::: {.fragment}
+Algunas funciones comunes:
+
+```{r}
+#| code-line-numbers: false
+#| eval: false
+mean() # calcular promedio
+median() # calcular mediana
+sum() # sumar elementos
+min() # valor mínimo
+max() # valor máximo
+```
+:::
+
+::: {.fragment}
+Por ejemplo:
+
+```{r}
+mean(c(1, 2, 3, 4, 5))
+```
+:::
+
+:::: aside
+::: {.fragment}
+Si no sabemos cómo usar una función, podemos buscar su nombre en el panel **Ayuda** de RStudio, o escribir el nombre de la función precedido de un signo de interrogación: `?funcion`
+:::
+::::
 
 ----
 
@@ -709,7 +741,7 @@ años
 ::: {.column width=40%}
 
 ::: {.incremental}
-- **Extensiones** de R que te permiten agregar **nuevas** y **mejores** funcionalidades.
+- **Extensiones** de R que te permiten agregar **nuevas funciones** al lenguaje, **datos**, y más.
 - Se instalan desde internet
 - Son creados y mantenidos **por la comunidad**
 - Se revisan para garantizar su seguridad y estabilidad
@@ -1020,6 +1052,20 @@ año != 2024
 
 Las comparaciones son el principio que luego nos permitirá filtrar datos, crear variables, y más!
 
+
+----
+
+### Comparaciones sobre vectores
+
+También podemos realizar **comparaciones** sobre los valores de un vector:
+
+```{r}
+edades <- c(54, 34, 65, 21, 32)
+edades > 40
+```
+
+En el fondo, cuando filtremos datos, las **columnas** de un _dataframe_ serán **vectores**, y las comparaciones se harán sobre cada uno de los valores de la columna, entregando un resultado `TRUE` o `FALSE` para cada fila, que luego usaremos para quedarnos sólo con las filas que cumplen la condición que queremos.
+
 ----
 
 
@@ -1048,39 +1094,7 @@ datos |>
 ----
 
 
-## Funciones
-
-::: {.incremental}
-- Las **funciones** son pequeños programas que permiten realizar distintas operaciones.
-:::
-
-::: {.centrar .fragment}
-`función(argumento = 123)`
-:::
-
-::: {.fragment}
-Algunas funciones comunes:
-
-```{r}
-#| code-line-numbers: false
-#| eval: false
-mean() # calcular promedio
-median() # calcular mediana
-sum() # sumar elementos
-min() # valor mínimo
-max() # valor máximo
-```
-:::
-
-::: aside
-::: {.fragment}
-Si no sabemos cómo usar una función, podemos buscar su nombre en el panel **Ayuda** de RStudio, o escribir el nombre de la función precedido de un signo de interrogación: `?funcion`
-:::
-:::
-
-----
-
-### Funciones comunes
+## Funciones comunes
 
 Algunas de las funciones más comunes de usar en `{dplyr}`, que son también las que usaremos para interactuar con los datos.
 
@@ -1249,6 +1263,29 @@ datos |>
 ```
 :::
 
+----
+
+### Resumiendo datos
+
+Veamos los [datos de educación del **Censo 2024**](https://censo2024.ine.gob.cl/resultados/), que contienen la escolaridad promedio de cada comuna, por sexo.
+
+::: {.boton}
+<a href="https://github.com/bastianolea/curso_intro_R_gratis_v2/raw/main/datos/censo/educacion.xlsx" target="_blank"> {{< fa file-download >}} Descargar datos de educación en Excel</a>
+:::
+
+```{r}
+educacion <- readxl::read_xlsx("datos/censo/educacion.xlsx")
+
+educacion |> 
+  filter(region != "País") |> 
+  filter(sexo == "Total Comuna") |> 
+  group_by(region) |> 
+  summarize(escolaridad = mean(escolaridad),
+            escolaridad_mayores_edad = mean(escolaridad_mayores_edad),
+            n_comunas = n()) |> 
+  head(n = 4)
+```
+
 
 ----
 
@@ -1310,7 +1347,95 @@ datos_clasif |> head(n = 3)
 ----
 
 
-## Ejercicios
+
+
+
+## Transformar datos
+
+::: {.boton .absolute top=0% right=0%}
+[{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/r_introduccion/tidyr_pivotar/)
+:::
+
+```{r}
+library(tidyr)
+```
+
+::: {.incremental}
+- El paquete `{tidyr}` se especializa en **transformar la estructura de los datos**.
+- Esto nos permite **manipular** los datos para que sea más cómodo o lógico realizar ciertas operaciones.
+- Por ejemplo:
+- Si necesitamos sumar varias variables, es más cómodo tenerlas en filas (para poder usar algo como `sum(valores)`) que en columnas (y tener que sumar `a+b+c+d`...)
+- Si queremos comparar varias variables, o mostrarlas a un público, es mejor que estén lado a lado, como en las tablas comunes.
+:::
+
+
+----
+
+
+### Ejemplo de transformación de datos
+
+![](imagenes/tidyr.png){.esquina-der style='height:128px;'}
+
+- **Pivotar** una tabla sirve para cambiar su forma:
+- De variables en columnas a filas: `pivot_longer()`
+- De variables en filas a columnas: `pivot_wider()`
+
+
+::: {.fragment}
+![](imagenes/pivot_longer.png){.centrar style='max-height: 200px;'}
+:::
+
+::: {.fragment}
+![](imagenes/pivot_wider.png){.centrar style='max-height: 200px;'}
+:::
+
+
+----
+
+
+### Transformando datos
+
+Veamos un ejemplo donde transformamos los [datos de **estimaciones de población** del INE](https://www.ine.gob.cl/estadisticas/sociales/demografia-y-vitales/proyecciones-de-poblacion), desde un formato **ancho** (años en columnas) a uno **largo** (años en filas).
+
+::: {.boton}
+<a href="https://github.com/bastianolea/curso_intro_R_gratis_v2/raw/main/datos/estimaciones/estimaciones_poblacion.xlsx" target="_blank"> {{< fa file-download >}} Descargar datos de estimaciones de población en Excel</a>
+:::
+
+:::: {.columns}
+
+:::{.column}
+```{r}
+library(readxl)
+
+poblacion <- read_xlsx("datos/estimaciones/estimaciones_poblacion.xlsx")
+
+poblacion |> 
+  select(1:6) |> 
+  head()
+```
+:::
+
+:::{.column}
+```{r}
+library(tidyr)
+
+poblacion |> 
+  pivot_longer(cols = `1992`:`2070`, 
+               names_to = "año", 
+               values_to = "poblacion") |> 
+  head()
+```
+:::
+::::
+
+
+
+----
+
+
+
+
+## Datos para practicar
 
 Algunos conjuntos de datos limpios para practicar
 
@@ -1319,9 +1444,12 @@ Algunos conjuntos de datos limpios para practicar
 <a href="https://github.com/bastianolea/curso_intro_R_gratis_v2/raw/main/datos/clasificacion/clasificacion.xlsx" target="_blank"> {{< fa file-download >}} Datos de clasificaciones comunales</a>
 :::
 
-
 ::: {.boton}
 <a href="https://github.com/bastianolea/curso_intro_R_gratis_v2/raw/main/datos/estimaciones/estimaciones_poblacion.xlsx" target="_blank"> {{< fa file-download >}} Datos de estimaciones de población</a>
+:::
+
+::: {.boton}
+<a href="https://github.com/bastianolea/curso_intro_R_gratis_v2/raw/main/datos/censo/educacion.xlsx" target="_blank"> {{< fa file-download >}} Datos de escolaridad por comuna</a>
 :::
 
 ::: {.boton}
@@ -1336,9 +1464,10 @@ Algunos conjuntos de datos limpios para practicar
 
 :::: {.columns}
 ::: {.incremental .column width=70%}
-- Librería de visualización de datos
-- Dibuja gráficos por medio de capas
-- Entre sus beneficios está su flexibilidad, adaptabilidad y reusabilidad
+- Paquete de **visualización de datos**
+- Una de las soluciones más populares a nivel mundial
+- Prodice gráficos por medio de **capas**
+- Entre sus beneficios están su flexibilidad, reusabilidad y extensibilidad
 
 ::: {.fragment}
 ```{r}
@@ -1394,13 +1523,13 @@ library(ggplot2)
 
 ## Gramática aplicada al código
 
-Por un lado tenemos los conceptos que constituyen la **gramática** de los gráficos, y por el otro un ejemplo de código aplicando estos conceptos.
-
 :::: {.columns}
 
 ::: {.column width="40%"}
 
-::: {style="font-align: right;"}
+Conceptos que constituyen la **gramática** de los gráficos:
+
+::: {.incremental style="font-align: right;"}
 - Datos [línea 1]{.linea}
 - Mapeos [línea 2]{.linea}
 - Capas [línea 3]{.linea}
@@ -1413,6 +1542,8 @@ Por un lado tenemos los conceptos que constituyen la **gramática** de los gráf
 :::
 
 ::: {.column width="60%"}
+Conceptos de la gramática de gráficos aplicados al código:
+
 ```{r}
 #| fig-height: 4
 #| fig-width: 7
@@ -1436,7 +1567,7 @@ ggplot(iris) + # datos
 ```{r}
 grafico <- ggplot(iris) +
   aes(Sepal.Width, Sepal.Length, color = Species) + 
-  geom_point(size = 1)
+  geom_point(alpha = 0.7)
 ```
 
 :::: {.columns}
@@ -1449,9 +1580,8 @@ grafico <- ggplot(iris) +
 #| fig-width: 4
 grafico_tema <- grafico +
   theme_linedraw(paper = "#EAD2FA", 
-                ink = "#553A74", 
-                accent = "#9069C0")
-
+                 ink = "#553A74", 
+                 accent = "#9069C0")
 grafico_tema
 ```
 :::
@@ -1463,10 +1593,9 @@ grafico_tema
 #| fig-height: 3
 #| fig-width: 4
 grafico_color <- grafico_tema +
-    scale_color_discrete(
-      palette = c("#AC558A", "#553A74", 
-                  "#666BC7"))
-
+  scale_color_discrete(
+    palette = c("#AC558A", "#553A74", 
+                "#666BC7"))
 grafico_color
 ```
 
@@ -1476,20 +1605,48 @@ grafico_color
 
 ----
 
+
+## Textos del gráfico
+
+Podemos configurar y agregar textos del gráfico con la capa `labs()`:
+
+```{r}
+#| output-location: "column-fragment"
+
+grafico_textos <- grafico_color +
+  labs(x = "Ancho del sépalo", 
+       y = "Largo del sépalo", 
+       color = "Especies",
+       title = "Gráfico de dispersión",
+       subtitle = "Iris Setosa")
+
+grafico_textos
+```
+
+
+----
+
 ## Temas
+
+Configuración completa de cualquier aspecto o elemento del gráfico.
 
 :::: {.columns}
 
 ::: {.column width="33%"}
 ##### Funciones de temas
 
+Agregar un tema prediseñado que cambia la apariencia general del gráfico:
+
 - `theme_minimal()`
 - `theme_classic()`
 - `theme_void()`
 - `theme_linedraw()`
 :::
+
 ::: {.column width="33%"}
 ##### Componentes del gráfico
+
+En `theme()` podemos cambiar aspectos específicos. Los principales empiezan con:
 
 - `panel`
 - `grid`
@@ -1498,8 +1655,12 @@ grafico_color
 - `strip`
 - `legend`
 :::
+
 ::: {.column width="33%"}
 #####  Tipos de componente
+
+Cada aspecto del gráfico es de un **tipo** distinto, y cada tipo se configura mediante una función:
+
 - `element_text()`, txtos
 - `element_line()`, líneas
 - `element_rect()`, rectángulos
@@ -1515,20 +1676,21 @@ grafico_color
 #| fig-height: 5
 #| fig-width: 7
 #| fig-scale: 1.5
-grafico_color +
-  theme(panel.grid.major = element_line(linewidth = 0.5, color = "#C2A1D6"),
+#| output-location: "column-fragment"
+
+grafico_textos +
+  theme(plot.title = element_text(face = "bold", size = 16),
+        plot.subtitle = element_text(family = "Arial", face = "italic"),
+        panel.grid.major = element_line(linewidth = 0.5, color = "#C2A1D6"),
         panel.grid.minor = element_blank(),
         panel.background = element_rect(fill = "#DBBFEC", color = NA),
         axis.title = element_text(face = "bold"),
         axis.title.x = element_text(margin = margin(t = 8)),
         axis.text.x = element_text(angle = 90, vjust = 0.5),
-        legend.position = "top",
-        legend.title = element_text(face = "bold", size = 14),
+        legend.title = element_text(face = "bold", size = 14, margin = margin(b = 10)),
         legend.text = element_text(margin = margin(l = 4)),
         legend.key = element_rect(fill = "#DBBFEC", color = "#C2A1D6"),
-        legend.key.spacing.y = unit(1.8, "mm"),
-        panel.spacing.x = unit(6, "mm"),
-        strip.text = element_text(face = "bold.italic", size = 12))
+        legend.key.spacing.y = unit(1.8, "mm"))
 ```
 
 
@@ -1549,7 +1711,6 @@ Existen muchos paquetes que extienden las capacidades de `{ggplot2}`:
 - `{ggrepel}`: separación de textos sobrepuestos
 - `{gganimate}`: gráficos animados
 - `{marquee}` y `{ggtext}`: textos con formato, color, y más
-- `{ggfx}`: shaders, filtros y efectos especiales
 - `{ggiraph}` y `{plotly}`: gráficos interactivos
 :::
 ::::
@@ -1592,48 +1753,6 @@ datos |>
 ```
 :::
 :::
-
-
-# Herramientas avanzadas para trabajar con datos
-
-----
-
-
-## Transformar datos
-
-::: {.boton .absolute top=0% right=0%}
-[{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/r_introduccion/tidyr_pivotar/)
-:::
-
-::: {.incremental}
-- El paquete `{tidyr}` se especializa en **transformar la estructura de los datos**.
-- Esto nos permite **manipular** los datos para que sea más cómodo o lógico realizar ciertas operaciones.
-  - Por ejemplo:
-    - Si necesitamos sumar varias variables, es más cómodo tenerlas en filas (para poder usar algo como `sum(valores)`) que en columnas (y tener que sumar `a+b+c+d`...)
-    - Si queremos comparar varias variables, o mostrarlas a un público, es mejor que estén lado a lado, como en las tablas comunes.
-:::
-  
-  
-----
-
-
-### Transformando datos
-
-![](imagenes/tidyr.png){.esquina-der style='height:128px;'}
-
-- **Pivotar** una tabla sirve para cambiar su forma:
-  - De variables en columnas a filas: `pivot_longer()`
-  - De variables en filas a columnas: `pivot_wider()`
-
-
-::: {.fragment}
-![](imagenes/pivot_longer.png){.centrar style='max-height: 200px;'}
-:::
-
-::: {.fragment}
-![](imagenes/pivot_wider.png){.centrar style='max-height: 200px;'}
-:::
-
 
 
 
@@ -1683,22 +1802,45 @@ El [paquete `{chilemapas}`](https://pacha.dev/chilemapas/) ofrece funciones que 
 library(chilemapas)
 
 mapa_comunas |> 
-  filter(codigo_region == 14)
+  filter(codigo_region == "14")
 ```
 
 ----
 
+## Visualizando datos en un mapa
 
-## Cargar datos geoespaciales
+Sólo basta con cruzar una tabla con las geometrías
 
-```{r}
-#| eval: false
-library(sf)
-mapa_comunas <- st_read("datos/mapas/mapa_comunas.geojson")
+```{r mapa_pobreza}
+#| output-location: "column-fragment"
+#| fig-height: 6
+#| fig-width: 5
 
+# cargar datos de pobreza por comuna
+pobreza <- read_xlsx("datos/pobreza/estimaciones_pobreza.xlsx") |> 
+  mutate(codigo = as.numeric(codigo))
+
+# filtrar mapa en una región específica
+mapa_region <- mapa_comunas |> 
+  filter(codigo_region == "04") |> 
+  mutate(codigo = as.numeric(codigo_comuna))
+
+# unir el mapa con los datos
+mapa_datos <- mapa_region |> 
+  left_join(pobreza, by = "codigo")
+
+# visualizar
+mapa_datos |> 
+  ggplot() +
+  aes(geometry = geometry,
+      fill = porcentaje * 100) +
+  geom_sf(linewidth = 0) +
+  scale_fill_gradient(low = "#9F69C7", high = "#23102A") +
+  labs(fill = "Pobreza")
 ```
 
-----
+
+
 
 ## Datos para practicar {{< fa file-code >}}
 
@@ -1741,9 +1883,9 @@ Ahora que ya sabes lo básico, todo lo demás se trata de aprender piezas y herr
 - También pueden devolverse y **empezar de nuevo**
 - Dense una vuelta y a veces la respuesta llega solita 😌
 - No se vuelvan dependientes de la IA 😵
-  - Si quieren usar IA: 
-    - **Autocompletado** de GitHub Copilot
-    - **Mensaje de sistema** para su proveedor de IA
+- Si quieren usar IA: 
+- **Autocompletado** de GitHub Copilot
+- **Mensaje de sistema** para su proveedor de IA
 - Aprendendan a **buscar** bien en internet
 - Compartan lo que hacen y socialicen sus aprendizajes! ✨
 :::
