@@ -193,7 +193,7 @@
     "href": "diapositivas.html#tutoriales-de-dplyr",
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Tutoriales de {dplyr}",
-    "text": "Tutoriales de {dplyr}\nPara que puedan repasar o guiarse con casos básicos de uso de {dplyr} con datos reales, dejo un par de tutoriales:\n\n Tutorial con datos censales\n\n\n Tutorial con datos sociales"
+    "text": "Tutoriales de {dplyr}\nPara que puedan repasar o guiarse con casos básicos de uso de {dplyr} con datos reales, dejo un par de tutoriales:\n\n Tutorial con datos censales\n\n\n Tutorial con datos sociales\n\n\nDatos para practicar\nAlgunos conjuntos de datos limpios para practicar\n\n  Clasificaciones comunales\n\n\n  Estimaciones de población\n\n\n  Escolaridad por comuna\n\n\n  Población según género"
   },
   {
     "objectID": "diapositivas.html#filtrar-datos",
@@ -369,5 +369,19 @@
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Datos para practicar ",
     "text": "Datos para practicar \n\n Estimaciones de población Censo\n\n\n Variables educacionales Censo 2024\n\n\n Estimación de pobreza multidimensional 2022\n\n\n Clasificaciones comunales 2024\n\nPuedes encontrar más datos en mi repositorio de datos sociales, en el banco integrado de datos del Ministerio de Desarrollo, en los datos abiertos del Estado Chile, y muchos más.\n\n\n\nAhora que ya sabes lo básico, todo lo demás se trata de aprender piezas y herramientas que puedes ir agregando a tus análisis! 🧩🛠️"
+  },
+  {
+    "objectID": "diapositivas.html#paquetes-aprendidos",
+    "href": "diapositivas.html#paquetes-aprendidos",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
+    "section": "Paquetes aprendidos",
+    "text": "Paquetes aprendidos\n\n\n\n\n\n\n  \n    \n  \n  \n    created with hexsession"
+  },
+  {
+    "objectID": "diapositivas.html#para-qué-sirve-dplyr",
+    "href": "diapositivas.html#para-qué-sirve-dplyr",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
+    "section": "¿Para qué sirve {dplyr}?",
+    "text": "¿Para qué sirve {dplyr}?\nPara explorar y modificar los datos.\n\n\nSeleccionar columnas:\ndatos |&gt; select(region, comuna, porcentaje)\n\n\n# A tibble: 4 × 3\n  region   comuna        porcentaje\n  &lt;chr&gt;    &lt;chr&gt;              &lt;dbl&gt;\n1 Tarapacá Iquique            0.183\n2 Tarapacá Alto Hospicio      0.326\n3 Tarapacá Pozo Almonte       0.250\n4 Tarapacá Camiña             0.223\n\n\nOrdenar observaciones:\ndatos |&gt; arrange(porcentaje)\n\n\n# A tibble: 4 × 3\n  region        comuna         porcentaje\n  &lt;chr&gt;         &lt;chr&gt;               &lt;dbl&gt;\n1 Magallanes    Río Verde         0.00113\n2 Magallanes    Laguna Blanca     0.00353\n3 Magallanes    Cabo De Hornos    0.0158 \n4 Metropolitana Vitacura          0.0244 \n\n\n\nFiltrar datos:\ndatos |&gt; filter(porcentaje &gt; 0.3)\n\n\n# A tibble: 4 × 3\n  region   comuna          porcentaje\n  &lt;chr&gt;    &lt;chr&gt;                &lt;dbl&gt;\n1 Tarapacá Alto Hospicio        0.326\n2 Tarapacá Colchane             0.300\n3 Tarapacá Huara                0.386\n4 Atacama  Tierra Amarilla      0.345\n\n\nCrear variables:\ndatos |&gt; mutate(ranking = row_number())\n\n\n# A tibble: 4 × 3\n  comuna        porcentaje ranking\n  &lt;chr&gt;              &lt;dbl&gt;   &lt;int&gt;\n1 General Lagos      0.586       1\n2 Saavedra           0.445       2\n3 Ercilla            0.416       3\n4 Galvarino          0.399       4\n\n\nY más!"
   }
 ]

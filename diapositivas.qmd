@@ -869,6 +869,64 @@ library(dplyr)
 
 ----
 
+## ¿Para qué sirve `{dplyr}`?
+
+Para **explorar** y **modificar** los datos.
+
+:::: {.columns}
+
+::: {.column}
+**Seleccionar columnas:**
+```r
+datos |> select(region, comuna, porcentaje)
+```
+
+```{r}
+#| echo: false
+datos |> select(region, comuna, porcentaje) |> head(n = 4)
+```
+
+
+**Ordenar observaciones:**
+```r
+datos |> arrange(porcentaje)
+```
+
+```{r}
+#| echo: false
+datos |> select(region, comuna, porcentaje) |> arrange(porcentaje) |> head(n = 4)
+```
+
+:::
+
+::: {.column}
+
+**Filtrar datos:**
+```r
+datos |> filter(porcentaje > 0.3)
+```
+
+```{r}
+#| echo: false
+datos |> select(region, comuna, porcentaje) |> filter(porcentaje > 0.3) |> head(n = 4)
+```
+
+**Crear variables:**
+```r
+datos |> mutate(ranking = row_number())
+```
+
+```{r}
+#| echo: false
+datos |> select(comuna, porcentaje) |> arrange(desc(porcentaje)) |> mutate(ranking = row_number()) |> head(n = 4)
+```
+
+Y más!
+
+:::
+::::
+
+----
 
 
 ## Conector
@@ -928,6 +986,9 @@ Otra forma de hacerlo con `|>` es:
 objeto |> funcion() # al objeto luego le aplicamos la función
 ```
 :::
+
+Se lee: _al `objeto` le aplicamos la `funcion()`_
+
 ::: {.fragment .pad}
 Luego podemos encadenar varias funciones:
 
@@ -1112,6 +1173,41 @@ Algunas de las funciones más comunes de usar en `{dplyr}`, que son también las
 ----
 
 
+
+## Datos de texto 
+
+![](imagenes/stringr.png){.esquina-der style='height:128px;'}
+
+El paquete `{stringr}` se especializa en texto.
+
+::: {.pad}
+```{r}
+library(stringr)
+```
+
+::: {.fragment}
+```{r}
+texto <- "todxs pueden aprender a programar 💕" 
+
+str_detect(texto, "todos")
+
+str_detect(texto, "aprender")
+```
+:::
+
+::: {.fragment}
+```{r}
+datos |> 
+  filter(str_detect(comuna, "Alto")) |> 
+  select(region, comuna)
+```
+:::
+:::
+
+
+----
+
+
 ## Crear/modificar variables
 
 ::: {.boton .absolute top=0% right=0%}
@@ -1220,20 +1316,6 @@ datos |>
 
 ----
 
-
-## Tutoriales de `{dplyr}`
-
-Para que puedan repasar o guiarse con **casos básicos de uso** de `{dplyr}` con **datos reales**, dejo un par de tutoriales:
-
-::: {.boton .pad}
-[{{< fa file-lines >}} Tutorial con datos censales ](https://bastianolea.rbind.io/blog/r_introduccion/tutorial_dplyr_censo/)
-:::
-
-::: {.boton .pad}
-[{{< fa file-lines >}} Tutorial con datos sociales](https://bastianolea.rbind.io/blog/r_introduccion/tutorial_dplyr_campamentos/)
-:::
-
-----
 
 
 
@@ -1433,27 +1515,39 @@ poblacion |>
 ----
 
 
+## Tutoriales de `{dplyr}`
 
+Para que puedan repasar o guiarse con **casos básicos de uso** de `{dplyr}` con **datos reales**, dejo un par de tutoriales:
 
-## Datos para practicar
+::: {.boton .pad}
+[{{< fa file-lines >}} Tutorial con datos censales ](https://bastianolea.rbind.io/blog/r_introduccion/tutorial_dplyr_censo/)
+:::
+
+::: {.boton .pad}
+[{{< fa file-lines >}} Tutorial con datos sociales](https://bastianolea.rbind.io/blog/r_introduccion/tutorial_dplyr_campamentos/)
+:::
+
+<br>
+
+### Datos para practicar
 
 Algunos conjuntos de datos limpios para practicar
 
 
 ::: { .boton}
-<a href="https://github.com/bastianolea/curso_intro_R_gratis_v2/raw/main/datos/clasificacion/clasificacion.xlsx" target="_blank"> {{< fa file-download >}} Datos de clasificaciones comunales</a>
+<a href="https://github.com/bastianolea/curso_intro_R_gratis_v2/raw/main/datos/clasificacion/clasificacion.xlsx" target="_blank"> {{< fa file-download >}} Clasificaciones comunales</a>
 :::
 
 ::: {.boton}
-<a href="https://github.com/bastianolea/curso_intro_R_gratis_v2/raw/main/datos/estimaciones/estimaciones_poblacion.xlsx" target="_blank"> {{< fa file-download >}} Datos de estimaciones de población</a>
+<a href="https://github.com/bastianolea/curso_intro_R_gratis_v2/raw/main/datos/estimaciones/estimaciones_poblacion.xlsx" target="_blank"> {{< fa file-download >}} Estimaciones de población</a>
 :::
 
 ::: {.boton}
-<a href="https://github.com/bastianolea/curso_intro_R_gratis_v2/raw/main/datos/censo/educacion.xlsx" target="_blank"> {{< fa file-download >}} Datos de escolaridad por comuna</a>
+<a href="https://github.com/bastianolea/curso_intro_R_gratis_v2/raw/main/datos/censo/educacion.xlsx" target="_blank"> {{< fa file-download >}} Escolaridad por comuna</a>
 :::
 
 ::: {.boton}
-<a href="https://github.com/bastianolea/curso_intro_R_gratis_v2/raw/main/datos/censo/genero.xlsx" target="_blank"> {{< fa file-download >}} Datos de población según género</a>
+<a href="https://github.com/bastianolea/curso_intro_R_gratis_v2/raw/main/datos/censo/genero.xlsx" target="_blank"> {{< fa file-download >}} Población según género</a>
 :::
 
 
@@ -1721,40 +1815,6 @@ Acá hay una [lista de extensiones de `ggplot2`](https://bastianolea.rbind.io/bl
 
 
 
-----
-
-
-## Datos de texto {visibility=hidden}
-
-![](imagenes/stringr.png){.esquina-der style='height:128px;'}
-
-El paquete `{stringr}` se especializa en texto.
-
-::: {.pad}
-```{r}
-library(stringr)
-```
-
-::: {.fragment}
-```{r}
-texto <- "todxs pueden aprender a programar 💕" 
-
-str_detect(texto, "todos")
-
-str_detect(texto, "aprender")
-```
-:::
-
-::: {.fragment}
-```{r}
-datos |> 
-  filter(str_detect(comuna, "Alto")) |> 
-  select(region, comuna)
-```
-:::
-:::
-
-
 
 # Mapas
 
@@ -1838,8 +1898,6 @@ mapa_datos |>
   scale_fill_gradient(low = "#9F69C7", high = "#23102A") +
   labs(fill = "Pobreza")
 ```
-
-
 
 
 ## Datos para practicar {{< fa file-code >}}
