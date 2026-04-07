@@ -1830,6 +1830,20 @@ Acá hay una [lista de extensiones de `ggplot2`](https://bastianolea.rbind.io/bl
 :::
 
 
+----
+
+## Recursos de aprendizaje
+
+
+
+::: {.boton}
+[{{< fa file-code >}} Tutorial de visualización de datos con `{ggplot2}`](https://bastianolea.rbind.io/blog/r_introduccion/tutorial_visualizacion_ggplot/)
+:::
+
+- [R Graph Gallery](https://www.r-graph-gallery.com/)
+- [R Charts](https://r-charts.com/es/)
+- [A ggplot2 Tutorial for Beautiful Plotting in R](https://cedricscherer.netlify.app/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/), tutorial de `{ggplot2}` en inglés
+
 
 
 # Mapas

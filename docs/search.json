@@ -383,5 +383,12 @@
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "¿Para qué sirve {dplyr}?",
     "text": "¿Para qué sirve {dplyr}?\nPara explorar y modificar los datos.\n\n\nSeleccionar columnas:\ndatos |&gt; select(region, comuna, porcentaje)\n\n\n# A tibble: 4 × 3\n  region   comuna        porcentaje\n  &lt;chr&gt;    &lt;chr&gt;              &lt;dbl&gt;\n1 Tarapacá Iquique            0.183\n2 Tarapacá Alto Hospicio      0.326\n3 Tarapacá Pozo Almonte       0.250\n4 Tarapacá Camiña             0.223\n\n\nOrdenar observaciones:\ndatos |&gt; arrange(porcentaje)\n\n\n# A tibble: 4 × 3\n  region        comuna         porcentaje\n  &lt;chr&gt;         &lt;chr&gt;               &lt;dbl&gt;\n1 Magallanes    Río Verde         0.00113\n2 Magallanes    Laguna Blanca     0.00353\n3 Magallanes    Cabo De Hornos    0.0158 \n4 Metropolitana Vitacura          0.0244 \n\n\n\nFiltrar datos:\ndatos |&gt; filter(porcentaje &gt; 0.3)\n\n\n# A tibble: 4 × 3\n  region   comuna          porcentaje\n  &lt;chr&gt;    &lt;chr&gt;                &lt;dbl&gt;\n1 Tarapacá Alto Hospicio        0.326\n2 Tarapacá Colchane             0.300\n3 Tarapacá Huara                0.386\n4 Atacama  Tierra Amarilla      0.345\n\n\nCrear variables:\ndatos |&gt; mutate(ranking = row_number())\n\n\n# A tibble: 4 × 3\n  comuna        porcentaje ranking\n  &lt;chr&gt;              &lt;dbl&gt;   &lt;int&gt;\n1 General Lagos      0.586       1\n2 Saavedra           0.445       2\n3 Ercilla            0.416       3\n4 Galvarino          0.399       4\n\n\nY más!"
+  },
+  {
+    "objectID": "diapositivas.html#recursos-de-aprendizaje",
+    "href": "diapositivas.html#recursos-de-aprendizaje",
+    "title": "Introducción al análisis de datos con R, 2ª versión",
+    "section": "Recursos de aprendizaje",
+    "text": "Recursos de aprendizaje\n\n Tutorial de visualización de datos con {ggplot2}\n\n\nR Graph Gallery\nR Charts\nA ggplot2 Tutorial for Beautiful Plotting in R, tutorial de {ggplot2} en inglés"
   }
 ]
