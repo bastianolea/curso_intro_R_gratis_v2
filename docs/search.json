@@ -291,7 +291,7 @@
     "href": "diapositivas.html#gramática-aplicada-al-código",
     "title": "Introducción al análisis de datos con R, 2ª versión",
     "section": "Gramática aplicada al código",
-    "text": "Gramática aplicada al código\n\n\nConceptos que constituyen la gramática de los gráficos:\n\n\nDatos línea 1\nMapeos línea 2\nCapas línea 3\nEscalas línea 4\nFacetas línea 5\nCoordenadas línea 6\nTemas línea 7\n\n\n\nConceptos de la gramática de gráficos aplicados al código:\n\nggplot(iris) + # datos\n  aes(Sepal.Width, Sepal.Length, color = Species) + # mapeos\n  geom_point(size = 1) + # capas\n  scale_color_discrete() + # escalas\n  facet_wrap(~Species) + # facetas\n  coord_cartesian(xlim = c(2, 5)) + # coordenadas\n  theme_linedraw() # temas"
+    "text": "Gramática aplicada al código\n\n Ver tutorial\n\n\n\nConceptos que constituyen la gramática de los gráficos:\n\n\nDatos línea 1\nMapeos línea 2\nCapas línea 3\nEscalas línea 4\nFacetas línea 5\nCoordenadas línea 6\nTemas línea 7\n\n\n\nConceptos de la gramática de gráficos aplicados al código:\n\nggplot(iris) + # datos\n  aes(Sepal.Width, Sepal.Length, color = Species) + # mapeos\n  geom_point(size = 1) + # capas\n  scale_color_discrete() + # escalas\n  facet_wrap(~Species) + # facetas\n  coord_cartesian(xlim = c(2, 5)) + # coordenadas\n  theme_linedraw() # temas"
   },
   {
     "objectID": "diapositivas.html#colores-del-gráfico",

@@ -1617,6 +1617,10 @@ library(ggplot2)
 
 ## Gramática aplicada al código
 
+::: {.boton .absolute top=0% right=0%}
+[{{< fa file-lines >}} Ver tutorial](https://bastianolea.rbind.io/blog/r_introduccion/tidyr_pivotar/)
+:::
+
 :::: {.columns}
 
 ::: {.column width="40%"}
@@ -1763,6 +1767,18 @@ Cada aspecto del gráfico es de un **tipo** distinto, y cada tipo se configura m
 ::::
 
 ----
+
+
+### Referencia de temas
+
+Hoja de referencia de los elementos de temas en `{ggplot2}`, fuente: [Isabella Benabaye](https://isabella-b.com/blog/ggplot2-theme-elements-reference/)
+
+<br>
+
+![](imagenes/ggplot2-theme-elements-reference.png)
+
+----
+
 
 ### Personalización de temas
 
